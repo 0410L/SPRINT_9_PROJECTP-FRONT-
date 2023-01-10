@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<!--
+<div class="background container-fluid d-flex" style="height:100vh; margin: 0; padding: 0; background-image: url(../../../assets/home.jpg);
+  background-size:100% 100%; background-repeat: no-repeat; background-position: center center; overflow: auto">
+  <p></p>
+  <div class="principal container text-center align-items-center justify-content-center mt-3" style="height:50vh">  
+</div> -->
+
+
+<div class="hero container-fluid d-flex justify-content-center align-items-center" style="height:90vh; background-image: url(../../../assets/img/pattern2.png);
+background-size:contain; background-repeat: repeat; background-position: 30% 35%; overflow: auto">
+
+    <div class="inicial" style="text-align:center">
+      <div class="container mt-2 text-center ">
+        <h2>Tabla</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listInfo">
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }} </td>
+              </tr>
+             
+            </tbody>
+          </table>
+      </div>
+      
+        
+    </div>
+</div>
+
+
