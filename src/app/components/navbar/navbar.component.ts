@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 const weatherLog = document.querySelector('#icono')
 const celsius = document.querySelector('#temperatura')
@@ -20,6 +21,14 @@ export class NavbarComponent implements OnInit {
   logOut() {
     localStorage.removeItem('token');
     this.router.navigate(['/login'])
+
+    Swal.fire({
+      icon: 'success',
+      title: 'Nos vemos,',
+      text: 'que pases un buen dia!',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
 

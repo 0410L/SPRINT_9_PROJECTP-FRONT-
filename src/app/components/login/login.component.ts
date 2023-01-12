@@ -50,6 +50,14 @@ export class LoginComponent implements OnInit {
       next: (token) => {
         localStorage.setItem('token', token);
         this.router.navigate(['/dashboard'])
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Benvenido',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
       },
       error: (e: HttpErrorResponse) => {
         this._errorService.msjError(e);
