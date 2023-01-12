@@ -20,7 +20,7 @@ export class WelcomeComponent implements OnInit {
  
   }
  iniciarProfesor(){
-  this.router.navigate(['login']);
+  this.router.navigate(['loginProfesor']);
   this.navegacionweb = !this.navegacionweb;
  
   }

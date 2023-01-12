@@ -7,11 +7,11 @@ import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  selector: 'app-sign-inprofesor',
+  templateUrl: './sign-inprofesor.component.html',
+  styleUrls: ['./sign-inprofesor.component.css']
 })
-export class SignInComponent implements OnInit {
+export class SignInProfesorComponent implements OnInit {
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
@@ -50,7 +50,7 @@ export class SignInComponent implements OnInit {
       next: (v) => {
         this.loading = false;
         this.toastr.success(`El usuario ${this.email} fue registrado con exito`, 'Usuario registrado');
-        this.router.navigate(['/loginProfesor']);
+        this.router.navigate(['/login']);
       },
       error: (e: HttpErrorResponse) => {
         this.loading = false;

@@ -12,7 +12,9 @@ import { ToastrModule } from 'ngx-toastr';
 
 // Componentes
 import { LoginComponent } from './components/login/login.component';
+import { LoginProfesorComponent } from './components/loginProfesor/loginProfesor.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignInProfesorComponent } from './components/sign-inProfesor/sign-inProfesor.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
@@ -27,7 +29,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
     DashboardComponent,
     NavbarComponent,
     SpinnerComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LoginComponent,
+    LoginProfesorComponent,
+    SignInProfesorComponent,
   ],
   imports: [
     BrowserModule,
