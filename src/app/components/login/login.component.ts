@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
         icon: 'error',
         title: 'Oops...',
         text: 'Todos los cambios son obligatorios',
-        footer: '<a href="">Why do I have this issue?</a>'
+        showConfirmButton: false,
+        timer: 2000,
       })
       //this.toastr.error('Todos los campos son obligatorios', 'Error');
       return

@@ -25,7 +25,8 @@ export class UserService {
 
    signIn(Email: User): Observable<any> {
     console.log(Email)
-    return this.http.post(`http://localhost:8080/api/login/`, Email);
+    const headers = new HttpHeaders({'Content-Type':'application/json'});
+    return this.http.post<any>(`http://localhost:8080/api/register/`, Email, {headers});
    }
    
 
