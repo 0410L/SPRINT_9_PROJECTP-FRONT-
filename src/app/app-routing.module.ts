@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardProfesorComponent } from './components/dashboardProfesor/dashboardProfesor.component';
 
 // Components
 import { LoginComponent } from './components/login/login.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'signIn', component: SignInComponent },
   { path: 'signInProfesor', component: SignInProfesorComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboardProfesor', component: DashboardProfesorComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 

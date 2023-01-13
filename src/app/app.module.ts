@@ -16,6 +16,7 @@ import { LoginProfesorComponent } from './components/loginProfesor/loginProfesor
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignInProfesorComponent } from './components/sign-inProfesor/sign-inProfesor.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardProfesorComponent } from './components/dashboardProfesor/dashboardProfesor.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AddTokenInterceptor } from './utils/add-token.interceptor';
@@ -33,6 +34,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     LoginComponent,
     LoginProfesorComponent,
     SignInProfesorComponent,
+    DashboardProfesorComponent,
   ],
   imports: [
     BrowserModule,
