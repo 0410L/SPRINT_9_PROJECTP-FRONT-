@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/interfaces/user';
 import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sign-inprofesor',
@@ -29,13 +30,28 @@ export class SignInProfesorComponent implements OnInit {
 
     // Validamos que el usuario ingrese valores
     if (this.email == '' || this.password == '' || this.confirmPassword == '') {
-      this.toastr.error('Todos los campos son obligatorios', 'Error');
+      //this.toastr.error('Todos los campos son obligatorios', 'Error');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Todos los campos son obligatorios',
+        showConfirmButton: false,
+        timer: 2000,
+      })
+      
       return;
     }
 
     // Validamos que las password sean iguales
     if (this.password != this.confirmPassword) {
-      this.toastr.error('Las passwords ingresadas son distintas', 'Error');
+      //this.toastr.error('Las passwords ingresadas son distintas', 'Error');
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Los passwords son distintos',
+        showConfirmButton: false,
+        timer: 2000,
+      })
       return;
     }
 

@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Todos los cambios son obligatorios',
+        text: 'Todos los campos son obligatorios',
         showConfirmButton: false,
         timer: 2000,
       })
