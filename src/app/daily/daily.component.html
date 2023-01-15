@@ -10,18 +10,12 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
         <br>
         <br>
         <br>
-        <table class="table">
-            <!--<thead>
-              <div class="d-grid gap-2 background">
-                  <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="editDaily()">Entrada Daily</button>
-              </div>
-              <div class="d-grid gap-2 background">
-                  <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="historialProfesor()">Daily</button>
-              </div>
-              <div class="d-grid gap-2 background">
-                <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="alertas()">Historial</button>
-            </div>
-            </thead>-->
+        <div *ngIf="!loading" class="body p-4 mb-2 bg-info rounded shadow p-3">
+          <table class="table">
+            <thead>
+             <div>{{ this.model.alumno_id }}</div>
+             <div>{{ this.model.comida_primero }}</div>
+            </thead>
             <tbody>
               <!--<tr *ngFor="let item of listInfo">
                 <td>{{ item.name }}</td>
@@ -29,6 +23,8 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
               </tr>-->
             </tbody>
           </table>
+        </div>
+        <app-spinner *ngIf="loading"></app-spinner>
       </div>
       <!--
       <div class="d-grid gap-2 d-md-block">

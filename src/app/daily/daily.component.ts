@@ -12,6 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./daily.component.css']
 })
 export class DailyComponent implements OnInit {
+  loading: boolean = true;
   model: Valoracion = {
     id_valoracion: 0,
     fecha: new Date(),
@@ -50,6 +51,7 @@ export class DailyComponent implements OnInit {
 
         //Asignar al modelo
         this.model = response.data;
+        this.loading = false;
       },
       error: (e: HttpErrorResponse) => {
         console.log()

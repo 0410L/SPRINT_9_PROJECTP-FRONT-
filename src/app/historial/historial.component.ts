@@ -1,5 +1,10 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Valoracion } from '../interfaces/valoracion';
+import { ErrorService } from '../services/error.service';
+import { UserService } from '../services/user.service';
+import { ValoracionService } from '../services/valoracion.service';
 
 @Component({
   selector: 'app-historial',
@@ -7,11 +12,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./historial.component.css']
 })
 export class HistorialComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  loading: boolean = true;
+  model: Array<Valoracion> = [];
+  
+  constructor(private router: Router, 
+    private valoracionService: ValoracionService, 
+    private errorService: ErrorService, 
+    private userService: UserService) { }
 
   ngOnInit(): void {
+    this.valoracionService.obtenerValoracionesHistorial(this.userService.getLoggedUserId()).subscribe({
+      next: (response) => {
+        console.log(response);
+        if(response.error)
+        {
+          this.errorService.mensajeError('Error al consultar historial.');
+          return;
+        }
+
+        //Asignar al modelo
+        this.model = response.data;
+        this.loading = false;
+      },
+      error: (e: HttpErrorResponse) => {
+        console.log()
+        this.errorService.msjError(e);
+      }
+    })
   }
+  
+  
   volver(){
     this.router.navigate(['dashboard']);
     }

@@ -1,6 +1,5 @@
 export interface UserProfile {
-    id_alumno: number,
+    id_usuario: number,
     email: string,
     nombre: string
-    nombre_tutor: string
 }

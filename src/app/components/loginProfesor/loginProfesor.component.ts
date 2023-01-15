@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/interfaces/user';
+import { UserProfile } from 'src/app/interfaces/userProfile';
 import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2'
@@ -13,8 +14,8 @@ import Swal from 'sweetalert2'
   styleUrls: ['./loginProfesor.component.css']
 })
 export class LoginProfesorComponent implements OnInit {
-  email: string = 'pa@gmail.com';
-  password: string = 'papa';
+  email: string = 'marta@gmail.com';
+  password: string = '1234';
   loading: boolean = false;
 
   constructor(private toastr: ToastrService,
@@ -47,10 +48,29 @@ export class LoginProfesorComponent implements OnInit {
     }
 
     this.loading = true;
-    this._userService.login(user).subscribe({
+    this._userService.loginProfesor(user).subscribe({
       next: (token) => {
-        localStorage.setItem('token', token);
+        console.log(token);
+        if(token.error)
+        {
+          this._errorService.mensajeError('El usuario y/o contraseña no es válido');
+          this.loading = false
+          return;
+        }
+
+        //Login successfully
+        localStorage.setItem('token', token.data.token);
         this.router.navigate(['/dashboardProfesor'])
+
+        //Obtener datos del usuario
+        let usuario: UserProfile = {
+          email: user.email,
+          nombre: token.data.nombre,
+          id_usuario: token.data.id_profesor,
+        };
+        
+        this._userService.setLoggedUser(usuario);
+        
 
         Swal.fire({
           icon: 'success',
@@ -61,11 +81,13 @@ export class LoginProfesorComponent implements OnInit {
 
       },
       error: (e: HttpErrorResponse) => {
+        console.log()
         this._errorService.msjError(e);
         this.loading = false
       }
     })
   }
+
 
   
 

@@ -66,8 +66,8 @@ export class LoginComponent implements OnInit {
         let usuario: UserProfile = {
           email: user.email,
           nombre: token.data.nombre,
-          id_alumno: token.data.id_alumno,
-          nombre_tutor: token.data.nombre_tutor
+          id_usuario: token.data.id_alumno,
+
         };
         
         this._userService.setLoggedUser(usuario);

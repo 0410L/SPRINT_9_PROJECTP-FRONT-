@@ -41,6 +41,13 @@ export class UserService {
     return this.http.post<any>(`http://localhost:8080/api/login/`, Email, {headers});
    }
 
+   loginProfesor(Email: User): Observable<any> {
+    console.log(Email)
+    const headers = new HttpHeaders({'Content-Type':'application/json'});
+    return this.http.post<any>(`http://localhost:8080/api/profesor/login/`, Email, {headers});
+   }
+
+
    getLoggedUserName(): string {
 
     return localStorage.getItem('nombre_usuario') ?? "";
@@ -55,7 +62,7 @@ export class UserService {
 
     localStorage.setItem('nombre_usuario', user.nombre);
     localStorage.setItem('email_usuario', user.email);
-    localStorage.setItem('id_usuario', user.id_alumno.toString());
+    localStorage.setItem('id_usuario', user.id_usuario.toString());
 
    }
 
