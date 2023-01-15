@@ -1,22 +1,39 @@
+import { AuthGuard } from './../../utils/auth.guard';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
 import { UserService } from 'src/app/services/user.service';
+import { WeatherService } from 'src/app/weather.service';
 
-const weatherLog = document.querySelector('#icono')
-const celsius = document.querySelector('#temperatura')
+
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+
+  /*template: `
+    <nav>
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <span>{{ temperature }}</span>
+    </nav>
+  `,
+  */
+
+  styles: []
 })
 
 export class NavbarComponent implements OnInit {
+  temperature = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private weatherService: WeatherService, private userservice: UserService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    /*this.weatherService.getWeather('Barcelona').subscribe(data => {
+      this.temperature = data.main.temp;
+    });
+    */
   }
 
   logOut() {
