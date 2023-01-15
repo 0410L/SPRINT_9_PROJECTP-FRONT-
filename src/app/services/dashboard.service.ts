@@ -7,7 +7,7 @@ import { information } from '../interfaces/information';
 @Injectable({
   providedIn: 'root'
 })
-export class InformationService {
+export class DashboardService {
   private myAppUrl: string;
   private myApiUrl: string;
 

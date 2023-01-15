@@ -1,6 +1,9 @@
-*{
+* {
+    font-family: Quicksand;
+    font-weight: 100;
+    margin: 0;
     overflow: hidden;
-}
+  }
 
 .table>:not(caption)>*>* {
     /*padding: 0.5rem 0.5rem;*/
@@ -13,4 +16,5 @@
 .table>:not(caption)>*>*:hover{
     background-color: black
 }
+
 

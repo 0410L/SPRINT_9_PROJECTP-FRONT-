@@ -12,14 +12,6 @@ import { WeatherService } from 'src/app/weather.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 
-  /*template: `
-    <nav>
-      <a routerLink="/">Home</a>
-      <a routerLink="/about">About</a>
-      <span>{{ temperature }}</span>
-    </nav>
-  `,
-  */
 
   styles: []
 })

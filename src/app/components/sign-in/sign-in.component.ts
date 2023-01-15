@@ -67,7 +67,8 @@ export class SignInComponent implements OnInit {
         this.loading = false;
         this.toastr.success(`El usuario ${this.email} fue registrado con exito`, 'Usuario registrado');
         
-        this.router.navigate(['/loginProfesor']);
+        
+        this.router.navigate(['/login']);
       },
       error: (e: HttpErrorResponse) => {
         this.loading = false;

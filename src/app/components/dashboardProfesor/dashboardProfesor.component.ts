@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { information } from 'src/app/interfaces/information';
-import { InformationService } from 'src/app/services/information.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,21 +8,24 @@ import { Router } from '@angular/router';
 })
 export class DashboardProfesorComponent implements OnInit {
 
+  showmodal:any;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
     //acció que fará el botó 'iniciar' per començar amb els textos.
- Daily(){
-  this.router.navigate(['login']);
+ editProfesor(){
+  this.router.navigate(['editProfesor']);
   }
- Historial(){
-  this.router.navigate(['loginProfesor']);
+ dailyProfesor(){
+  this.router.navigate(['dailyProfesor']);
   }
-Alertas(){
-  this.router.navigate(['loginProfesor']);
+historialProfesor(){
+  this.router.navigate(['historialProfesor']);
    }
+
 
 
 

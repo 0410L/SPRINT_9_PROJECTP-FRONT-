@@ -1,34 +1,27 @@
 <app-navbar></app-navbar>
 
-<!--
-<div class="background container-fluid d-flex" style="height:100vh; margin: 0; padding: 0; background-image: url(../../../assets/home.jpg);
-  background-size:100% 100%; background-repeat: no-repeat; background-position: center center; overflow: auto">
-  <p></p>
-  <div class="principal container text-center align-items-center justify-content-center mt-3" style="height:50vh">  
-</div> -->
-
 
 <div class="hero container-fluid d-flex justify-content-center align-items-center" style="height:94vh;  background-image: url(../../assets/img/background_pattern_black.png);
 background-size:contain; background-repeat: repeat; background-position: 50% 50%; overflow: hidden">
 
     <div class="inicial" style="text-align:center">
       <div class="container-fluid text-center ">
-        <h2 class="text-white">Hola, Profesor/a</h2>
+        <h2 class="text-white">Daily Profesor</h2>
         <br>
         <br>
         <br>
         <table class="table">
-            <thead>
+            <!--<thead>
               <div class="d-grid gap-2 background">
-                  <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="editProfesor()">Entrada Daily</button>
+                  <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="editDaily()">Entrada Daily</button>
               </div>
               <div class="d-grid gap-2 background">
-                  <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="dailyProfesor()">Daily</button>
+                  <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="historialProfesor()">Daily</button>
               </div>
               <div class="d-grid gap-2 background">
-                <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="historialProfesor()">Historial</button>
+                <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="alertas()">Historial</button>
             </div>
-            </thead>
+            </thead>-->
             <tbody>
               <!--<tr *ngFor="let item of listInfo">
                 <td>{{ item.name }}</td>
@@ -37,11 +30,15 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
             </tbody>
           </table>
       </div>
-      
-        
+      <!--
+      <div class="d-grid gap-2 d-md-block">
+        <button class="btn btn-info p-1">Daily</button> 
+        <button class="btn btn-info p-1">Historial</button> 
+        <button class="btn btn-info p-1">Alertas</button>
+      </div>
+      -->
+      <div class="d-grid gap-2 d-md-block">
+        <button class="btn btn-info p-1" (click)="volver()">Volver</button>
+      </div> 
     </div>
 </div>
-<p></p> 
-<div >© Polard</div>
-
-

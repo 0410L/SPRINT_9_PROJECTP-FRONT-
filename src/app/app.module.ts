@@ -21,6 +21,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AddTokenInterceptor } from './utils/add-token.interceptor';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { DailyComponent } from './daily/daily.component';
+import { HistorialComponent } from './historial/historial.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { EditProfesorComponent } from './edit-profesor/edit-profesor.component';
+import { DailyProfesorComponent } from './daily-profesor/daily-profesor.component';
+import { HistorialProfesorComponent } from './historial-profesor/historial-profesor.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +41,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
     LoginProfesorComponent,
     SignInProfesorComponent,
     DashboardProfesorComponent,
+    DailyComponent,
+    HistorialComponent,
+    AlertasComponent,
+    EditProfesorComponent,
+    DailyProfesorComponent,
+    HistorialProfesorComponent,
   ],
   imports: [
     BrowserModule,
