@@ -24,4 +24,14 @@ export class ErrorService {
       //this.toastr.error('Upps ocurrio un error, comuniquese con el administrador', 'Error');
     }
   }
+
+  mensajeError(errorMessage: string) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error...',
+      text: errorMessage,
+      showConfirmButton: false,
+      timer: 4500,
+    })
+  }
 }

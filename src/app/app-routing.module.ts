@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'dashboardProfesor', component: DashboardProfesorComponent, canActivate: [AuthGuard] },
   { path: 'alertas', component: AlertasComponent },
-  { path: 'daily', component: DailyComponent, canActivate: [AuthGuard]  },
+  { path: 'daily', component: DailyComponent },
   { path: 'dailyProfesor', component: DailyProfesorComponent, canActivate: [AuthGuard]  },
   { path: 'editProfesor', component: EditProfesorComponent, canActivate: [AuthGuard]  },
   { path: 'historial', component: HistorialComponent, canActivate: [AuthGuard]  },

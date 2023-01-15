@@ -12,11 +12,11 @@
 
 
       <form class="d-flex">
-        <div class="p-2 `${this.email}`">Barcelona - El poblenou  ⛅12º</div>&nbsp;&nbsp;
+        <div class="p-2">{{ this.getUserName() }}</div>&nbsp;&nbsp;
         <button class="btn btn-light" (click)="logOut()" type="button">LogOut</button>
       </form>
 
-
+      <!-- <div class="p-2">Barcelona - El poblenou  ⛅12º {{ this.getUserName() }}</div>&nbsp;&nbsp; -->
       <!--<span *ngIf="userService.userEmail">{{ UserService.userEmail }}</span>-->
 
 

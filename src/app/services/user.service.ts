@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../interfaces/user';
+import { UserProfile } from '../interfaces/userProfile';
 
 @Injectable({
   providedIn: 'root'
@@ -34,11 +35,34 @@ export class UserService {
    }
    
 
-   login(Email: User) {
+   login(Email: User): Observable<any> {
     console.log(Email)
     const headers = new HttpHeaders({'Content-Type':'application/json'});
-    return this.http.post<any>(`http://localhost:8080/api/login/`, Email, {headers})
+    return this.http.post<any>(`http://localhost:8080/api/login/`, Email, {headers});
    }
+
+   getLoggedUserName(): string {
+
+    return localStorage.getItem('nombre_usuario') ?? "";
+   }
+
+   getLoggedUserId(): number {
+//Number para convertir a entero el string que viene del local storage
+    return Number(localStorage.getItem('id_usuario') ?? "0");
+   }
+
+   setLoggedUser(user: UserProfile) {
+
+    localStorage.setItem('nombre_usuario', user.nombre);
+    localStorage.setItem('email_usuario', user.email);
+    localStorage.setItem('id_usuario', user.id_alumno.toString());
+
+   }
+
+   logout() {
+    localStorage.clear();
+   }
+
 
    /*
    login(Email: User) {

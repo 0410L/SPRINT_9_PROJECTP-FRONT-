@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logOut() {
-    localStorage.removeItem('token');
+    this.userservice.logout();
     this.router.navigate(['/welcome'])
 
     Swal.fire({
@@ -40,6 +40,10 @@ export class NavbarComponent implements OnInit {
       timer: 1500
     })
   }
+
+  getUserName(): string { 
+    return this.userservice.getLoggedUserName();
+   }
 
 /*
   //// generador del temps desde API EXTERNA

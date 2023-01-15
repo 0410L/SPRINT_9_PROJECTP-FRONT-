@@ -6,6 +6,7 @@ import { User } from 'src/app/interfaces/user';
 import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2'
+import { UserProfile } from '../../interfaces/userProfile';
 
 @Component({
   selector: 'app-login',
@@ -49,8 +50,28 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this._userService.login(user).subscribe({
       next: (token) => {
-        localStorage.setItem('token', token);
+        console.log(token);
+        if(token.error)
+        {
+          this._errorService.mensajeError('El usuario y/o contraseña no es válido');
+          this.loading = false
+          return;
+        }
+
+        //Login successfully
+        localStorage.setItem('token', token.data.token);
         this.router.navigate(['/dashboard'])
+
+        //Obtener datos del usuario
+        let usuario: UserProfile = {
+          email: user.email,
+          nombre: token.data.nombre,
+          id_alumno: token.data.id_alumno,
+          nombre_tutor: token.data.nombre_tutor
+        };
+        
+        this._userService.setLoggedUser(usuario);
+        
 
         Swal.fire({
           icon: 'success',
@@ -61,6 +82,7 @@ export class LoginComponent implements OnInit {
 
       },
       error: (e: HttpErrorResponse) => {
+        console.log()
         this._errorService.msjError(e);
         this.loading = false
       }
