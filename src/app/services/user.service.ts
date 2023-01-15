@@ -9,6 +9,10 @@ import { User } from '../interfaces/user';
 })
 export class UserService {
 
+  /*contadorID: number = 0;
+  loggedUser: any = 'Guest';
+  loginControl: boolean = false;
+  */
   private myApiUrl: string;
 
   constructor(private http: HttpClient) {

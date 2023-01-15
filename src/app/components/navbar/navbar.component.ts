@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2'
+import { UserService } from 'src/app/services/user.service';
 
 const weatherLog = document.querySelector('#icono')
 const celsius = document.querySelector('#temperatura')
@@ -20,7 +21,7 @@ export class NavbarComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem('token');
-    this.router.navigate(['/login'])
+    this.router.navigate(['/welcome'])
 
     Swal.fire({
       icon: 'success',
@@ -31,7 +32,7 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-
+/*
   //// generador del temps desde API EXTERNA
   async justWeather() {
   const weatherData = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid=14f15cb2967f0ebbd8cde2cc84211707&lang=ca&units=metric', {
@@ -44,7 +45,30 @@ export class NavbarComponent implements OnInit {
   //celsius.innerHTML = weatherBox.main.temp.toString().split(".")[0] + (" ºC ");
   //alert(celsius.innerHTML);
   //const cambioDosDigits = celsius.split(".")[0];
+*/
+
+  /*
+  get userLogged() {
+    return this.userService.loggedUser;
+   }
+ 
+   get loginControl() {
+     return this.userService.loginControl;
+} */
+
+
+/*
+
 }
 
 
+}
+function userLogged() {
+  throw new Error('Function not implemented.');
+}
+
+function loginControl() {
+  throw new Error('Function not implemented.');
+}
+*/
 }
