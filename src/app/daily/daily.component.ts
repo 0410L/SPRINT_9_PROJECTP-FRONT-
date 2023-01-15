@@ -22,14 +22,8 @@ export class DailyComponent implements OnInit {
     comida_segundo: '',
     comida_postre: '',
     merienda: '',
-    dormir_inicio: {
-      hours: 0,
-      minutes: 0
-    },
-    dormir_final: {
-      hours: 0,
-      minutes: 0
-    },
+    dormir_inicio: '00:00',
+    dormir_final: '00:00',
     deposiciones: 0,
     observaciones: ''
   };

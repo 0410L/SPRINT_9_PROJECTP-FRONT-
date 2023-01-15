@@ -5,3 +5,7 @@
     overflow: hidden;
     max-width: none;
   }
+
+.bold{
+  font-style: bold;
+}

@@ -9,8 +9,8 @@ export interface Valoracion {
     comida_segundo: string,
     comida_postre: string,
     merienda: string,
-    dormir_inicio: Time,
-    dormir_final: Time,
+    dormir_inicio: string,
+    dormir_final: string,
     deposiciones: number,
     observaciones: string
 }

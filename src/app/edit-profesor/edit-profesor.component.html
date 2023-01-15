@@ -1,45 +1,59 @@
 <app-navbar></app-navbar>
 
-
 <div class="hero container-fluid d-flex justify-content-center align-items-center" style="height:94vh;  background-image: url(../../assets/img/background_pattern_black.png);
 background-size:contain; background-repeat: repeat; background-position: 50% 50%; overflow: hidden">
 
-    <div class="inicial" style="text-align:center">
-      <div class="container-fluid text-center ">
-        <h2 class="text-white">Edit Daily</h2>
-        <br>
-        <br>
-        <br>
-        <table class="table">
-            <!--<thead>
-              <div class="d-grid gap-2 background">
-                  <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="editDaily()">Entrada Daily</button>
-              </div>
-              <div class="d-grid gap-2 background">
-                  <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="historialProfesor()">Daily</button>
-              </div>
-              <div class="d-grid gap-2 background">
-                <button type="button" class="btn btn-dark btn-lg mt-3 mb-3 pt-5 pb-5" (click)="alertas()">Historial</button>
-            </div>
-            </thead>-->
-            <tbody>
-              <!--<tr *ngFor="let item of listInfo">
-                <td>{{ item.name }}</td>
-                <td>{{ item.description }} </td>
-              </tr>-->
-            </tbody>
-          </table>
-      </div>
-      <!--
-      <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-info p-1">Daily</button> 
-        <button class="btn btn-info p-1">Historial</button> 
-        <button class="btn btn-info p-1">Alertas</button>
-      </div>
-      -->
-      <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-info p-1" (click)="volver()">Volver</button>
-      </div>
+<div class="inicial" style="text-align:center">
+  <div class="container-fluid text-center ">
+    <h2 class="text-white">Edit Daily ({{ this.getdate() }})</h2>
+    <br>
+    <br>
+    <br>
+
+    <div *ngIf="!loading" class="body p-4 mb-2 bg-info rounded shadow p-3">
+      <table class="table">
+        <thead>
+          <th>Nombre</th>
+          <th>Desayuno</th>
+          <th>Comida 1o</th>
+          <th>Comida 2o</th>
+          <th>Postre</th>
+          <th>Merienda</th>
+          <th>Dormir Ini</th>
+          <th>Dormir Fin</th>
+          <th>Deposiciones</th>
+          <th>Observaciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
+            <td>{{ model[i].alumno.nombre }}</td>
+            <td><select class="form-control" [(ngModel)]="model[i].valoracion.desayuno">
+              <option value="T">Tot</option>
+              <option value="B">Bastant</option>
+              <option value="P">Poc</option>
+            </select></td>
+            <!-- <td><input [(ngModel)]="model[i].valoracion.desayuno" class="form-control" placeholder="Ex: T"/></td> -->
+            <td><input [(ngModel)]="model[i].valoracion.comida_primero" class="form-control" placeholder="Ex: T"/></td>
+            <td><input [(ngModel)]="model[i].valoracion.comida_segundo" class="form-control" placeholder="Ex: T"/></td>
+            <td><input [(ngModel)]="model[i].valoracion.comida_postre" class="form-control" placeholder="Ex: T"/></td>
+            <td><input [(ngModel)]="model[i].valoracion.merienda" class="form-control" placeholder="Ex: T"/></td>
+            <td><input [(ngModel)]="model[i].valoracion.dormir_inicio" class="form-control" placeholder="10:00"/></td>
+            <td><input [(ngModel)]="model[i].valoracion.dormir_final" class="form-control" placeholder="12:00"/></td>
+            <td><input [(ngModel)]="model[i].valoracion.deposiciones" class="form-control" placeholder="Ex: 2"/></td>
+            <td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control" placeholder="Comentarios"/></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    <app-spinner *ngIf="loading"></app-spinner>
+    </div>
+    <br>
+    <br>
+    <div class="d-grid gap-2 d-md-block">
+      <button class="btn btn-info p-1" (click)="guardar()">Guardar</button>
+      <button class="btn btn-info p-1" (click)="volver()">Volver</button>
+    </div>
+  </div>
 </div>
+
 
