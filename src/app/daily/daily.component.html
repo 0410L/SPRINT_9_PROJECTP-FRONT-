@@ -13,14 +13,29 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
         <div *ngIf="!loading" class="body p-4 mb-2 bg-info rounded shadow p-3">
           <table class="table">
             <thead>
-             <div>{{ this.model.alumno_id }}</div>
-             <div>{{ this.model.comida_primero }}</div>
+              <tr>
+                <th>Fecha</th>
+                <th>Comida_primero</th>
+                <th>comida_segundo</th>
+                <th>comida_postre</th>
+                <th>merienda</th>
+                <th>dormir_inicio</th>
+                <th>dormir_final</th>
+                <th>dormir_deposiciones</th>
+                <th>dormir_observaciones</th>
+
+                </tr>
             </thead>
             <tbody>
-              <!--<tr *ngFor="let item of listInfo">
-                <td>{{ item.name }}</td>
-                <td>{{ item.description }} </td>
-              </tr>-->
+              <td>{{ this.model.fecha }}</td>
+             <td>{{ this.model.comida_primero }}</td>
+             <td>{{ this.model.comida_segundo }}</td>
+             <td>{{ this.model.comida_postre }}</td>
+             <td>{{ this.model.merienda }}</td>
+             <td>{{ this.model.dormir_inicio }}</td>
+             <td>{{ this.model.dormir_final }}</td>
+             <td>{{ this.model.deposiciones }}</td>
+             <td>{{ this.model.observaciones}}</td>
             </tbody>
           </table>
         </div>
