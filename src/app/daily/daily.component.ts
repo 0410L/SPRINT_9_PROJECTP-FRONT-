@@ -5,6 +5,7 @@ import { ErrorService } from 'src/app/services/error.service';
 import { Valoracion } from '../interfaces/valoracion';
 import { UserService } from 'src/app/services/user.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-daily',
@@ -59,5 +60,6 @@ export class DailyComponent implements OnInit {
   volver(){
     this.router.navigate(['dashboard']);
     }
+
 
 }

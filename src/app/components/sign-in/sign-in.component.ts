@@ -65,9 +65,8 @@ export class SignInComponent implements OnInit {
     this._userService.signIn(user).subscribe({
       next: (v) => {
         this.loading = false;
-        this.toastr.success(`El usuario ${this.email} fue registrado con exito`, 'Usuario registrado');
-        
-        
+        //this.toastr.success(`El usuario ${this.email} fue registrado con exito`, 'Usuario registrado');
+        Swal.fire(`cuenta creada ${this.email}`)
         this.router.navigate(['/login']);
       },
       error: (e: HttpErrorResponse) => {

@@ -50,7 +50,7 @@ export class EditProfesorComponent implements OnInit {
               merienda: 'T',
               dormir_inicio: '00:00',
               dormir_final: '00:00',
-              deposiciones: 2,
+              deposiciones: 0,
               observaciones: ''
             }
           }

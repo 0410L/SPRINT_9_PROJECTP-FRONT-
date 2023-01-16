@@ -27,31 +27,63 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
         <tbody>
           <tr *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
             <td>{{ model[i].alumno.nombre }}</td>
-            <td><select class="form-control" [(ngModel)]="model[i].valoracion.desayuno">
+            <td><select class="form-control" [(ngModel)]="model[i].valoracion.desayuno"><option [value]="item"></option>
               <option value="T">Tot</option>
               <option value="B">Bastant</option>
               <option value="P">Poc</option>
             </select></td>
-            <!-- <td><input [(ngModel)]="model[i].valoracion.desayuno" class="form-control" placeholder="Ex: T"/></td> -->
-            <td><input [(ngModel)]="model[i].valoracion.comida_primero" class="form-control" placeholder="Ex: T"/></td>
-            <td><input [(ngModel)]="model[i].valoracion.comida_segundo" class="form-control" placeholder="Ex: T"/></td>
-            <td><input [(ngModel)]="model[i].valoracion.comida_postre" class="form-control" placeholder="Ex: T"/></td>
-            <td><input [(ngModel)]="model[i].valoracion.merienda" class="form-control" placeholder="Ex: T"/></td>
-            <td><input [(ngModel)]="model[i].valoracion.dormir_inicio" class="form-control" placeholder="10:00"/></td>
-            <td><input [(ngModel)]="model[i].valoracion.dormir_final" class="form-control" placeholder="12:00"/></td>
-            <td><input [(ngModel)]="model[i].valoracion.deposiciones" class="form-control" placeholder="Ex: 2"/></td>
+            <td><select class="form-control" [(ngModel)]="model[i].valoracion.comida_primero">
+              <option value="T">Tot</option>
+              <option value="B">Bastant</option>
+              <option value="P">Poc</option>
+            </select></td>
+            <td><select class="form-control" [(ngModel)]="model[i].valoracion.comida_segundo">
+              <option value="T">Tot</option>
+              <option value="B">Bastant</option>
+              <option value="P">Poc</option>
+            </select></td>
+            <td><select class="form-control" [(ngModel)]="model[i].valoracion.comida_postre">
+              <option value="T">Tot</option>
+              <option value="B">Bastant</option>
+              <option value="P">Poc</option>
+            </select></td>
+            <td><select class="form-control" [(ngModel)]="model[i].valoracion.merienda">
+              <option value="T">Tot</option>
+              <option value="B">Bastant</option>
+              <option value="P">Poc</option>
+            </select></td>
+            <td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control" placeholder="10:00"/></td>
+            <td><input [(ngModel)]="model[i].valoracion.dormir_final" style="height:40px;width:70px" class="form-control" placeholder="12:00"/></td>
+            <td><select class="form-control" [(ngModel)]="model[i].valoracion.deposiciones">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select></td>
             <td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control" placeholder="Comentarios"/></td>
+
+            <!-- <td><input [(ngModel)]="model[i].valoracion.desayuno" class="form-control" placeholder="Ex: T"/></td> -->
+            <!--<td><input [(ngModel)]="model[i].valoracion.comida_primero" class="form-control" placeholder="Ex: T"/></td>-->
+            <!--<td><input [(ngModel)]="model[i].valoracion.comida_segundo" class="form-control" placeholder="Ex: T"/></td>-->
+            <!--<td><input [(ngModel)]="model[i].valoracion.comida_postre" class="form-control" placeholder="Ex: T"/></td>-->
+            <!--<td><input [(ngModel)]="model[i].valoracion.merienda" class="form-control" placeholder="Ex: T"/></td>-->
+            <!--<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" class="form-control" placeholder="10:00"/></td>-->
+            <!--<td><input [(ngModel)]="model[i].valoracion.dormir_final" class="form-control" placeholder="12:00"/></td>-->
+            <!--<td><input [(ngModel)]="model[i].valoracion.deposiciones" class="form-control" placeholder="Ex: 2"/></td>-->
+            <!--<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control" placeholder="Comentarios"/></td>-->
           </tr>
         </tbody>
       </table>
+      <br>
+      <button class="btn btn-dark p-1" style="height:50px;width:110px" (click)="guardar()">Guardar</button>
     </div>
     <app-spinner *ngIf="loading"></app-spinner>
     </div>
     <br>
     <br>
     <div class="d-grid gap-2 d-md-block">
-      <button class="btn btn-info p-1" (click)="guardar()">Guardar</button>
-      <button class="btn btn-info p-1" (click)="volver()">Volver</button>
+      <button class="btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
     </div>
   </div>
 </div>

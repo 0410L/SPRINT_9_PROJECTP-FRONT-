@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-dashboard-profesor',
@@ -10,7 +11,7 @@ export class DashboardProfesorComponent implements OnInit {
 
   showmodal:any;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +27,9 @@ historialProfesor(){
   this.router.navigate(['historialProfesor']);
    }
 
-
+   getUserName(): string { 
+    return this._userService.getLoggedUserName();
+   }
 
 
   /*

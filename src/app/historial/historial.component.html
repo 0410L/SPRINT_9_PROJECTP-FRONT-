@@ -8,20 +8,37 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
       <div class="container-fluid text-center ">
         <h2 class="text">Historial</h2>
         <br>
-        <br>
+        <br> 
         <br>
           <div *ngIf="!loading" class="body p-4 mb-2 bg-info rounded shadow p-3">
             <table class="table">
               <thead>
                <tr>
                 <th>Fecha</th>
-                <th>Comida</th>
+                <th>Desayuno</th>
+                <th>Comida 1º</th>
+                <th>Comida 2º</th>
+                <th>Comida postre</th>
+                <th>Merienda</th>
+                <th>Dormir inicio</th>
+                <th>Dormir final</th>
+                <th>Deposiciones</th>
+                <th>Observaciones</th>
+
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of this.model">
                   <td>{{ item.fecha }}</td>
+                  <td>{{ item.desayuno }} </td>
                   <td>{{ item.comida_primero }} </td>
+                  <td>{{ item.comida_segundo }} </td>
+                  <td>{{ item.comida_postre }} </td>
+                  <td>{{ item.merienda}} </td>
+                  <td>{{ item.dormir_inicio}} </td>
+                  <td>{{ item.dormir_final}} </td>
+                  <td>{{ item.deposiciones}} </td>
+                  <td>{{ item.observaciones}} </td>
                 </tr>
               </tbody>
             </table>
@@ -35,8 +52,10 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
         <button class="btn btn-info p-1">Alertas</button>
       </div>
       -->
-      <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-info p-1" (click)="volver()">Volver</button>
+      <br>
+      <br>
+      <div class="d-grid gap-2 d-md-block text-center">
+        <button class="btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
       </div>
     </div>
 </div>
