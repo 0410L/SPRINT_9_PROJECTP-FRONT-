@@ -28,16 +28,16 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
                 </tr>
             </thead>
             <tbody>
-              <td>{{ this.model.fecha }}</td>
-             <td>{{ this.model.desayuno }}</td>
-             <td>{{ this.model.comida_primero }}</td>
-             <td>{{ this.model.comida_segundo }}</td>
-             <td>{{ this.model.comida_postre }}</td>
-             <td>{{ this.model.merienda }}</td>
-             <td>{{ this.model.dormir_inicio }}</td>
-             <td>{{ this.model.dormir_final }}</td>
-             <td>{{ this.model.deposiciones }}</td>
-             <td>{{ this.model.observaciones}}</td>
+              <td class="dato"><span>{{ this.model.fecha }}</span></td>
+             <td><img class="IconoVal" src="../../assets/img/{{ this.model.desayuno }}.svg"/></td>
+             <td><img class="IconoVal" src="../../assets/img/{{ this.model.comida_primero }}.svg"/></td>
+             <td><img class="IconoVal" src="../../assets/img/{{ this.model.comida_segundo }}.svg"/></td>
+             <td><img class="IconoVal" src="../../assets/img/{{ this.model.comida_postre }}.svg"/></td>
+             <td><img class="IconoVal" src="../../assets/img/{{ this.model.merienda }}.svg"/></td>
+             <td class="dato"><span>{{ this.model.dormir_inicio }}</span></td>
+             <td class="dato"><span>{{ this.model.dormir_final }}</span></td>
+             <td class="dato"><span>{{ this.model.deposiciones }}</span></td>
+             <td class="dato"><span>{{ this.model.observaciones}}</span></td>
             </tbody>
           </table>
         </div>

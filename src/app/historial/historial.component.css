@@ -5,3 +5,17 @@
     overflow: hidden;
     max-width: none;
   }
+
+  .IconoVal{
+    width: 25px;
+    text-align: center;
+  }
+  
+  .dato{
+    padding-top: 8px;
+  }
+
+  .titulo{
+    margin-bottom: 30px;
+    font-weight: 700;
+  }

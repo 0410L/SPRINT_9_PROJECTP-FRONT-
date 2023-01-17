@@ -14,31 +14,31 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
             <table class="table">
               <thead>
                <tr>
-                <th>Fecha</th>
-                <th>Desayuno</th>
-                <th>Comida 1º</th>
-                <th>Comida 2º</th>
-                <th>Comida postre</th>
-                <th>Merienda</th>
-                <th>Dormir inicio</th>
-                <th>Dormir final</th>
-                <th>Deposiciones</th>
-                <th>Observaciones</th>
+                <th><span class="titulo">Fecha</span></th>
+                <th><span class="titulo">Desayuno</span></th>
+                <th><span class="titulo">Comida 1º</span></th>
+                <th><span class="titulo">Comida 2º</span></th>
+                <th><span class="titulo">Comida postre</span></th>
+                <th><span class="titulo">Merienda</span></th>
+                <th><span class="titulo">Dormir inicio</span></th>
+                <th><span class="titulo">Dormir final</span></th>
+                <th><span class="titulo">Deposiciones</span></th>
+                <th><span class="titulo">Observaciones</span></th>
 
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of this.model">
-                  <td>{{ item.fecha }}</td>
-                  <td>{{ item.desayuno }} </td>
-                  <td>{{ item.comida_primero }} </td>
-                  <td>{{ item.comida_segundo }} </td>
-                  <td>{{ item.comida_postre }} </td>
-                  <td>{{ item.merienda}} </td>
-                  <td>{{ item.dormir_inicio}} </td>
-                  <td>{{ item.dormir_final}} </td>
-                  <td>{{ item.deposiciones}} </td>
-                  <td>{{ item.observaciones}} </td>
+                  <td class="dato"><span>{{ item.fecha }}</span></td>
+                  <td><img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></td>
+                  <td><img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/></td>
+                  <td><img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/></td>
+                  <td><img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></td>
+                  <td><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></td>
+                  <td class="dato"><span>{{ item.dormir_inicio}}</span></td>
+                  <td class="dato"><span>{{ item.dormir_final}}</span></td>
+                  <td class="dato"><span>{{ item.deposiciones}}</span></td>
+                  <td class="dato"><span>{{ item.observaciones}}</span></td>
                 </tr>
               </tbody>
             </table>

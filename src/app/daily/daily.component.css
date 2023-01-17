@@ -9,3 +9,12 @@
 .bold{
   font-style: bold;
 }
+
+.IconoVal{
+  width: 40px;
+  text-align: center;
+}
+
+.dato{
+  padding-top: 9px;
+}
