@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,12 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getWeather(city: string) {
-    return this.http.get(`${this.apiUrl}${city}&appid=${this.apiKey}`);
+    console.log(this.getWeather)
+    const headers = new HttpHeaders({'Content-Type':'application/json'});
+    return this.http.get(`${this.apiUrl}${city}&appid=${this.apiKey}`,{headers});
   }
+
+
+
 }
+

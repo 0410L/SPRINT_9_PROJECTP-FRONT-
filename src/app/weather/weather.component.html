@@ -1,0 +1,7 @@
+
+<div class="data col  justify-content-center align-items-center" *ngIf="weatherData != undefined">
+    <form class="d-flex">
+        <div class="number text-center pt-1"><strong>{{this.weatherData.current.temperature.toFixed()}}ºC</strong></div>&nbsp;&nbsp;
+        <img [src]="this.icon" alt="icon" class="icon">
+      </form>
+</div>

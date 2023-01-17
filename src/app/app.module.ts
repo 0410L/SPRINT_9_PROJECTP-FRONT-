@@ -27,6 +27,7 @@ import { AlertasComponent } from './alertas/alertas.component';
 import { EditProfesorComponent } from './edit-profesor/edit-profesor.component';
 import { DailyProfesorComponent } from './daily-profesor/daily-profesor.component';
 import { HistorialProfesorComponent } from './historial-profesor/historial-profesor.component';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { HistorialProfesorComponent } from './historial-profesor/historial-profe
     EditProfesorComponent,
     DailyProfesorComponent,
     HistorialProfesorComponent,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,

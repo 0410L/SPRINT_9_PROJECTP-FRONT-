@@ -9,12 +9,16 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Alumno } from '../interfaces/alumno';
 import Swal from 'sweetalert2';
 import { formatDate } from '@angular/common';
+import { NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-profesor',
   templateUrl: './edit-profesor.component.html',
   styleUrls: ['./edit-profesor.component.css']
 })
+
+
 export class EditProfesorComponent implements OnInit {
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
@@ -43,11 +47,11 @@ export class EditProfesorComponent implements OnInit {
               id_valoracion: 0,
               fecha: new Date(),
               alumno_id: 0,
-              desayuno: 'T',
-              comida_primero: 'T',
-              comida_segundo: 'T',
-              comida_postre: 'T',
-              merienda: 'T',
+              desayuno: '1',
+              comida_primero: '1',
+              comida_segundo: '1',
+              comida_postre: '1',
+              merienda: '1',
               dormir_inicio: '00:00',
               dormir_final: '00:00',
               deposiciones: 0,

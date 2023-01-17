@@ -1,3 +1,59 @@
 .polard {
     font-weight: bold;
 }
+
+#temperatura{
+    width: 200px;
+    height: 120px;
+    animation: colorchange 3s; /* animation-name followed by duration in seconds*/ /* you could also use milliseconds (ms) or something like 2.5s */ 
+    animation-timing-function: ease-in-out; 
+    animation-iteration-count: infinite; 
+    animation-play-state: running;
+}
+
+.weather {
+    align-items: start;
+    justify-content: start;
+    width: 50%;
+    margin: auto;
+    font-size: larger;
+    
+  }
+
+.col1{
+    justify-content: start;
+}
+
+.col2{
+    position: absolute;
+    left:50%;
+}
+
+.col3{
+    justify-content: end;
+}
+
+.tiempo{
+
+    position: relative;
+    align-items: center;
+    
+}
+
+
+
+@media (max-width: 780px) {
+    
+.col2{
+    position: absolute;
+    left:30%;
+}
+}
+
+@media (max-width: 527px) {
+    
+    .col2{
+        position: absolute;
+        left:20%;
+    }
+    }
