@@ -9,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 export class WeatherComponent implements OnInit {
 
   url : string = 'https://www.meteosource.com/api/v1/free/point?place_id=barcelona&sections=current&timezone=auto&language=en&units=metric&key=utzkebe4e64587x1z29gyeqm301r5c8x8l4r0009'
-
   weatherData! : any
   icon! : string
 
