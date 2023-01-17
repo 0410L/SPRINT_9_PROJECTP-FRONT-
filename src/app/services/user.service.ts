@@ -21,8 +21,6 @@ export class UserService {
     //this.myApiUrl = 'api/users'
     //this.myAppUrl = environment.endpoint;
     this.myApiUrl = 'api/'
-    //this.myApiUrl = 'http://localhost:8080/api/'
-    //this.myApiUrl = 'http://localhost:8080/api/profesor/list'
     
 
    }
