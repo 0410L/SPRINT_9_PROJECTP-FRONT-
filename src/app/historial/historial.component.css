@@ -3,10 +3,11 @@
     margin: 0;
     /*overflow: hidden;*/
     max-width: none;
+    height: none;
   }
 
   .IconoVal{
-    width: 25px;
+    width: 24px;
     text-align: center;
   }
   
@@ -17,4 +18,14 @@
   .titulo{
     margin-bottom: 30px;
     font-weight: 700;
+  }
+
+  /*#daily{
+    overflow-y: scroll;
+  }*/
+
+  .hero {
+    background-image: url("../../assets/img/background_pattern.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
   }

@@ -1,17 +1,31 @@
 <!--<app-navbar></app-navbar>-->
 
 
-<div class="hero container-fluid d-flex justify-content-center align-items-center" style="height:94vh;  background-image: url(../../assets/img/background_pattern.png);
-background-size:contain; background-repeat: repeat; background-position: 50% 50%; overflow: hidden">
-
+<div class="hero container-fluid d-flex justify-content-center align-items-center" style="background-image: url(../../assets/img/background_pattern.png);
+background-size:contain; background-repeat: repeat; background-position: 50% 50%;">
     <div class="inicial" style="text-align:center">
-      <div class="container-fluid text-center ">
-        <h2 class="text">Historial</h2>
+      <div class="container">
         <br>
         <br> 
+        <h2 class="text">Historial</h2>
         <br>
-          <div *ngIf="!loading" class="body p-4 mb-2 bg-info rounded shadow p-3">
-            <table class="table">
+        <br>
+          <div *ngIf="!loading" id="daily" class="body rounded">
+            
+            <div class="card mt-3" style="width: 18rem;"  *ngFor="let item of this.model">
+              <div class="card-header bg-info"><span>{{ item.fecha }}</span></div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Desayuno <img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></li>
+                <li class="list-group-item">Comida <img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></li>
+                <li class="list-group-item">Merienda <img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></li>
+                <li class="list-group-item">Dormir <span>{{ item.dormir_inicio}}</span> - <span>{{ item.dormir_final}}</span></li>
+                <li class="list-group-item">Deposiciones: <span>{{ item.deposiciones}}</span></li>
+                <li class="list-group-item">Observaciones: <span>{{ item.observaciones}}</span></li>
+              </ul>
+            </div>
+            <br>
+            
+            <!--<table class="table">
               <thead>
                <tr>
                 <th><span class="titulo">Fecha</span></th>
@@ -41,7 +55,10 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
                   <td class="dato"><span>{{ item.observaciones}}</span></td>
                 </tr>
               </tbody>
-            </table>
+            </table>-->
+
+
+
           </div>
           <app-spinner *ngIf="loading"></app-spinner>
           </div>
@@ -52,11 +69,17 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
         <button class="btn btn-info p-1">Alertas</button>
       </div>
       -->
-      <br>
-      <br>
+      
       <div class="d-grid gap-2 d-md-block text-center">
         <button class="btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
+        <br>
+        <br>
       </div>
     </div>
+    <br>
+    <br>
+    <br>
 </div>
+
+
 
