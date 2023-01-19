@@ -2,10 +2,12 @@
     font-family: Quicksand;
     font-weight: 100;
     margin: 0;
+    /*overflow: hidden;*/
+    max-width: none;
     
   }
 
 
-  #daily{
+  /*#daily{
     overflow: scroll;
-  }
+  }*/

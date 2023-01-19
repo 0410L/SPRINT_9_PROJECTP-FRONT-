@@ -1,8 +1,8 @@
 <!--<app-navbar></app-navbar>-->
 
 
-<div class="hero container-fluid d-flex justify-content-center align-items-center" style="height:94vh;  background-image: url(../../assets/img/background_pattern.png);
-background-size:contain; background-repeat: repeat; background-position: 50% 50%; overflow: hidden">
+<div class="hero container-fluid d-flex justify-content-center align-items-center" style="height:95vh;  background-image: url(../../assets/img/background_pattern.png);
+background-size:contain; background-repeat: repeat; background-position: 30% 35%">
 
     <div class="inicial" style="text-align:center">
       <div class="container-fluid text-center ">
@@ -10,10 +10,25 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
         <br>
         <br>
         <br>
-        <div *ngIf="!loading" class="body p-4 mb-2 bg-info rounded shadow p-3">
+        <div *ngIf="!loading" class="body p-4 mb-2 rounded">
+
+          <div class="card mt-3" style="width: 18rem">
+            <div class="card-header bg-info"><span>{{ this.model.fecha }}</span></div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Desayuno <img class="IconoVal" src="../../assets/img/{{this.model.desayuno}}.svg"/></li>
+              <li class="list-group-item">Comida <img class="IconoVal" src="../../assets/img/{{this.model.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_postre}}.svg"/></li>
+              <li class="list-group-item">Merienda <img class="IconoVal" src="../../assets/img/{{this.model.merienda}}.svg"/></li>
+              <li class="list-group-item">Dormir <span>{{this.model.dormir_inicio}}</span> - <span>{{this.model.dormir_final}}</span></li>
+              <li class="list-group-item">Deposiciones: <span>{{this.model.deposiciones}}</span></li>
+              <li class="list-group-item">Observaciones: <span>{{this.model.observaciones}}</span></li>
+            </ul>
+          </div>
+          
+
+          <!--
           <table class="table">
             <thead>
-              <tr>
+              <tr> 
                 <th><span class="titulo">Fecha</span></th>
                 <th><span class="titulo">Desayuno</span></th>
                 <th><span class="titulo">Comida primero</span></th>
@@ -40,6 +55,8 @@ background-size:contain; background-repeat: repeat; background-position: 50% 50%
              <td class="dato"><span>{{ this.model.observaciones}}</span></td>
             </tbody>
           </table>
+          -->
+
         </div>
         <app-spinner *ngIf="loading"></app-spinner>
       </div>

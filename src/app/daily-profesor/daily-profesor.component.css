@@ -2,6 +2,20 @@
     font-family: Quicksand;
     font-weight: 100;
     margin: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
     max-width: none;
+  }
+
+  .IconoVal{
+    width: 24px;
+    text-align: center;
+  }
+  
+  .dato{
+    padding-top: 8px;
+  }
+
+  .titulo{
+    margin-bottom: 30px;
+    font-weight: 700;
   }
