@@ -20,12 +20,16 @@
     font-weight: 700;
   }
 
+  .tamano{
+    padding-top: 10vh;
+  }
+
   /*#daily{
     overflow-y: scroll;
   }*/
 
-  .hero {
+  /*.hero {
     background-image: url("../../assets/img/background_pattern.png");
     background-repeat: repeat;
     background-attachment: fixed;
-  }
+  }*/

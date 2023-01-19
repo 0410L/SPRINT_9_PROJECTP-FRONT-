@@ -1,3 +1,11 @@
 .title { 
     text-shadow: 1px 1px 1px #000;
   }
+
+  * {
+    max-width: none;
+  }
+  
+  .forma{
+    min-width: 10vw;
+   }

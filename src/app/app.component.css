@@ -12,5 +12,17 @@
 
 /*app-footer{
 
-    position: sticky; bottom: 0;
+    position: fixed; bottom: 0;
 }*/
+
+
+.heros{
+    background-image: url(../../src/assets/img/background_pattern.png);
+    background-size:contain;
+    background-repeat: repeat repeat;
+    background-position: 30% 35%;
+    min-height: 100vh;
+    /*padding-top: 25vh;
+    padding-bottom: 4vh;*/
+    
+   }
