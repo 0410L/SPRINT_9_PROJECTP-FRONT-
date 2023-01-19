@@ -40,6 +40,19 @@
     
 }
 
+#logoPolard{
+    /* font-family: 'Sofia Sans Extra Condensed'; */
+     font-family: 'Butterfly Kids';
+     font-size: xx-large;
+     margin: none;
+     padding: none;
+ }
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
 
 
 @media (max-width: 780px) {

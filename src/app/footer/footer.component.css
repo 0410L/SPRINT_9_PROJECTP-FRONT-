@@ -1,0 +1,15 @@
+* {
+    font-weight: auto;
+    font-size: smaller;
+    color: grey;
+    letter-spacing: 1px;
+    font-family: Quicksand;
+    margin: 0;
+}
+
+
+footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}

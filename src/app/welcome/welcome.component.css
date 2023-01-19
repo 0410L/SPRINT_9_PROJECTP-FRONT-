@@ -1,3 +1,12 @@
 .title { 
     text-shadow: 1px 1px 1px #000;
   }
+
+  
+  #logoPolard{
+    /* font-family: 'Sofia Sans Extra Condensed'; */
+     font-family: 'Butterfly Kids';
+     font-weight: bolder;
+     font-size: 70px;
+     margin: 0;
+ }
