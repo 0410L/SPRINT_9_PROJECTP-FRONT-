@@ -1,26 +1,9 @@
-/*router-outlet{
-    min-height: 100vh;
-}*/
-
-/*app-navbar{
-
-    position: sticky; top: 0;
-    z-index: +1;
-
-    
-}*/
-
-/*app-footer{
-
-    position: fixed; bottom: 0;
-}*/
-
 
 .heros{
-    background-image: url(../../src/assets/img/background_pattern.png);
-    background-size:contain;
+    background-image: url(../../src/assets/img/background_pattern_min2.png);
+    background-size:cover;
     background-repeat: repeat repeat;
-    background-position: 30% 35%;
+    background-position: 50% 50%;
     min-height: 100vh;
     /*padding-top: 25vh;
     padding-bottom: 4vh;*/

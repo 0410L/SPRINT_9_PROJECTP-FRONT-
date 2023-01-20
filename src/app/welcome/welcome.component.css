@@ -2,6 +2,10 @@
     text-shadow: 1px 1px 1px #000;
   }
 
+  * {
+    max-width: none;
+  }
+
   
   #logoPolard{
     /* font-family: 'Sofia Sans Extra Condensed'; */
@@ -13,5 +17,20 @@
 
 
  .forma{
-  min-width: 27vw;
+  min-width: 26vw;
+  max-width: 35vw;
  }
+
+
+ 
+
+ @media (max-width: 500px) {
+    
+  #logoPolard{
+    /* font-family: 'Sofia Sans Extra Condensed'; */
+     font-family: 'Butterfly Kids';
+     font-weight: bolder;
+     font-size: 60px;
+     margin: 0;
+ }
+  }

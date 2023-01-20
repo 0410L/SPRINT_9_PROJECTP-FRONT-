@@ -1,6 +1,6 @@
 * {
     font-family: Quicksand;
-    margin: 0;
+    /*margin: 0;*/
     /*overflow: hidden;*/
     max-width: none;
     /*height: none;*/
@@ -22,6 +22,11 @@
 
   .tamano{
     padding-top: 10vh;
+  }
+
+
+  button{
+    justify-content: center;
   }
 
   /*#daily{

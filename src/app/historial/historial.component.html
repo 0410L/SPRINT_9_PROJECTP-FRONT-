@@ -59,20 +59,13 @@
 
           </div>
           <app-spinner *ngIf="loading"></app-spinner>
+          <div class="d-grid gap-2 d-md text-center justify-content-center">
+            <button class="btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
+          
+            <br>
+            <br>
           </div>
-      <!--
-      <div class="d-grid gap-2 d-md-block">
-        <button class="btn btn-info p-1">Daily</button> 
-        <button class="btn btn-info p-1">Historial</button> 
-        <button class="btn btn-info p-1">Alertas</button>
-      </div>
-      -->
-      
-      <div class="d-grid gap-2 d-md-block text-center">
-        <button class="btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
-        <br>
-        <br>
-      </div>
+          </div>
     </div>
     <br>
     <br>

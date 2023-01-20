@@ -6,6 +6,14 @@
     max-width: none;
   }
   
+  /*
   .forma{
     min-width: 10vw;
    }
+   */
+
+   .forma{
+    min-width: 26vw;
+    max-width: 35vw;
+   }
+   

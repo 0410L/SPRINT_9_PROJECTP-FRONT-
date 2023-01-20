@@ -1,7 +1,12 @@
 * {
     font-family: Quicksand;
     font-weight: 100;
-    margin: 0;
+    /*margin: 0;*/
     /*overflow: hidden;*/
     max-width: none;
+  }
+
+
+  button{
+    justify-content: center;
   }

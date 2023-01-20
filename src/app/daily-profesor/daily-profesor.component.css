@@ -3,7 +3,7 @@
     font-weight: 100;
     margin: 0;
     /*overflow: hidden;*/
-    max-width: none;
+    /*max-width: none;*/
   }
 
   .IconoVal{
@@ -18,4 +18,8 @@
   .titulo{
     margin-bottom: 30px;
     font-weight: 700;
+  }
+
+  button{
+    justify-content: center;
   }

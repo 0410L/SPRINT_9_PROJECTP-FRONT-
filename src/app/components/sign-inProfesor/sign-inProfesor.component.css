@@ -6,10 +6,11 @@
     box-shadow: 5px 5px 5px black, -5px -5px 10px blue;
   }
 
-  * {
+  /* *{
     max-width: none;
-  }
+  }*/
   
   .forma{
-    min-width: 10vw;
+    min-width: 26vw;
+    max-width: 35vw;
    }
