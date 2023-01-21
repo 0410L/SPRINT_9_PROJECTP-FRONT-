@@ -28,3 +28,19 @@
     font-size: none;
     border-radius: 0.25rem;
 }
+
+ 
+.list-group{
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: normal;
+}
+
+
+.titulo{
+  /*margin-bottom: 30px;*/
+  font-weight: 700;
+  font-size: medium;
+}

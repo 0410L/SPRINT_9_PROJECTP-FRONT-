@@ -23,8 +23,8 @@ export class DashboardProfesorComponent implements OnInit {
  dailyProfesor(){
   this.router.navigate(['dailyProfesor']);
   }
-historialProfesor(){
-  this.router.navigate(['historialProfesor']);
+alumnos(){
+  this.router.navigate(['alumnos']);
    }
 
    getUserName(): string { 

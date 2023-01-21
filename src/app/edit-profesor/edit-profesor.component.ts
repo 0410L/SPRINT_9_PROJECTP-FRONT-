@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './edit-profesor.component.html',
   styleUrls: ['./edit-profesor.component.css']
 })
-
+ 
 
 export class EditProfesorComponent implements OnInit {
   loading: boolean = true;

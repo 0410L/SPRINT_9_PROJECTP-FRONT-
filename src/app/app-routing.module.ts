@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'dailyProfesor', component: DailyProfesorComponent, canActivate: [AuthGuard]  },
   { path: 'editProfesor', component: EditProfesorComponent, canActivate: [AuthGuard]  },
   { path: 'historial', component: HistorialComponent, canActivate: [AuthGuard]  },
-  { path: 'historialProfesor', component: HistorialProfesorComponent, canActivate: [AuthGuard]  },
+  { path: 'alumnos', component: HistorialProfesorComponent, canActivate: [AuthGuard]  },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 
