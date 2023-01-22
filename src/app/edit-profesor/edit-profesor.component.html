@@ -27,7 +27,7 @@
 
         <div class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
 
-          <div class="titulo card-header bg-info"><span>{{ model[i].alumno.nombre }}</span></div>
+          <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
 
           <ul class="list-group list-group-flush justify-content-center bg-info">
             <li class="celdas list-group-item">Desayuno<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.desayuno">
@@ -69,13 +69,13 @@
         </div>
       </table>
       <br>
-      <button class="btn btn-dark p-1" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
+      <button class="boton2 btn btn-dark p-1" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
     </div>
     <app-spinner *ngIf="loading"></app-spinner>
     </div>
     <br>
     <div class="d-grid gap-2 d-md text-center justify-content-center">
-      <button class="btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
+      <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
     </div>
     <br>
     <br>

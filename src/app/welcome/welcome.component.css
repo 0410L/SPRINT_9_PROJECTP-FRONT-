@@ -22,6 +22,21 @@
  }
 
 
+ .boton:hover{
+  color: black;
+  background-color: gold;
+  border-color: gold;
+ }
+
+ .boton:active{
+  color: white;
+  background-color: black;
+  border-color: black;
+ }
+
+ 
+
+
  
 
  @media (max-width: 500px) {

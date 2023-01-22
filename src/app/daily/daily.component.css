@@ -20,11 +20,41 @@
 }
 
 .titulo{
-  margin-bottom: 30px;
+  /*margin-bottom: 30px;*/
   font-weight: 700;
-  font-size: medium;
 }
 
 button{
   justify-content: center;
 }
+
+.boton{
+  background-color: rgb(13, 202, 240);
+  /*border-color: black;*/
+  border: none;
+}
+ 
+.boton:hover{
+  color: black;
+  background-color: gold;
+
+ }
+
+ .boton:active{
+  color: white;
+  background-color: black;
+ }
+
+
+ .ok{
+  text-shadow: 1px 1px 1px #000;
+}
+
+.nook{
+  text-shadow: 0px 0px 0px;
+}
+
+.cabecera{
+  color: black;
+  background-color: gold;
+} 

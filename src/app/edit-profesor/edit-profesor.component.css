@@ -44,3 +44,37 @@
   font-weight: 700;
   font-size: medium;
 }
+
+.cabecera{
+  background-color: gold;
+}
+
+.boton2:hover{
+  color: black;
+  background-color: gold;
+  border-color: gold;
+ }
+
+ .boton:active{
+  color: white;
+  background-color: black;
+  border-color: black;
+ }
+
+
+ .boton{
+  
+ }
+
+
+ .boton:hover{
+  color: black;
+  background-color: gold;
+  border-color: gold;
+ }
+
+ .boton:active{
+  color: white;
+  background-color: black;
+  border-color: black;
+ }

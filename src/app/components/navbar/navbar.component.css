@@ -54,6 +54,25 @@
     
 }
 
+.boton{
+    color: white;
+    background-color: black;
+    border: black;
+}
+
+
+.boton:hover{
+    color: black;
+    background-color: gold;
+    border: gold;
+   }
+  
+   .boton:active{
+    color: white;
+    background-color: black;
+    border: black;
+   }
+
 
 @media (max-width: 780px) {
     

@@ -7,7 +7,7 @@
   }
 
   .titulo{
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
     font-weight: 700;
     font-size: medium;
   }
@@ -15,3 +15,49 @@
   button{
     justify-content: center;
   }
+
+  .boton:hover{
+    color: black;
+    background-color: gold;
+    border: none;
+   }
+  
+   .boton:active{
+    color: white;
+    background-color: rgb(13, 202, 240);
+   }
+
+   .cabecera{
+    background-color: gold;
+    padding-left: 10vh;
+    padding-right: 10vh;
+   }
+
+   .todo{
+    font-size: 1.7ch;
+   }
+
+   
+
+ .ok{
+  text-shadow: 1px 1px 1.5px #000;
+}
+
+.nook{
+  text-shadow: 0px 0px 0px;
+}
+
+
+
+   /*@media (max-width: 700px) {
+    
+    .todo{
+        font-size: 1.2ch;
+    }
+
+    .titulo{
+      font-size: small;
+    }
+
+    }*/
+

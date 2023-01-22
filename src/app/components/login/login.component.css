@@ -18,3 +18,15 @@
 .forma{
   min-width: 27vw;
  }
+
+ .boton:hover{
+  color: black;
+  background-color: gold;
+  border-color: gold;
+ }
+
+ .boton:active{
+  color: white;
+  background-color: black;
+  border-color: black;
+ }
