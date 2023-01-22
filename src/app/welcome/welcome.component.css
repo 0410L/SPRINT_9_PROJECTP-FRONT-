@@ -3,7 +3,7 @@
   }
 
   * {
-    /*max-width: none;*/
+    max-width: none;
   }
 
   
@@ -17,8 +17,8 @@
 
 
  .forma{
-  min-width: 26vw;
-  /*max-width: 30vw;*/
+ min-width: 15vw;
+  max-width: 35vw;
  }
 
 
@@ -44,12 +44,42 @@
      font-size: 60px;
      margin: 0;
  }
+
+
+ .forma{
+  min-width: 20vw;
+  }
+
+
+  }
+
+
+  @media (max-width: 900px) {
+    
+    #logoPolard{
+      /* font-family: 'Sofia Sans Extra Condensed'; */
+       font-family: 'Butterfly Kids';
+       font-weight: bolder;
+       font-size: 60px;
+       margin: 0;
+    }
+
+    .forma{
+      min-width: 30vw;
+      }
+      
+
+
   }
 
 
  
 
  @media (max-width: 500px) {
+
+  .forma{
+    min-width: 50vw;
+    }
     
   #logoPolard{
     /* font-family: 'Sofia Sans Extra Condensed'; */
