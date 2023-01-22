@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-sign-inprofesor',
   templateUrl: './sign-inprofesor.component.html',
-  styleUrls: ['./sign-inprofesor.component.css']
+  styleUrls: ['./sign-inProfesor.component.css']
 })
 export class SignInProfesorComponent implements OnInit {
   email: string = '';

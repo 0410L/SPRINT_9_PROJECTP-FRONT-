@@ -5,17 +5,19 @@
   * {
     max-width: none;
   }
-  
-  /*
-  .forma{
-    min-width: 10vw;
-   }
-   */
 
-   .forma{
+
+   .foLrma{
     min-width: 26vw;
-    max-width: 35vw;
+    max-width: 50vw;
+    /*max-width: 35vw;*/
    }
+
+   .boton{
+    color:white;
+    background-color: black;
+   }
+
 
    .boton:hover{
     color: black;

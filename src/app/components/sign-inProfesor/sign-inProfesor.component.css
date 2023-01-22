@@ -6,14 +6,17 @@
     box-shadow: 5px 5px 5px black, -5px -5px 10px blue;
   }
 
-  /* *{
+  *{
     max-width: none;
-  }*/
+  }
   
-  .forma{
+  
+  .foLrma{
     min-width: 26vw;
-    max-width: 35vw;
+    max-width: 50vw;
+    /*max-width: 35vw;*/
    }
+
 
    .boton:hover{
     color: black;

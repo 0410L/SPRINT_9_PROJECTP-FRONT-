@@ -3,7 +3,7 @@
   }
 
   * {
-    max-width: none;
+    /*max-width: none;*/
   }
 
   
@@ -11,14 +11,14 @@
     /* font-family: 'Sofia Sans Extra Condensed'; */
      font-family: 'Butterfly Kids';
      font-weight: bolder;
-     font-size: 70px;
+     font-size: 4.5vw;
      margin: 0;
  }
 
 
  .forma{
   min-width: 26vw;
-  max-width: 35vw;
+  /*max-width: 30vw;*/
  }
 
 
@@ -35,6 +35,16 @@
  }
 
  
+ @media (max-width: 1280px) {
+    
+  #logoPolard{
+    /* font-family: 'Sofia Sans Extra Condensed'; */
+     font-family: 'Butterfly Kids';
+     font-weight: bolder;
+     font-size: 60px;
+     margin: 0;
+ }
+  }
 
 
  
@@ -45,7 +55,7 @@
     /* font-family: 'Sofia Sans Extra Condensed'; */
      font-family: 'Butterfly Kids';
      font-weight: bolder;
-     font-size: 60px;
+     font-size: 55px;
      margin: 0;
  }
   }
