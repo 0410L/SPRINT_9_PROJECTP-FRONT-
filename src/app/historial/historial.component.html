@@ -10,15 +10,15 @@
         <br>
           <div *ngIf="!loading" id="daily" class="body rounded">
             
-            <div class="card mt-3" style="width: 18rem;"  *ngFor="let item of this.model">
+            <div class="card mt-5" style="width: 18rem;"  *ngFor="let item of this.model">
               <div class="titulo cabecera card-header"><span>{{ item.fecha }}</span></div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-info text-white ok">Desayuno <img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></li>
-                <li class="list-group-item bg-info text-white ok">Comida <img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></li>
-                <li class="list-group-item bg-info text-white ok">Merienda <img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></li>
-                <li class="list-group-item bg-info text-white ok">Dormir:  <span class="text-black nook">{{ item.dormir_inicio}}</span> - <span class="text-black nook">{{ item.dormir_final}}</span></li>
-                <li class="list-group-item bg-info text-white ok">Deposiciones: <span class="text-black nook">{{ item.deposiciones}}</span></li>
-                <li class="list-group-item bg-info text-white ok">Observaciones: <span class="text-black nook">{{ item.observaciones}}</span></li>
+                <li class="list-group-item bg-info text-white ok">Desayuno <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></li>
+                <li class="list-group-item bg-info text-white ok">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></li>
+                <li class="list-group-item bg-info text-white ok">Merienda <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></li>
+                <li class="list-group-item bg-info text-white ok">Dormir:  <p class="mb-1"></p><span class="text-black nook">{{ item.dormir_inicio}}</span> - <span class="text-black nook">{{ item.dormir_final}}</span></li>
+                <li class="list-group-item bg-info text-white ok">Deposiciones: <p class="mb-1"></p><span class="text-black nook">{{ item.deposiciones}}</span></li>
+                <li class="list-group-item bg-info text-white ok">Observaciones: <p class="mb-1"></p><span class="text-black nook">{{ item.observaciones}}</span></li>
               </ul>
             </div>
             <br>
