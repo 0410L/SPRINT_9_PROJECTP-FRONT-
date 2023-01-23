@@ -47,7 +47,7 @@
 
 
 .rol{
-    margin-right: 2vh;
+    margin-right: 1vh;
 }
 
 .iconoPerfil{
@@ -98,7 +98,6 @@ th{
 
 
 .boton:hover{
-    color: black;
     background-color: gold;
     border: gold;
    }
@@ -210,6 +209,7 @@ table {
     font-family: Roboto;
     font-size: small;
 }
+
 
 /*.modal-content {
     box-shadow: 4px 2px 2px 4px rgba(49, 138, 172, 1);

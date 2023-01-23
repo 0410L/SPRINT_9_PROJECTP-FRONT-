@@ -23,3 +23,17 @@
     background-color: black;
     border: none;
    }
+
+   .iconoPerfil{
+    max-width: 40px;
+    text-align: center;
+}
+
+/*.separacion{
+  padding-right: 1vh;
+}*/
+
+.space{
+  
+  padding-left: 10px;
+}

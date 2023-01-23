@@ -17,7 +17,7 @@
         <div class="col3">
           <form class="d-flex" *ngIf="this.getUserName(); ngIfElse getUserName">
 
-            <table class="grupo">
+            <table class="grupal">
               <tr>
                   <th class="nombrecuenta">{{this.getUserName() }}</th>
               </tr>
@@ -42,7 +42,7 @@
                 </div>
               </div>
           </div>
-          <button type="button" class="btn btn-white btn-sm margin-0 padding-0" (click)="showModal=true" data-toggle="modal" data-target="#myModal"><img class="iconoPerfil" src="../../assets/rol/{{getRol()}}.png"/>
+          <button type="button" class="grupo btn btn-white btn-sm margin-0 padding-0" (click)="showModal=true" data-toggle="modal" data-target="#myModal"><img class="iconoPerfil" src="../../assets/rol/{{getRol()}}.png"/>
             </button>
              
 

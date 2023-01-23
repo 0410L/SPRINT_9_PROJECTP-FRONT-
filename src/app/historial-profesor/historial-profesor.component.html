@@ -12,7 +12,9 @@
         <table class="table">
             
             <tbody class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;"> 
-              <div class="titulo card-header bg-info"><span>{{ model[i].alumno.nombre }}</span></div>
+              <div class="titulo card-header bg-info"><img class="iconoPerfil" src="../../assets/rol/{{ model[i].valoracion.alumno_id }}.png" alt=""><span>{{ model[i].alumno.nombre }}</span></div>
+              
+              <!--<span>{{ model[i].valoracion.alumno_id }} </span>-->
             </tbody>
           </table>
       </div>
