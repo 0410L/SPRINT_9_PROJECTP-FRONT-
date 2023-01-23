@@ -32,6 +32,15 @@ Alertas(){
    }
 
 
+   
+   getGrupo(): string { 
+    return this._userService.getGrupo();
+   }
+
+   getRol():number {
+    return this._userService.getRol();
+   }
+
 
   /*
   ngOnInit(): void {

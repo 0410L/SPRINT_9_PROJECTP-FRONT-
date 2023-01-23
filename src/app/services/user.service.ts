@@ -51,6 +51,18 @@ export class UserService {
     return localStorage.getItem('nombre_usuario') ?? "";
    }
 
+   getGrupo(): string {
+    return localStorage.getItem('grupo') ?? "";
+   }
+
+   getRol(): number {
+    return Number(localStorage.getItem('role_id') ?? "0");
+   }
+
+   getNameTutor(): string {
+    return localStorage.getItem('nombre_tutor') ?? "";
+   }
+
    getLoggedUserId(): number {
 //Number para convertir a entero el string que viene del local storage
     return Number(localStorage.getItem('id_usuario') ?? "0");
@@ -59,8 +71,11 @@ export class UserService {
    setLoggedUser(user: UserProfile) {
 
     localStorage.setItem('nombre_usuario', user.nombre);
+    localStorage.setItem('nombre_tutor', user.nombre_tutor)
     localStorage.setItem('email_usuario', user.email);
     localStorage.setItem('id_usuario', user.id_usuario.toString());
+    localStorage.setItem('grupo', user.grupodescripcion);
+    localStorage.setItem('role_id', user.role_id.toString());
 
    }
 

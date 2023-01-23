@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 })
 
 export class NavbarComponent implements OnInit {
+  
+  showModal: any;
   temperature = '';
   data: any;
 
@@ -46,7 +48,18 @@ export class NavbarComponent implements OnInit {
     return this.userservice.getLoggedUserName();
    };
 
+   getGrupo(): string { 
+    return this.userservice.getGrupo();
+   }
 
+   getRol():number {
+    return this.userservice.getRol();
+   }
+
+   getNameTutor(): string {
+    return this.userservice.getNameTutor();
+   }
+  
 
 }
 

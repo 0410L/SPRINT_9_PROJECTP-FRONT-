@@ -67,6 +67,10 @@ export class LoginComponent implements OnInit {
           email: user.email,
           nombre: token.data.nombre,
           id_usuario: token.data.id_alumno,
+          grupodescripcion: token.data.grupodescripcion,
+          role_id: token.data.role_id,
+          nombre_tutor: token.data.nombre_tutor
+
 
         };
         

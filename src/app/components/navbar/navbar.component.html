@@ -15,15 +15,42 @@
 
 
         <div class="col3">
-          <form class="d-flex">
-            <div class="p-2">{{ this.getUserName() }}</div>&nbsp;&nbsp;
-            <button class="boton btn btn-light" (click)="logOut()" type="button" *ngIf="this.getUserName(); ngIfElse getUserName">LogOut</button>
+          <form class="d-flex" *ngIf="this.getUserName(); ngIfElse getUserName">
+
+            <table class="grupo">
+              <tr>
+                  <th class="nombrecuenta">{{this.getUserName() }}</th>
+              </tr>
+              <!--<tr>
+                  <th class="nombregrupo">{{getGrupo()}}</th>
+              </tr>-->
+            </table>
+
+            <!--<span class="rol grupo2"><img class="iconoPerfil" src="../../assets/rol/{{getRol()}}.png"/>
+            </span>-->
+          
+            <div class="modal" (click)="showModal=false" tabindex="-1"[ngClass]="{'show':showModal}">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body border rounded m-3 gold text-center">
+                    <p><img class="iconoPerfil2" src="../../assets/rol/{{getRol()}}.png"/></p>
+                    <h5 *ngIf="this.getRol()==1; ngIfElse getRol">Alumno</h5>
+                    <h5 *ngIf="this.getRol()==2; ngIfElse getRol">Profesor</h5>
+
+                    <h3 class="text-center">{{this.getUserName() }}</h3><span class="text-center">Classe: {{getGrupo()}}</span><br><span *ngIf="this.getRol()==1; ngIfElse getRol" >Tutor: {{this.getNameTutor()}}</span>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <button type="button" class="btn btn-white btn-sm margin-0 padding-0" (click)="showModal=true" data-toggle="modal" data-target="#myModal"><img class="iconoPerfil" src="../../assets/rol/{{getRol()}}.png"/>
+            </button>
+             
+
+
+            <button class="boton btn btn-light-sm" (click)="logOut()" type="button" *ngIf="this.getUserName(); ngIfElse getUserName">Salir</button>
           </form>
         </div>
 
-     
-
-      
       </div>
   
 </nav>
