@@ -5,14 +5,14 @@
 
     <div class="inicial" *ngIf="!loading" id="daily" class="body p-4 mb-2 rounded" style="text-align:center">
       <div class="container-fluid text-center ">
-        <h2 class="text-black">Alumnos</h2>
+        <h4 class="text-black">Alumnos</h4>
         <br>
         <br>
         <br> 
         <table class="table">
             
             <tbody class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;"> 
-              <div class="titulo card-header bg-info"><img class="iconoPerfil" src="../../assets/rol/{{ model[i].valoracion.alumno_id }}.png" alt=""><span>{{ model[i].alumno.nombre }}</span></div>
+              <div class="shake titulo card-header bg-info"><img class="iconoPerfil" src="../../assets/rol/{{ model[i].valoracion.alumno_id }}.png" alt=""><span>{{ model[i].alumno.nombre }}</span></div>
               
               <!--<span>{{ model[i].valoracion.alumno_id }} </span>-->
             </tbody>
@@ -21,7 +21,7 @@
       <br>
       <br>
       <div class="d-grid gap-2 d-md text-center justify-content-center">
-        <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
+        <button class="shake boton btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
       </div>
       
     </div>

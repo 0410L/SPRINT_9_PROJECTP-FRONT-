@@ -4,7 +4,8 @@
     <div class="inicial" style="text-align:center">
       <div class="container tamano">
         <br>
-        <h2 class="text">Historial</h2>
+        <br>
+        <h4 class="text">Historial</h4>
         <br> 
           <div *ngIf="!loading" id="daily" class="body rounded">
             
@@ -58,7 +59,7 @@
           </div>
           <app-spinner *ngIf="loading"></app-spinner>
           <div class="d-grid gap-2 d-md text-center justify-content-center">
-            <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
+            <button class="shake boton btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
           
             <br>
             <br>
