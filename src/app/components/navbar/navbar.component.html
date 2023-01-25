@@ -37,17 +37,24 @@
                     <h5 *ngIf="this.getRol()==1; ngIfElse getRol">Alumno</h5>
                     <h5 *ngIf="this.getRol()==2; ngIfElse getRol">Profesor</h5>
 
-                    <h3 class="text-center">{{this.getUserName() }}</h3><span class="text-center">Classe: {{getGrupo()}}</span><br><span *ngIf="this.getRol()==1; ngIfElse getRol" >Tutor: {{this.getNameTutor()}}</span>
+                    <h3 class="text-center">{{this.getUserName() }}</h3>
+                    <span class="text-center">Classe: {{getGrupo()}}</span>
+                    <br><span *ngIf="this.getRol()==1; ngIfElse getRol" >Tutor: {{this.getNameTutor()}}</span>
+
                   </div>
                 </div>
               </div>
           </div>
-          <button type="button" class="grupo btn btn-white btn-sm" (click)="showModal=true" data-toggle="modal" data-target="#myModal"><img class="iconoPerfil" src="../../assets/rol/{{getRol()}}.png"/>
+          
+          <button type="button" class="grupo btn btn-white btn-sm"
+          (click)="showModal=true" data-toggle="modal" data-target="#myModal">
+          <img class="iconoPerfil" src="../../assets/rol/{{getRol()}}.png"/>
             </button>
              
 
 
-            <button class="boton btn btn-light-sm p-1 mt-1 mb-1" (click)="logOut()" type="button" *ngIf="this.getUserName(); ngIfElse getUserName">Salir</button>
+            <button class="boton btn btn-light-sm p-1 mt-1 mb-1" (click)="logOut()"
+            type="button" *ngIf="this.getUserName(); ngIfElse getUserName">Salir</button>
           </form>
         </div>
 

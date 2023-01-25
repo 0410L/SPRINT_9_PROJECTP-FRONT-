@@ -7,22 +7,25 @@ import { AlumnoService } from '../services/alumno.service';
 import { ErrorService } from '../services/error.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Alumno } from '../interfaces/alumno';
+import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 import { formatDate } from '@angular/common';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-
+ 
 @Component({
   selector: 'app-historial-profesor',
   templateUrl: './historial-profesor.component.html',
   styleUrls: ['./historial-profesor.component.css']
 })
 export class HistorialProfesorComponent implements OnInit {
+  showModal: any;
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
 
   constructor(private router: Router,
     private alummnoService: AlumnoService,
+    private userservice: UserService,
     private valoracionService: ValoracionService,
     private errorService: ErrorService) { }
 
@@ -69,6 +72,25 @@ export class HistorialProfesorComponent implements OnInit {
       })
     }
 
+  getRol(): number {
+    return this.userservice.getRol();
+  }
+
+  getUserName(): string { 
+    return this.userservice.getLoggedUserName();
+   };
+
+   getGrupo(): string { 
+    return this.userservice.getGrupo();
+   }
+
+   getNameTutor(): string {
+    return this.userservice.getNameTutor();
+   }
+
+   getNumberAlumno(): any {
+    return this.alummnoService.obtenerLista();
+   }
 
 
   volver(){
