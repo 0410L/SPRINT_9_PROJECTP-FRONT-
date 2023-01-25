@@ -44,7 +44,12 @@ export class LoginComponent implements OnInit {
     // Creamos el body
     const user: User = {
       email: this.email,
-      password: this.password
+      password: this.password,
+      nombre: '',
+      fecha_nacimiento: '',
+      nombre_tutor: '',
+      phone_no: '',
+      dni: ''
     }
 
     this.loading = true;

@@ -17,6 +17,11 @@ export class SignInComponent implements OnInit {
   password: string = '';
   confirmPassword: string = '';
   loading: boolean = false;
+  nombre: string = '';
+  fecha_nacimiento: string = '';
+  nombre_tutor: string = '';
+  phone_no: string = '';
+  dni: string = '';
 
   constructor(private toastr: ToastrService,
     private _userService: UserService,
@@ -29,7 +34,8 @@ export class SignInComponent implements OnInit {
   addUser() {
 
     // Validamos que el usuario ingrese valores
-    if (this.email == '' || this.password == '' || this.confirmPassword == '') {
+    if (this.email == '' || this.password == '' || this.confirmPassword == ''|| this.nombre == ''||
+    this.fecha_nacimiento == ''|| this.nombre_tutor == ''|| this.phone_no == ''|| this.dni == '') {
       //this.toastr.error('Todos los campos son obligatorios', 'Error');
       Swal.fire({
         icon: 'error',
@@ -58,7 +64,13 @@ export class SignInComponent implements OnInit {
     // Creamos el objeto
     const user: User = {
       email: this.email,
-      password: this.password
+      password: this.password,
+      nombre: this.nombre,
+      fecha_nacimiento: this.fecha_nacimiento,
+      nombre_tutor: this.nombre_tutor,
+      phone_no: this.phone_no,
+      dni: this.dni,
+
     }
 
     this.loading = true;
