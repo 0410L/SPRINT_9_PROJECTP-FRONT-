@@ -74,7 +74,8 @@ export class LoginComponent implements OnInit {
           id_usuario: token.data.id_alumno,
           grupodescripcion: token.data.grupodescripcion,
           role_id: token.data.role_id,
-          nombre_tutor: token.data.nombre_tutor
+          nombre_tutor: token.data.nombre_tutor,
+          id_profesor: token.data.id_profesor
 
 
         };

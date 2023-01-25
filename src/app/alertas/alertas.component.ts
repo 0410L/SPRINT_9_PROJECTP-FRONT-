@@ -43,6 +43,15 @@ export class AlertasComponent implements OnInit {
   }
   
   
+  getGrupo(): string { 
+    return this.userService.getGrupo();
+   }
+
+   getRol():number {
+    return this.userService.getRol();
+   }
+
+
   volver(){
     this.router.navigate(['dashboard']);
     }

@@ -1,5 +1,5 @@
-<div class="hero container-fluid d-flex justify-content-center align-items-center">
-
+<div class="hero container-fluid d-flex justify-content-center align-items-center" *ngIf="this.getRol()===2; ngIfElse getRol">
+<!--*ngIf="this.getRol()==2; ngIfElse getRol"-->
     <div class="inicial" style="text-align:center">
       <div class="container-fluid text-center ">
         <h4 class="text-black">Hola, {{ getUserName() }}</h4>
@@ -22,6 +22,14 @@
           </table>
       </div>
     </div>
+</div>
+
+<div class="text-center">
+  <h1>404</h1>
+  <br>
+  <h3>PAGINA NO ENCONTRADA</h3>
+  <br>
+  <button class="boton btn btn-info p-1" *ngIf="this.getRol()===1; ngIfElse getRol" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
 </div>
 <!--<p></p> 
 <div>© Polard</div>-->

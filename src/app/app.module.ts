@@ -29,6 +29,7 @@ import { DailyProfesorComponent } from './daily-profesor/daily-profesor.componen
 import { HistorialProfesorComponent } from './historial-profesor/historial-profesor.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FooterComponent } from './footer/footer.component';
+/*import { L10nConfig, L10nLoader, TranslationModule } from 'angular-l10n';*/
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { FooterComponent } from './footer/footer.component';
     HistorialProfesorComponent,
     WeatherComponent,
     FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -64,10 +66,37 @@ import { FooterComponent } from './footer/footer.component';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }), // ToastrModule added
+
+    //TranslationModule.forRoot(l10nConfig),
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true, /*L10nLoader*/ }
   ],
+
   bootstrap: [AppComponent]
+
+  /*
+  const l10nConfig: L10nConfig = {
+    locale: {
+      languages: [
+        { code: 'es', dir: 'ltr' }
+      ],
+      defaultLocale: { languageCode: 'es', countryCode: 'ES' },
+      currency: 'EUR',
+      storage: StorageStrategy.Cookie
+    }
+  };
+  */
+
 })
-export class AppModule { }
+
+export class AppModule {}
+
+/*
+export class AppModule {
+  constructor(public l10nLoader: L10nLoader) {
+    this.l10nLoader.load();}
+}
+*/
+
+ 

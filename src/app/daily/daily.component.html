@@ -1,4 +1,4 @@
-<div class="hero container-fluid d-flex justify-content-center align-items-center">
+<div class="hero container-fluid d-flex justify-content-center align-items-center"  *ngIf="this.getRol()===1; ngIfElse getRol">
 
     <div class="inicial" style="text-align:center">
       <div class="container-fluid text-center ">
@@ -7,7 +7,7 @@
         <div *ngIf="!loading" class="body p-4 mb-2 rounded">
 
           <div class="card mt-3" style="width: 18rem">
-            <div class="titulo cabecera card-header"><span>{{ this.model.fecha }}</span></div>
+            <div class="titulo cabecera card-header"><span>{{ this.model.fecha | date : 'd/M/y' }}</span></div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item bg-info text-white ok">Desayuno <p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.desayuno}}.svg"/></li>
               <li class="list-group-item bg-info text-white ok">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_postre}}.svg"/></li>

@@ -1,23 +1,23 @@
 <!--<app-navbar></app-navbar>-->
 
 
-<div class="hero container-fluid d-flex justify-content-center align-items-center">
+<div class="hero container-fluid d-flex justify-content-center align-items-center" *ngIf="this.getRol()===2; ngIfElse getRol">
 
     <div class="inicial" *ngIf="!loading" id="daily" class="body p-4 mb-2 rounded" style="text-align:center">
-      <div class="container-fluid text-center ">
+      <div class="container-fluid text-center">
         <h4 class="text-black">Alumnos</h4>
         <br>
         <br>
         <br>
-
+ 
         
         <table class="table">
             
             <tbody class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;"> 
               <div class="titulo card-header bg-info"><img class="iconoPerfil" src="../../assets/rol/{{ model[i].valoracion.alumno_id }}.png" alt="">
                 <span>{{ model[i].alumno.nombre }}</span><br>
-                <span>Telefono: {{ model[i].alumno.phone_no }}</span><br>
-                <span>Telefono: {{ model[i].alumno.email }}</span></div>
+                <span>Telefono: <a href="tel:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.phone_no }}</a></span><br>
+                <span>Email: <a href="mailto:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.email }}</a></span></div>
                 
               
               
@@ -37,3 +37,12 @@
     </div>
     <app-spinner *ngIf="loading"></app-spinner>
 </div>
+
+<div class="text-center">
+  <h1>404</h1>
+  <br>
+  <h3>PAGINA NO ENCONTRADA</h3>
+  <br>
+  <button class="boton btn btn-info p-1" *ngIf="this.getRol()===1; ngIfElse getRol" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
+</div>
+

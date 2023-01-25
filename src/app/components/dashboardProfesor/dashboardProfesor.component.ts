@@ -39,6 +39,10 @@ alumnos(){
     return this._userService.getRol();
    }
 
+   volverdashboard(){
+    this.router.navigate(['dashboard']);
+    }
+
 
   /*
   ngOnInit(): void {

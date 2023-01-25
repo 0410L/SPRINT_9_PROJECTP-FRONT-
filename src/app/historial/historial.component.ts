@@ -5,6 +5,7 @@ import { Valoracion } from '../interfaces/valoracion';
 import { ErrorService } from '../services/error.service';
 import { UserService } from '../services/user.service';
 import { ValoracionService } from '../services/valoracion.service';
+/*import { L10nConfig, L10nLoader, TranslationModule } from 'angular-l10n';*/
 
 @Component({
   selector: 'app-historial',
@@ -15,10 +16,12 @@ export class HistorialComponent implements OnInit {
   loading: boolean = true;
   model: Array<Valoracion> = [];
   
+  
   constructor(private router: Router, 
     private valoracionService: ValoracionService, 
     private errorService: ErrorService, 
     private userService: UserService) { }
+
 
   ngOnInit(): void {
     this.valoracionService.obtenerValoracionesHistorial(this.userService.getLoggedUserId()).subscribe({
@@ -41,7 +44,14 @@ export class HistorialComponent implements OnInit {
     })
   }
   
-  
+  getGrupo(): string { 
+    return this.userService.getGrupo();
+   }
+
+   getRol():number {
+    return this.userService.getRol();
+   }
+
   volver(){
     this.router.navigate(['dashboard']);
     }

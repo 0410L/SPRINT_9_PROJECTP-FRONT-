@@ -22,6 +22,7 @@ export class HistorialProfesorComponent implements OnInit {
   showModal: any;
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
+  back: boolean = true;
 
   constructor(private router: Router,
     private alummnoService: AlumnoService,
@@ -72,6 +73,12 @@ export class HistorialProfesorComponent implements OnInit {
       })
     }
 
+  
+  getIdProfesor(): number {
+    return this.userservice.getIdProfesor();
+  }
+
+
   getRol(): number {
     return this.userservice.getRol();
   }
@@ -97,5 +104,10 @@ export class HistorialProfesorComponent implements OnInit {
     this.router.navigate(['dashboardProfesor']);
     }
 
+  volverdashboard(){
+    this.router.navigate(['dashboard']);
+    }
+
+    
 
 }

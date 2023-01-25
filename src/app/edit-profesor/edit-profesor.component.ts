@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 import { formatDate } from '@angular/common';
 import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-edit-profesor',
@@ -20,12 +21,14 @@ import { FormsModule } from '@angular/forms';
  
 
 export class EditProfesorComponent implements OnInit {
+  [x: string]: any;
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
 
   constructor(private router: Router,
               private alummnoService: AlumnoService,
               private valoracionService: ValoracionService,
+              private userservice: UserService,
               private errorService: ErrorService) { }
 
   ngOnInit(): void {
@@ -104,14 +107,31 @@ export class EditProfesorComponent implements OnInit {
     });
   }
 
+  volverdashboard(){
+    this.router.navigate(['dashboard']);
+    }
+
+
   volver(){
     this.router.navigate(['dashboardProfesor']);
+    }
+
+  back(){
+    return this.router.navigate(['dashboardProfesor']);
     }
 
   
   getdate()
   {
     return formatDate(Date.now(),'dd-MM-yyyy','en-US');
+  }
+
+  getIdProfesor(): number {
+    return this.userservice.getIdProfesor();
+  }
+
+  getRol(): number {
+    return this.userservice.getRol();
   }
 
 

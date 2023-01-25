@@ -17,6 +17,7 @@ export class LoginProfesorComponent implements OnInit {
   email: string = 'marta@gmail.com';
   password: string = '1234';
   loading: boolean = false;
+  userservice: any;
 
   constructor(private toastr: ToastrService,
     private _userService: UserService,
@@ -74,7 +75,8 @@ export class LoginProfesorComponent implements OnInit {
           id_usuario: token.data.id_profesor,
           grupodescripcion: token.data.grupodescripcion,
           role_id: token.data.role_id,
-          nombre_tutor: token.data.nombre_tutor
+          nombre_tutor: token.data.nombre_tutor,
+          id_profesor: token.data.id_profesor
 
         };
         
@@ -97,6 +99,15 @@ export class LoginProfesorComponent implements OnInit {
     })
   }
 
+  getIdProfesor(): number {
+    return this.userservice.getIdProfesor();
+  }
+
+  getRol():number {
+    return this.userservice.getRol();
+   }
+
+  
 
   
 

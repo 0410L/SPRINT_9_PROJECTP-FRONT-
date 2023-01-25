@@ -9,6 +9,7 @@ import { UserProfile } from '../interfaces/userProfile';
   providedIn: 'root'
 })
 export class UserService {
+  
 
   /*contadorID: number = 0;
   loggedUser: any = 'Guest';
@@ -52,8 +53,12 @@ export class UserService {
    }
 
 
-   getLoggedUserName(): string {
+   getIdProfesor(): number {
+    return Number (localStorage.getItem('id_usuario') ?? "0");
+   }
 
+
+   getLoggedUserName(): string {
     return localStorage.getItem('nombre_usuario') ?? "";
    }
 

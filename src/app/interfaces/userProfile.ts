@@ -4,6 +4,7 @@ export interface UserProfile {
     nombre: string,
     grupodescripcion: string,
     role_id: number,
-    nombre_tutor: string
+    nombre_tutor: string,
+    id_profesor: number,
     
 }
