@@ -45,6 +45,12 @@ export class UserService {
     return this.http.post<any>(`http://localhost:8080/api/profesor/login/`, Email, {headers});
    }
 
+   sigInProfesor(Email: User): Observable<any> {
+    console.log(Email)
+    const headers = new HttpHeaders({'Content-Type':'application/json'});
+    return this.http.post<any>(`http://localhost:8080/api/profesor/add/`, Email, {headers});
+   }
+
 
    getLoggedUserName(): string {
 
