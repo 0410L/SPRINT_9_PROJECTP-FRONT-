@@ -6,4 +6,6 @@ export interface User {
     nombre_tutor: string,
     phone_no: string,
     dni: string,
+    role_id: string,
+    grupo_id: string,
 }

@@ -65,7 +65,12 @@ export class DailyComponent implements OnInit {
 
   volver(){
     this.router.navigate(['dashboard']);
-    }
+  }
+  
+volverdashboard(){
+  this.router.navigate(['dashboardProfesor']);
+}
+  
 
 
 }

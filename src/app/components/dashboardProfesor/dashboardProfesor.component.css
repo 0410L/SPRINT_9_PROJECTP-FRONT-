@@ -3,21 +3,29 @@
     font-weight: 100;
     /*margin: 0;*/
     /*overflow: hidden;*/
-  }
+  } 
 
 .table>:not(caption)>*>* {
     /*padding: 0.5rem 0.5rem;*/
-    background-color: rgb(13, 202, 240);
+    background-color: gold;
     /*border-bottom-width: 1px;*/
     
     box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
 
+button{
+    color: black;
+}
+
+.colorback{
+    background-color: rgb(13, 202, 240)
+   }
+
 
 .table>:not(caption)>*>*:hover{
     color: black;
-    background-color: gold;
-    /*border-color: gold;*/
+    background-color:  rgb(13, 202, 240);
+    /*border-color:  rgb(13, 202, 240);;*/
 }
 
 .table>:not(caption)>*>*:active{

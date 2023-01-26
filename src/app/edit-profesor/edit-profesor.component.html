@@ -84,12 +84,12 @@
   </div>
 </div>
 
-<div class="text-center">
+<div class="text-center" *ngIf="this.getRol()===1; ngIfElse getRol" >
   <h1>404</h1>
   <br>
   <h3>PAGINA NO ENCONTRADA</h3>
   <br>
-  <button class="boton btn btn-info p-1" *ngIf="this.getRol()===1; ngIfElse getRol" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
+  <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
 </div>
         
 

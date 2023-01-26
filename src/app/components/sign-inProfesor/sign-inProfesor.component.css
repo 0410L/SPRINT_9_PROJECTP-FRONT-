@@ -17,22 +17,20 @@
   }
   
   
-  .foLrma{
-    min-width: 26vw;
-    max-width: 50vw;
-    /*max-width: 35vw;*/
+  .forma{
+    background-color: gold;
    }
 
 
    .boton:hover{
     color: black;
-    background-color: gold;
-    border-color: gold;
+    background-color:  rgb(13, 202, 240);
+    /*border-color:  rgb(13, 202, 240);*/
    }
   
    .boton:active{
     color: white;
     background-color: black;
-    border-color: black;
+    /*border-color: black;*/
    }
   

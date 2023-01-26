@@ -41,6 +41,10 @@ Alertas(){
     return this._userService.getRol();
    }
 
+   volverdashboard(){
+    this.router.navigate(['dashboardProfesor']);
+    }
+
 
   /*
   ngOnInit(): void {

@@ -31,5 +31,12 @@
     </div>
 </div>
 <p></p>
+<div class="text-center" *ngIf="this.getRol()===2; ngIfElse getRol">
+  <h1>404</h1>
+  <br>
+  <h3>PAGINA NO ENCONTRADA</h3>
+  <br>
+  <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
+</div>
 
 

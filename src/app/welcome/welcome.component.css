@@ -2,10 +2,16 @@
     text-shadow: 1px 1px 1px #000;
   }
 
-  * {
+ /*
+ * {
     max-width: none;
   }
+*/
 
+.size{
+  padding-left: 10px;
+  padding-right: 10px;
+}
   
   #logoPolard{
     /* font-family: 'Sofia Sans Extra Condensed'; */
@@ -16,10 +22,10 @@
  }
 
 
- .forma{
+ /*.forma{
  min-width: 15vw;
   max-width: 35vw;
- }
+ }*/
 
 
  .boton:hover{

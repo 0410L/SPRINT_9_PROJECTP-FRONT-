@@ -2,25 +2,30 @@
 
     <div class="inicial" style="text-align:center">
       <div class="container mt-2 text-center ">
-
+ 
 
         <div class="wrapper">
-            <div *ngIf="!loading" class="forma p-4 mb-2 bg-info rounded shadow p-3">
+            <div *ngIf="!loading" class="forma p-4 rounded shadow p-3">
                 <img class="logo" src="../../../assets/img/robot3.gif"  alt="img login">
-                <h4 class="text-white title">Login Profesor</h4>
-                <div class="form-floating mb-3 mt-3">
+                <h4 class="text-black">Login Profesor</h4>
+                <div class="form-floating mb-2 mt-2">
                     <input  type="text" [(ngModel)]="email" autocomplete="false" class="form-control" placeholder="Introduce Email">
                     <label>Email</label>
                 </div>
-                <div class="form-floating mb-3">
+                <div class="form-floating mb-2">
                     <input  type="password" [(ngModel)]="password" autocomplete="false" class="form-control" placeholder="Introduce Password">
                     <label>Password</label>
                 </div> 
                 <div class="d-grid gap-2">
                     <button type="button" class="boton btn btn-dark btn-lg" (click)="login()">Entrar</button>
                 </div>
-                <p class="mt-3">No tienes cuenta? <a routerLink="/signInProfesor">R. Prof.</a></p>
-                <p class="mt-3">Ir a <a routerLink="/login">Login Alumno</a></p>
+
+                <div class="mt-2">
+                    <span class="mt-1">No tienes cuenta? <a routerLink="/signInProfesor">Registro</a></span>
+                    <br>
+                    <span class="mt-1">Ir a <a routerLink="/login">Login Alumno</a></span>
+                </div>
+
             </div>
             <app-spinner *ngIf="loading"></app-spinner>
         </div>

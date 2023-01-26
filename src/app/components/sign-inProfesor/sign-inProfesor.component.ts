@@ -1,7 +1,9 @@
+
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Profesor } from 'src/app/interfaces/profesor';
 import { User } from 'src/app/interfaces/user';
 import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
@@ -13,18 +15,21 @@ import Swal from 'sweetalert2';
   styleUrls: ['./sign-inProfesor.component.css']
 })
 export class SignInProfesorComponent implements OnInit {
+  [x: string]: any;
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
   loading: boolean = false;
   nombre: string = '';
-  fecha_nacimiento: string = '';
+  fecha_nacimiento: string = '2000-01-01';
   nombre_tutor: string = '';
   phone_no: string = '';
   dni: string = '';
+  role_id:  string = '';
+  grupo_id:  string = '';
 
   constructor(private toastr: ToastrService,
-    private _userService: UserService,
+    private userService: UserService,
     private router: Router,
     private _errorService: ErrorService) { }
 
@@ -34,7 +39,8 @@ export class SignInProfesorComponent implements OnInit {
   addUser() {
 
     // Validamos que el usuario ingrese valores
-    if (this.nombre == '' ||  this.email == '' || this.password == '' || this.confirmPassword == '') {
+    if (this.nombre == '' ||  this.email == '' 
+    || this.password == '' || this.confirmPassword == ''|| this.role_id == ''|| this.grupo_id == '') {
       //this.toastr.error('Todos los campos son obligatorios', 'Error');
       Swal.fire({
         icon: 'error',
@@ -65,15 +71,17 @@ export class SignInProfesorComponent implements OnInit {
       email: this.email,
       password: this.password,
       nombre: this.nombre,
-      fecha_nacimiento: this.fecha_nacimiento,
-      nombre_tutor: this.nombre_tutor,
-      phone_no: this.phone_no,
-      dni: this.dni,
+      role_id: this.role_id,
+      grupo_id: this.grupo_id,
+      fecha_nacimiento: '',
+      nombre_tutor: '',
+      phone_no: '',
+      dni: ''
     }
 
     this.loading = true;
-    this._userService.signIn(user).subscribe({
-      next: (v) => {
+    this.userService.signIn(user).subscribe({
+      next: (v: any) => {
         this.loading = false;
         //this.toastr.success(`El usuario ${this.email} fue registrado con exito`, 'Usuario registrado');
         Swal.fire(`cuenta creada ${this.email}`)

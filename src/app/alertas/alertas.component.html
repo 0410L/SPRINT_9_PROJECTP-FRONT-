@@ -4,9 +4,8 @@
 
 <div class="inicial" style="min-width:25vw">
   <div class="container-fluid text-center ">
-    <h4 class="text">Alertas</h4>
     <br>
-    <br> 
+    <h4 class="text">Alertas</h4>
     <br>
       <div *ngIf="!loading" class="body bg-info rounded shadow">
         <table class="table todo">
@@ -34,10 +33,16 @@
   </div>
   -->
   <br>
-      <br>
       <div class="d-grid gap-2 d-md text-center justify-content-center">
         <button class="shake boton btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
       </div>
 </div>
+</div>
+<div class="text-center" *ngIf="this.getRol()===2; ngIfElse getRol" >
+  <h1>404</h1>
+  <br>
+  <h3>PAGINA NO ENCONTRADA</h3>
+  <br>
+  <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
 </div>
 

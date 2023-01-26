@@ -7,7 +7,7 @@ import { UserProfile } from 'src/app/interfaces/userProfile';
 import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2'
-
+ 
 @Component({
   selector: 'app-login-profesor',
   templateUrl: './loginProfesor.component.html',
@@ -18,6 +18,8 @@ export class LoginProfesorComponent implements OnInit {
   password: string = '1234';
   loading: boolean = false;
   userservice: any;
+  grupo_id!: number;
+  role_id!: number;
 
   constructor(private toastr: ToastrService,
     private _userService: UserService,
@@ -50,9 +52,11 @@ export class LoginProfesorComponent implements OnInit {
       fecha_nacimiento: '',
       nombre_tutor: '',
       phone_no: '',
-      dni: ''
+      dni: '',
+      role_id:  '',
+      grupo_id:  '',
     }
-
+ 
     this.loading = true;
     this._userService.loginProfesor(user).subscribe({
       next: (token) => {
@@ -63,7 +67,7 @@ export class LoginProfesorComponent implements OnInit {
           this.loading = false
           return;
         }
-
+ 
         //Login successfully
         localStorage.setItem('token', token.data.token);
         this.router.navigate(['/dashboardProfesor'])
@@ -76,7 +80,8 @@ export class LoginProfesorComponent implements OnInit {
           grupodescripcion: token.data.grupodescripcion,
           role_id: token.data.role_id,
           nombre_tutor: token.data.nombre_tutor,
-          id_profesor: token.data.id_profesor
+          id_profesor: token.data.id_profesor,
+          grupo_id: token.data.grupo_id
 
         };
         

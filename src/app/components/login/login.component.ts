@@ -7,16 +7,18 @@ import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2'
 import { UserProfile } from '../../interfaces/userProfile';
-
+ 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email: string = 'pa@gmail.com';
+  email: string = 'oriol.busquet@gmail.com';
   password: string = 'papa';
   loading: boolean = false;
+  role_id: string = '1'
+  grupo_id: string = '1'
 
   constructor(private toastr: ToastrService,
     private _userService: UserService,
@@ -49,7 +51,9 @@ export class LoginComponent implements OnInit {
       fecha_nacimiento: '',
       nombre_tutor: '',
       phone_no: '',
-      dni: ''
+      dni: '',
+      role_id:  '',
+      grupo_id:  '',
     }
 
     this.loading = true;
@@ -75,7 +79,8 @@ export class LoginComponent implements OnInit {
           grupodescripcion: token.data.grupodescripcion,
           role_id: token.data.role_id,
           nombre_tutor: token.data.nombre_tutor,
-          id_profesor: token.data.id_profesor
+          id_profesor: token.data.id_profesor,
+          grupo_id: token.data.grupo_id
 
 
         };

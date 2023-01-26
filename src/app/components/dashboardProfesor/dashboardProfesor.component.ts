@@ -40,7 +40,7 @@ alumnos(){
    }
 
    volverdashboard(){
-    this.router.navigate(['dashboard']);
+    this.router.navigate(['dashboardProfesor']);
     }
 
 
