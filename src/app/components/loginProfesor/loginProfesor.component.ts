@@ -43,7 +43,7 @@ export class LoginProfesorComponent implements OnInit {
       //this.toastr.error('Todos los campos son obligatorios', 'Error');
       return
     }
-
+ 
     // Creamos el body
     const user: User = {
       email: this.email,

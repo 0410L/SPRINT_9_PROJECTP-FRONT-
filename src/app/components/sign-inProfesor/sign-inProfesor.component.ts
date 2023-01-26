@@ -40,7 +40,8 @@ export class SignInProfesorComponent implements OnInit {
 
     // Validamos que el usuario ingrese valores
     if (this.nombre == '' ||  this.email == '' 
-    || this.password == '' || this.confirmPassword == ''|| this.role_id == ''|| this.grupo_id == '') {
+    || this.password == '' || this.confirmPassword == ''||
+     this.role_id == ''|| this.grupo_id == ''|| this.phone_no == ''|| this.dni == '') {
       //this.toastr.error('Todos los campos son obligatorios', 'Error');
       Swal.fire({
         icon: 'error',
@@ -71,17 +72,18 @@ export class SignInProfesorComponent implements OnInit {
       email: this.email,
       password: this.password,
       nombre: this.nombre,
+      fecha_nacimiento: this.fecha_nacimiento,
+      nombre_tutor: this.nombre_tutor,
+      phone_no: this.phone_no,
+      dni: this.dni,
       role_id: this.role_id,
       grupo_id: this.grupo_id,
-      fecha_nacimiento: '',
-      nombre_tutor: '',
-      phone_no: '',
-      dni: ''
+
     }
 
     this.loading = true;
-    this.userService.signIn(user).subscribe({
-      next: (v: any) => {
+    this.userService.sigInProfesor(user).subscribe({
+      next: (v) => {
         this.loading = false;
         //this.toastr.success(`El usuario ${this.email} fue registrado con exito`, 'Usuario registrado');
         Swal.fire(`cuenta creada ${this.email}`)
