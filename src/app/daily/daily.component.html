@@ -7,7 +7,8 @@
         <div *ngIf="!loading" class="body p-4 mb-2 rounded">
 
           <div class="card mt-3" style="width: 18rem">
-            <div class="titulo cabecera card-header"><span>{{ this.model.fecha | date : 'd/M/y' }}</span></div>
+            <div class="titulo cabecera card-header"><span>{{ this.model.fecha | date : 'fullDate' }}</span></div>
+            <!--<div class="titulo cabecera card-header"><span>{{ this.model.fecha | date : 'd/M/y' }}</span></div>-->
             <ul class="list-group list-group-flush">
               <li class="list-group-item bg-info text-white ok">Desayuno <p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.desayuno}}.svg"/></li>
               <li class="list-group-item bg-info text-white ok">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_postre}}.svg"/></li>

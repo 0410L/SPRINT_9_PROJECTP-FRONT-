@@ -1,9 +1,21 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { registerLocaleData } from '@angular/common';
+
+  // importar locales
+  import localePy from '@angular/common/locales/es-PY';
+  import localePt from '@angular/common/locales/pt';
+  import localeEn from '@angular/common/locales/en';
+
+  // registrar los locales con el nombre que quieras utilizar a la hora de proveer
+  registerLocaleData(localePy, 'es');
+  registerLocaleData(localePt, 'pt');
+  registerLocaleData(localeEn, 'en')
+
+
 
 // Modulos
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -30,6 +42,7 @@ import { HistorialProfesorComponent } from './historial-profesor/historial-profe
 import { WeatherComponent } from './weather/weather.component';
 import { FooterComponent } from './footer/footer.component';
 /*import { L10nConfig, L10nLoader, TranslationModule } from 'angular-l10n';*/
+
 
 @NgModule({
   declarations: [
@@ -69,24 +82,9 @@ import { FooterComponent } from './footer/footer.component';
 
     //TranslationModule.forRoot(l10nConfig),
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true, /*L10nLoader*/ }
-  ],
+  providers: [{provide: LOCALE_ID, useValue: 'es'/*|| HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true*/}],
 
   bootstrap: [AppComponent]
-
-  /*
-  const l10nConfig: L10nConfig = {
-    locale: {
-      languages: [
-        { code: 'es', dir: 'ltr' }
-      ],
-      defaultLocale: { languageCode: 'es', countryCode: 'ES' },
-      currency: 'EUR',
-      storage: StorageStrategy.Cookie
-    }
-  };
-  */
 
 })
 

@@ -9,66 +9,64 @@
     <br>
     <br>
  
-    <div *ngIf="!loading" id="daily" class="body p-4 mb-2 rounded">
-      <table class="table" id="tablainfo" >
-        <!--<thead>
-          <th>Nombre</th>
-          <th>Desayuno</th>
-          <th>Comida 1o</th>
-          <th>Comida 2o</th>
-          <th>Postre</th>
-          <th>Merienda</th>
-          <th>Dormir Ini</th>
-          <th>Dormir Fin</th>
-          <th>Deposiciones</th>
-          <th>Observaciones</th>
-        </thead>-->
+    <div *ngIf="!loading" id="daily" class="container-fluid body p-4 mb-2 rounded">
+      
+      <div class="row">
+        <div class="col">
+          <div class="table" id="tablainfo" >
+            <h2 class="text-black">Edit Daily ({{ this.getdate() }})</h2>
+            <br>
+            <div class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
+    
+              <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
+    
+              <ul class="list-group list-group-flush justify-content-center bg-info">
+                <li class="celdas list-group-item">Desayuno<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.desayuno">
+                  <option value="1">🟢 Todo</option>
+                  <option value="2">🟡 Bastante</option>
+                  <option value="3">🟠 Poco</option>
+                </select></td></li>
+    
+                <li class="celdas list-group-item">Comida<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_primero">
+                  <option value="1">🟢 Todo</option>
+                  <option value="2">🟡 Bastante</option>
+                  <option value="3">🟠 Poco</option>
+                </select></td><td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_segundo">
+                  <option value="1">🟢 Todo</option>
+                  <option value="2">🟡 Bastante</option>
+                  <option value="3">🟠 Poco</option>
+                </select></td><td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_postre">
+                  <option value="1">🟢 Todo</option>
+                  <option value="2">🟡 Bastante</option>
+                  <option value="3">🟠 Poco</option>
+                </select></td></li>
+                
+                <li class="celdas list-group-item">Merienda<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.merienda">
+                  <option value="1">🟢 Todo</option>
+                  <option value="2">🟡 Bastante</option>
+                  <option value="3">🟠 Poco</option>
+                </select></td></li>
+                <li class="celdas list-group-item">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center" placeholder="10:00"/></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center" placeholder="12:00"/></td></li>
+                
+                <li class="celdas list-group-item">Deposiciones <td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.deposiciones">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select></td></li>
+                <li class="celdas list-group-item">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center" placeholder="Comentarios"/></td></li>
+              </ul>
+            </div>
+          </div>
 
-
-        <h2 class="text-black">Edit Daily ({{ this.getdate() }})</h2>
-        <div class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
-
-          <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
-
-          <ul class="list-group list-group-flush justify-content-center bg-info">
-            <li class="celdas list-group-item">Desayuno<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.desayuno">
-              <option value="1">🟢 Todo</option>
-              <option value="2">🟡 Bastante</option>
-              <option value="3">🟠 Poco</option>
-            </select></td></li>
-
-            <li class="celdas list-group-item">Comida<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_primero">
-              <option value="1">🟢 Todo</option>
-              <option value="2">🟡 Bastante</option>
-              <option value="3">🟠 Poco</option>
-            </select></td><td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_segundo">
-              <option value="1">🟢 Todo</option>
-              <option value="2">🟡 Bastante</option>
-              <option value="3">🟠 Poco</option>
-            </select></td><td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_postre">
-              <option value="1">🟢 Todo</option>
-              <option value="2">🟡 Bastante</option>
-              <option value="3">🟠 Poco</option>
-            </select></td></li>
-            
-            <li class="celdas list-group-item">Merienda<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.merienda">
-              <option value="1">🟢 Todo</option>
-              <option value="2">🟡 Bastante</option>
-              <option value="3">🟠 Poco</option>
-            </select></td></li>
-            <li class="celdas list-group-item">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center" placeholder="10:00"/></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center" placeholder="12:00"/></td></li>
-            
-            <li class="celdas list-group-item">Deposiciones <td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.deposiciones">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select></td></li>
-            <li class="celdas list-group-item">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center" placeholder="Comentarios"/></td></li>
-          </ul>
         </div>
-      </table>
+          
+        
+      </div>
+
+
+      
       <br>
       <button class="boton2 btn btn-dark p-1" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
     </div>

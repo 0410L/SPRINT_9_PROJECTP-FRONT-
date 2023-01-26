@@ -25,7 +25,7 @@ export class SignInProfesorComponent implements OnInit {
   nombre_tutor: string = '';
   phone_no: string = '';
   dni: string = '';
-  role_id:  string = '';
+  role_id:  string = '2';
   grupo_id:  string = '';
 
   constructor(private toastr: ToastrService,
