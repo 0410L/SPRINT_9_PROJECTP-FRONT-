@@ -8,20 +8,22 @@
     <h4 class="text">Alertas</h4>
     <br>
       <div *ngIf="!loading" class="body bg-info rounded shadow">
-        <table class="table todo">
+        <div class="table todo">
           <thead class="cabecera">
            <tr>
                 <th><span class="titulo">Fecha</span></th>
                 <th><span class="titulo">Observaciones</span></th>
+                <th><span class="titulo">Notificación</span></th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let item of this.model">
               <td class="text-white ok">{{ item.fecha | date : 'fullDate' }}</td>
               <td class="text-white ok">{{ item.observaciones }} </td>
+              <td class="text-white ok"> <img class="iconoPerfil" src="../../assets/img/alert.gif"></td>
             </tr>
           </tbody>
-        </table>
+        </div>
       </div>
       <app-spinner *ngIf="loading"></app-spinner>
       </div>

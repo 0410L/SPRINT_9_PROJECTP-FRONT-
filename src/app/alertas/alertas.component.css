@@ -37,7 +37,10 @@
     font-size: 1.7ch;
    }
 
-   
+   .iconoPerfil{
+    max-width: 10px;
+    text-align: center;
+}
 
  .ok{
   text-shadow: 1px 1px 1.5px #000;
