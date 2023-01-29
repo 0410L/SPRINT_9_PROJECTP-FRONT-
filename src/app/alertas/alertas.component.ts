@@ -51,6 +51,11 @@ export class AlertasComponent implements OnInit {
     return this.userService.getRol();
    }
 
+   getUserName(): string { 
+    return this.userService.getLoggedUserName();
+   }
+
+
 
   volver(){
     this.router.navigate(['dashboard']);

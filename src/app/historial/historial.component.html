@@ -5,55 +5,30 @@
       <br>
       <div class="container tamano">
         <br>
-        <h4 class="text">Historial</h4>
+        <h3 class="fw-bold">Historial</h3><b>{{ getUserName () }}</b><br><br>
           <div *ngIf="!loading" id="daily" class="body rounded">
-            
-            <div class="card mt-5" style="width: 18rem;"  *ngFor="let item of this.model">
-              <div class="titulo cabecera card-header"><span>{{ item.fecha | date : 'fullDate' }}</span></div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item bg-info text-white ok">Desayuno <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></li>
-                <li class="list-group-item bg-info text-white ok">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></li>
-                <li class="list-group-item bg-info text-white ok">Merienda <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></li>
-                <li class="list-group-item bg-info text-white ok">Dormir:  <p class="mb-1"></p><span class="text-black nook">{{ item.dormir_inicio}}</span> - <span class="text-black nook">{{ item.dormir_final}}</span></li>
-                <li class="list-group-item bg-info text-white ok">Deposiciones: <p class="mb-1"></p><span class="text-black nook">{{ item.deposiciones}}</span></li>
-                <li class="list-group-item bg-info text-white ok">Observaciones: <p class="mb-1"></p><span class="text-black nook">{{ item.observaciones}}</span></li>
-              </ul>
+          
+            <div class="accordion" id="accordionExample" *ngFor="let item of this.model">
+              <div class="accordion-item mt-3">
+                <h2 class="accordion-header" id="{{item.id_valoracion}}">
+                  <div class="accordion-button cabecera titulo collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+(item.id_valoracion)" aria-expanded="false" [attr.aria-controls]="item.id_valoracion">
+                    <span>{{ item.fecha | date : 'fullDate' }}</span>
+                </div>
+                </h2>
+                <div id="collapse{{item.id_valoracion}}" class="accordion-collapse pintar collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body"><ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-info text-white ok">Desayuno <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></li>
+                    <li class="list-group-item bg-info text-white ok">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></li>
+                    <li class="list-group-item bg-info text-white ok">Merienda <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></li>
+                    <li class="list-group-item bg-info text-white ok">Dormir:  <p class="mb-1"></p><span class="text-black nook">{{ item.dormir_inicio}}</span> - <span class="text-black nook">{{ item.dormir_final}}</span></li>
+                    <li class="list-group-item bg-info text-white ok">Deposiciones: <p class="mb-1"></p><span class="text-black nook">{{ item.deposiciones}}</span></li>
+                    <li class="list-group-item bg-info text-white ok">Observaciones: <p class="mb-1"></p><span class="text-black nook">{{ item.observaciones}}</span></li>
+                  </ul></div>
+                </div>
+              </div>
             </div>
-            <br>
-            
-            <!--<table class="table d-none d-lg-flex">
-              <thead>
-               <tr>
-                <th><span class="titulo">Fecha</span></th>
-                <th><span class="titulo">Desayuno</span></th>
-                <th><span class="titulo">Comida 1º</span></th>
-                <th><span class="titulo">Comida 2º</span></th>
-                <th><span class="titulo">Comida postre</span></th>
-                <th><span class="titulo">Merienda</span></th>
-                <th><span class="titulo">Dormir inicio</span></th>
-                <th><span class="titulo">Dormir final</span></th>
-                <th><span class="titulo">Deposiciones</span></th>
-                <th><span class="titulo">Observaciones</span></th>
 
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of this.model">
-                  <td class="dato"><span>{{ item.fecha }}</span></td>
-                  <td><img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></td>
-                  <td><img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/></td>
-                  <td><img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/></td>
-                  <td><img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></td>
-                  <td><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></td>
-                  <td class="dato"><span>{{ item.dormir_inicio}}</span></td>
-                  <td class="dato"><span>{{ item.dormir_final}}</span></td>
-                  <td class="dato"><span>{{ item.deposiciones}}</span></td>
-                  <td class="dato"><span>{{ item.observaciones}}</span></td>
-                </tr>
-              </tbody>
-            </table>-->
-
-
+          <br>
 
           </div>
           <app-spinner *ngIf="loading"></app-spinner>

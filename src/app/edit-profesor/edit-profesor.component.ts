@@ -120,6 +120,10 @@ export class EditProfesorComponent implements OnInit {
     return this.router.navigate(['dashboardProfesor']);
     }
 
+  getGrupo(): string { 
+    return this.userservice.getGrupo();
+  }
+
   
   getdate()
   {

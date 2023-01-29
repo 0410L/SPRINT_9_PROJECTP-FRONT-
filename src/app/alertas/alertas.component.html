@@ -2,24 +2,24 @@
 
 <div class="hero container-fluid d-flex justify-content-center align-items-center" *ngIf="this.getRol()===1; ngIfElse getRol">
 
-<div class="inicial" style="min-width:25vw">
-  <div class="container-fluid text-center ">
+<div class="inicial">
+  <div class="container-fluid text-center">
     <br>
-    <h4 class="text">Alertas</h4>
+    <h4 class="fw-bold text">Alertas</h4><b class="fw-bold">{{ getUserName () }}</b><br><br>
     <br>
       <div *ngIf="!loading" class="body bg-info rounded shadow">
         <div class="table todo">
           <thead class="cabecera">
            <tr>
-                <th><span class="titulo">Fecha</span></th>
-                <th><span class="titulo">Observaciones</span></th>
-                <th><span class="titulo">Notificación</span></th>
+                <th><span class="titulo fw-bold">Fecha</span></th>
+                <th><span class="titulo fw-bold">Observaciones</span></th>
+                <th><span class="titulo fw-bold">Notificación</span></th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let item of this.model">
-              <td class="text-white ok">{{ item.fecha | date : 'fullDate' }}</td>
-              <td class="text-white ok">{{ item.observaciones }} </td>
+              <td class="text-dark fw-bold">{{ item.fecha | date : 'fullDate' }}</td>
+              <td class="text-white ok fw-bold">{{ item.observaciones }} </td>
               <td class="text-white ok"> <img class="iconoPerfil" src="../../assets/img/alert.gif"></td>
             </tr>
           </tbody>

@@ -14,48 +14,53 @@
       <div class="row">
         <div class="col">
           <div class="table" id="tablainfo" >
-            <h2 class="text-black">Edit Daily ({{ this.getdate() }})</h2>
+            <h4 class="text-black fw-bold">Edit Daily ({{ this.getdate() }})</h4><h5 class="fw-bold">{{ getGrupo() }}</h5>
             <br>
             <div class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
     
               <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
     
               <ul class="list-group list-group-flush justify-content-center bg-info">
-                <li class="celdas list-group-item">Desayuno<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.desayuno">
-                  <option value="1">🟢 Todo</option>
-                  <option value="2">🟡 Bastante</option>
-                  <option value="3">🟠 Poco</option>
+                <li class="celdas list-group-item fw-bold">Desayuno<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.desayuno">
+                  <option value="1" class="fw-bold">🟢 Todo</option>
+                  <option value="2" class="fw-bold">🟡 Bastante</option>
+                  <option value="3" class="fw-bold">🟠 Poco</option>
+                  <option value="4" class="fw-bold">❌ No</option>
                 </select></td></li>
     
-                <li class="celdas list-group-item">Comida<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_primero">
-                  <option value="1">🟢 Todo</option>
-                  <option value="2">🟡 Bastante</option>
-                  <option value="3">🟠 Poco</option>
-                </select></td><td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_segundo">
-                  <option value="1">🟢 Todo</option>
-                  <option value="2">🟡 Bastante</option>
-                  <option value="3">🟠 Poco</option>
-                </select></td><td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.comida_postre">
-                  <option value="1">🟢 Todo</option>
-                  <option value="2">🟡 Bastante</option>
-                  <option value="3">🟠 Poco</option>
+                <li class="celdas list-group-item fw-bold">Comida<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_primero">
+                  <option value="1" class="fw-bold">🟢 Todo</option>
+                  <option value="2" class="fw-bold">🟡 Bastante</option>
+                  <option value="3" class="fw-bold">🟠 Poco</option>
+                  <option value="4" class="fw-bold">❌ No</option>
+                </select></td><td><select class="form-control-sm fw-bold margen" [(ngModel)]="model[i].valoracion.comida_segundo">
+                  <option value="1" class="fw-bold">🟢 Todo</option>
+                  <option value="2" class="fw-bold">🟡 Bastante</option>
+                  <option value="3" class="fw-bold">🟠 Poco</option>
+                  <option value="4" class="fw-bold">❌ No</option>
+                </select></td><td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_postre">
+                  <option value="1" class="fw-bold">🟢 Todo</option>
+                  <option value="2" class="fw-bold">🟡 Bastante</option>
+                  <option value="3" class="fw-bold">🟠 Poco</option>
+                  <option value="4" class="fw-bold">❌ No</option>
                 </select></td></li>
                 
-                <li class="celdas list-group-item">Merienda<td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.merienda">
-                  <option value="1">🟢 Todo</option>
-                  <option value="2">🟡 Bastante</option>
-                  <option value="3">🟠 Poco</option>
+                <li class="celdas list-group-item fw-bold">Merienda<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.merienda">
+                  <option value="1" class="fw-bold">🟢 Todo</option>
+                  <option value="2" class="fw-bold">🟡 Bastante</option>
+                  <option value="3" class="fw-bold">🟠 Poco</option>
+                  <option value="4" class="fw-bold">❌ No</option>
                 </select></td></li>
-                <li class="celdas list-group-item">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center" placeholder="10:00"/></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center" placeholder="12:00"/></td></li>
+                <li class="celdas list-group-item fw-bold">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="10:00"/></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="12:00"/></td></li>
                 
-                <li class="celdas list-group-item">Deposiciones <td><select class="form-control-sm" [(ngModel)]="model[i].valoracion.deposiciones">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
+                <li class="celdas list-group-item fw-bold">Deposiciones <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones">
+                  <option value="0" class="fw-bold">0</option>
+                  <option value="1" class="fw-bold">1</option>
+                  <option value="2" class="fw-bold">2</option>
+                  <option value="3" class="fw-bold">3</option>
+                  <option value="4" class="fw-bold">4</option>
                 </select></td></li>
-                <li class="celdas list-group-item">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center" placeholder="Comentarios"/></td></li>
+                <li class="celdas list-group-item fw-bold">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center fw-bold" placeholder="Comentarios"/></td></li>
               </ul>
             </div>
           </div>

@@ -70,6 +70,11 @@ export class UserService {
     return Number(localStorage.getItem('role_id') ?? "0");
    }
 
+   getIdValoracion(): number {
+    return Number(localStorage.getItem('id_valoracion') ?? "0");
+   }
+
+
    getNameTutor(): string {
     return localStorage.getItem('nombre_tutor') ?? "";
    }

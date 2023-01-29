@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         showConfirmButton: false,
         timer: 2000,
       })
-      //this.toastr.error('Todos los campos son obligatorios', 'Error');
+     
       return
     }
 
@@ -82,7 +82,6 @@ export class LoginComponent implements OnInit {
           id_profesor: token.data.id_profesor,
           grupo_id: token.data.grupo_id
 
-
         };
         
         this._userService.setLoggedUser(usuario);
@@ -90,7 +89,7 @@ export class LoginComponent implements OnInit {
 
         Swal.fire({
           icon: 'success',
-          title: 'Benvenido',
+          title: '¡Benvenido Alumno!',
           showConfirmButton: false,
           timer: 1500
         })

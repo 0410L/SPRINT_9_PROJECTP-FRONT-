@@ -90,7 +90,7 @@ export class LoginProfesorComponent implements OnInit {
 
         Swal.fire({
           icon: 'success',
-          title: 'Benvenido',
+          title: '¡Benvenido Profesor!',
           showConfirmButton: false,
           timer: 1500
         })

@@ -50,6 +50,12 @@
   background-color: gold;
 }
 
+
+.margen{
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
 .boton2:hover{
   color: black;
   background-color: gold;

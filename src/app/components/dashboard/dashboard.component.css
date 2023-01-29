@@ -31,6 +31,10 @@
 }
 */
 
+.ok{
+    text-shadow: 1px 1px 1.5px #000;
+  }
+
 
  /*MOVIMIENTO BOTONES*/             
 .shake:hover{

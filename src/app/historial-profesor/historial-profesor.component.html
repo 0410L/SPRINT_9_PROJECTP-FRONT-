@@ -9,7 +9,7 @@
         <br>
         <br>
         <br>
-        <h4 class="text-black">Alumnos</h4>
+        <h3 class="text-black fw-bold">Alumnos</h3><h5 class="fw-bold">{{ getGrupo() }}</h5>
         
         <br>
  
@@ -18,9 +18,9 @@
             
             <tbody class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;"> 
               <div class="titulo card-header bg-info"><img class="iconoPerfil" src="../../assets/rol/{{ model[i].valoracion.alumno_id }}.png" alt="">
-                <span>{{ model[i].alumno.nombre }}</span><br>
-                <span>Telefono: <a href="tel:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.phone_no }}</a></span><br>
-                <span>Email: <a href="mailto:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.email }}</a></span></div>
+                <span class="fw-bold">{{ model[i].alumno.nombre }}</span><br>
+                <span>Telefono: <a class="fw-bold" href="tel:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.phone_no }}</a></span><br>
+                <span>Email: <a class="fw-bold" href="mailto:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.email }}</a></span></div>
                 
               
               

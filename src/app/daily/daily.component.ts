@@ -71,6 +71,8 @@ volverdashboard(){
   this.router.navigate(['dashboardProfesor']);
 }
   
-
+getUserName(): string { 
+  return this.userService.getLoggedUserName();
+ }
 
 }

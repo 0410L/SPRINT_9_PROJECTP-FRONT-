@@ -5,6 +5,8 @@ import { Valoracion } from '../interfaces/valoracion';
 import { ErrorService } from '../services/error.service';
 import { UserService } from '../services/user.service';
 import { ValoracionService } from '../services/valoracion.service';
+import { Alumno } from '../interfaces/alumno';
+import { AlumnoService } from '../services/alumno.service';
 /*import { L10nConfig, L10nLoader, TranslationModule } from 'angular-l10n';*/
 
 @Component({
@@ -20,7 +22,8 @@ export class HistorialComponent implements OnInit {
   constructor(private router: Router, 
     private valoracionService: ValoracionService, 
     private errorService: ErrorService, 
-    private userService: UserService) { }
+    private userService: UserService,
+    private alummnoService: AlumnoService) { }
 
 
   ngOnInit(): void {
@@ -42,22 +45,38 @@ export class HistorialComponent implements OnInit {
         this.errorService.msjError(e);
       }
     })
+
+
+
+
+
   }
   
-  getGrupo(): string { 
-    return this.userService.getGrupo();
+  getUserName(): string { 
+    return this.userService.getLoggedUserName();
    }
 
-   getRol():number {
+  getGrupo(): string { 
+    return this.userService.getGrupo();
+    }
+
+  getRol():number {
     return this.userService.getRol();
-   }
+    }
+
 
   volver(){
     this.router.navigate(['dashboard']);
     }
-  
+    
   volverdashboard(){
     this.router.navigate(['dashboardProfesor']);
-  }
+    }
+
+  getIdValoracion (): number {
+    return this.userService.getIdValoracion();
+    }
+
+  
 
 }
