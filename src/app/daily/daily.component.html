@@ -12,19 +12,19 @@
             <div class="titulo cabecera card-header"><span>{{ this.model.fecha | date : 'fullDate' }}</span></div>
             <!--<div class="titulo cabecera card-header"><span>{{ this.model.fecha | date : 'd/M/y' }}</span></div>-->
             <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-info text-white ok">Desayuno <p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.desayuno}}.svg"/></li>
-              <li class="list-group-item bg-info text-white ok">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_postre}}.svg"/></li>
-              <li class="list-group-item bg-info text-white ok">Merienda <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.merienda}}.svg"/></li>
-              <li class="list-group-item bg-info text-white ok">Dormir <p class="mb-1"></p><span class="text-black nook">{{this.model.dormir_inicio}}</span> - <span class="text-black nook">{{this.model.dormir_final}}</span></li>
-              <li class="list-group-item bg-info text-white ok">Deposiciones: <p class="mb-1"></p><span class="text-black nook">{{this.model.deposiciones}}</span></li>
-              <li class="list-group-item bg-info text-white ok">Observaciones: <p class="mb-1"></p><span class="text-black nook">{{this.model.observaciones}}</span></li>
+              <li class="list-group-item bg-info text-white ok fw-bold">Desayuno <p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.desayuno}}.svg"/></li>
+              <li class="list-group-item bg-info text-white ok fw-bold">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_postre}}.svg"/></li>
+              <li class="list-group-item bg-info text-white ok fw-bold">Merienda <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.merienda}}.svg"/></li>
+              <li class="list-group-item bg-info text-white ok fw-bold">Dormir <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.model.dormir_inicio}}</span> - <span class="text-black nook fw-bold">{{this.model.dormir_final}}</span></li>
+              <li class="list-group-item bg-info text-white ok fw-bold">Deposiciones: <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.model.deposiciones}}</span></li>
+              <li class="list-group-item bg-info text-white ok fw-bold">Observaciones: <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.model.observaciones}}</span></li>
             </ul>
           </div>
         </div>
         <app-spinner *ngIf="loading"></app-spinner>
       </div>
       <div class="d-grid gap-2 d-md text-center justify-content-center">
-        <button class="shake boton btn btn-info p-1 mt-2" style="height:40px;width:70px" (click)="volver()">Volver</button>
+        <button class="shake boton btn btn-info p-1 mt-2 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
         <br>
         <br>
         <br>

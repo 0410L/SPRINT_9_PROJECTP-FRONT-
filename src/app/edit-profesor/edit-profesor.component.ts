@@ -24,6 +24,8 @@ export class EditProfesorComponent implements OnInit {
   [x: string]: any;
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
+  colorIndex = 0;
+
 
   constructor(private router: Router,
               private alummnoService: AlumnoService,

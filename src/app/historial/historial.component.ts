@@ -17,6 +17,7 @@ import { AlumnoService } from '../services/alumno.service';
 export class HistorialComponent implements OnInit {
   loading: boolean = true;
   model: Array<Valoracion> = [];
+  colorIndex = 0;
   
   
   constructor(private router: Router, 

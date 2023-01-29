@@ -23,6 +23,7 @@ export class HistorialProfesorComponent implements OnInit {
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
   back: boolean = true;
+  colorIndex = 0;
 
   constructor(private router: Router,
     private alummnoService: AlumnoService,
@@ -108,6 +109,7 @@ export class HistorialProfesorComponent implements OnInit {
     this.router.navigate(['dashboard']);
     }
 
-    
+  
 
 }
+

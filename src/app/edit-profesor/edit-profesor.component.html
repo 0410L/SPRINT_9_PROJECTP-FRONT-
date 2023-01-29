@@ -4,7 +4,6 @@
 
 <div class="inicial" style="text-align:center">
   <div class="container-fluid text-center ">
-    <h4 class="text-black">Edit Daily ({{ this.getdate() }})</h4>
     <br>
     <br>
     <br>
@@ -16,7 +15,10 @@
           <div class="table" id="tablainfo" >
             <h4 class="text-black fw-bold">Edit Daily ({{ this.getdate() }})</h4><h5 class="fw-bold">{{ getGrupo() }}</h5>
             <br>
-            <div class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
+
+
+             <!--COLUMNA PER TABLET / SMARTPHONE EN RESOLUCIÓ VERTICAL-->
+            <div class="card mt-3 d-xl-none" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
     
               <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
     
@@ -63,23 +65,84 @@
                 <li class="celdas list-group-item fw-bold">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center fw-bold" placeholder="Comentarios"/></td></li>
               </ul>
             </div>
-          </div>
 
-        </div>
-          
+
+
+            <!--COLUMNA PER PC EN RESOLUCIÓ AMPLE-->
+            <div *ngIf="!loading" id="daily" class="body d-none d-xl-block">
+              <div class="table justify-content-center">
+                <thead class="cabecera m-3 rounded justify-content-center">
+                  <th class="fw-bold">Nombre</th>
+                  <th class="fw-bold">Desayuno</th>
+                  <th class="fw-bold">Comida 1o</th>
+                  <th class="fw-bold">Comida 2o</th>
+                  <th class="fw-bold">Postre</th>
+                  <th class="fw-bold">Merienda</th>
+                  <th class="fw-bold">Dormir Ini</th>
+                  <th class="fw-bold">Dormir Fin</th>
+                  <th class="fw-bold">Deposiciones</th>
+                  <th class="fw-bold">Observaciones</th>
+                </thead>
         
+                
+                <tbody class="bg-info m-3 rounded text-center justify-content-center">
+                  <tr *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
+                    <td class="fw-bold">{{ model[i].alumno.nombre }}</td>
+                    <td><select class="celdas form-control-sm fw-bold shadow" [(ngModel)]="model[i].valoracion.desayuno">
+                      <option class="fw-bold" value="1">🟢 Tot</option>
+                      <option class="fw-bold" value="2">🟡 Bastant</option>
+                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="4" >❌ No</option>
+                    </select></td>
+                    <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_primero">
+                      <option class="fw-bold" value="1">🟢 Tot</option>
+                      <option class="fw-bold" value="2">🟡 Bastant</option>
+                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="4" >❌ No</option>
+                    </select></td>
+                    <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_segundo">
+                      <option class="fw-bold" value="1">🟢 Tot</option>
+                      <option class="fw-bold" value="2">🟡 Bastant</option>
+                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="4" >❌ No</option>
+                    </select></td>
+                    <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_postre">
+                      <option class="fw-bold" value="1">🟢 Tot</option>
+                      <option class="fw-bold" value="2">🟡 Bastant</option>
+                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="4" >❌ No</option>
+                    </select></td>
+                    <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.merienda">
+                      <option class="fw-bold" value="1">🟢 Tot</option>
+                      <option class="fw-bold" value="2">🟡 Bastant</option>
+                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="4" >❌ No</option>
+                    </select></td>
+                    <td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm fw-bold text-center" placeholder="10:00"/></td>
+                    <td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm fw-bold text-center" placeholder="12:00"/></td>
+                    <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones">
+                      <option class="fw-bold" value="0">0</option>
+                      <option class="fw-bold" value="1">1</option>
+                      <option class="fw-bold" value="2">2</option>
+                      <option class="fw-bold" value="3">3</option>
+                      <option class="fw-bold" value="4">4</option>
+                    </select></td>
+                    <td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center fw-bold" placeholder="Comentarios"/></td>
+                  </tr>
+                </tbody>
+              </div>
+            
+            </div>
+          </div>
+        </div>
       </div>
-
-
-      
       <br>
-      <button class="boton2 btn btn-dark p-1" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
+      <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
     </div>
     <app-spinner *ngIf="loading"></app-spinner>
     </div>
-    <br>
     <div class="d-grid gap-2 d-md text-center justify-content-center">
-      <button class="shake boton btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
+      <button class="shake boton btn btn-info p-1 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
     </div>
     <br>
     <br>
@@ -150,18 +213,19 @@
 
 
 
-<!--
-<div class="hero container-fluid d-flex justify-content-center align-items-center">
+<!--<div class="hero container-fluid d-flex justify-content-center align-items-center">
 
   <div class="inicial" style="text-align:center">
     <div class="container-fluid text-center ">
       <h2 class="text-black">Edit Daily ({{ this.getdate() }})</h2>
       <br>
       <br>
-      <br>
-  
-      <div *ngIf="!loading" id="daily" class="body p-4 mb-2 bg-info rounded shadow p-3">
-        <table class="table">
+      <br>-->
+      
+
+      <!--COLUMNA PER PC EN RESOLUCIÓ AMPLE-->
+      <!--<div *ngIf="!loading" id="daily" class="body p-4 mb-2 bg-info rounded shadow p-3">
+        <div class="table">
           <thead>
             <th>Nombre</th>
             <th>Desayuno</th>
@@ -214,11 +278,14 @@
                 <option value="4">4</option>
               </select></td>
               <td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm" placeholder="Comentarios"/></td>
-  
             </tr>
           </tbody>
-        </table>
+        </div>
         <br>
+      </div>-->
+
+
+<!--
         <button class="btn btn-dark p-1" style="height:50px;width:110px" (click)="guardar()">Guardar</button>
       </div>
       <app-spinner *ngIf="loading"></app-spinner>
@@ -230,6 +297,6 @@
       </div>
     </div>
   </div>
--->
+  -->
   
   

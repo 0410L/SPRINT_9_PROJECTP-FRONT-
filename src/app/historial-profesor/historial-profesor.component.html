@@ -17,10 +17,26 @@
         <table class="table">
             
             <tbody class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;"> 
-              <div class="titulo card-header bg-info"><img class="iconoPerfil" src="../../assets/rol/{{ model[i].valoracion.alumno_id }}.png" alt="">
+              <div class="titulo card-header bg-info"><img class="iconoPerfil0" src="../../assets/rol/{{ model[i].valoracion.alumno_id }}.png" alt="{{ model[i].alumno.nombre }}">
                 <span class="fw-bold">{{ model[i].alumno.nombre }}</span><br>
-                <span>Telefono: <a class="fw-bold" href="tel:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.phone_no }}</a></span><br>
-                <span>Email: <a class="fw-bold" href="mailto:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.email }}</a></span></div>
+
+                <span>Contacto Tutor:</span><br>
+                <!--<span>Telefono: <a class="fw-bold" href="tel:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.phone_no }}</a></span><br>
+                <span>Email: <a class="fw-bold" href="mailto:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.email }}</a></span>-->
+                <div class="row">
+                  <div class="col">
+                    <a class="titulo bg-info" href="https://wa.me/{{ model[i].alumno.phone_no}}"><img class="iconoPerfil" src="../../assets/img/whatsapp.svg" alt="https://wa.me/{{ model[i].alumno.phone_no}}"></a>
+                  </div>
+                  <div class="col">
+                    <a class="titulo bg-info" href="mailto:{{ model[i].alumno.email }}"><img class="iconoPerfil2" src="../../assets/img/mail.svg" alt="mailto:{{ model[i].alumno.email }}"></a>
+                  </div>
+                  <div class="col">
+                    <a class="titulo bg-info" href="tel:{{ model[i].alumno.phone_no }}"><img class="iconoPerfil3" src="../../assets/img/mobile.svg" alt="tel:{{ model[i].alumno.phone_no }}"></a>
+                  </div>
+                </div>
+
+
+              </div>
                 
               
               
@@ -32,7 +48,7 @@
       </div>
       <div class="d-grid gap-2 d-md text-center justify-content-center">
 
-        <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volver()">Volver</button>
+        <button class="boton btn btn-info p-1 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
       </div>
     </div>
     <app-spinner *ngIf="loading"></app-spinner>
@@ -46,6 +62,6 @@
   <br>
   <h3>PAGINA NO ENCONTRADA</h3>
   <br>
-  <button class="boton btn btn-info p-1"  style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
+  <button class="boton btn btn-info p-1 fw-bold"  style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
 </div>
 

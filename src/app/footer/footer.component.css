@@ -8,6 +8,14 @@
 }
 
 
+.shadowsuperior{
+    box-shadow:
+    inset -10em -3em 3em rgba(0,0,0,0.1),
+          0 0  0 10px rgb(255,255,255),
+          0.9em 0.9em 1em rgba(0,0,0,0.3);
+}
+
+
 footer{
     padding-top: 10px;
     padding-bottom: 10px;
