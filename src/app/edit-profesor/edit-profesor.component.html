@@ -118,8 +118,8 @@
                       <option class="fw-bold" value="3">🟠 Poc</option>
                       <option class="fw-bold" value="4" >❌ No</option>
                     </select></td>
-                    <td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm fw-bold text-center" placeholder="10:00"/></td>
-                    <td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm fw-bold text-center" placeholder="12:00"/></td>
+                    <td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px; height: 22px" class="form-control-sm fw-bold text-center" placeholder="10:00"/></td>
+                    <td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px; height: 22px" class="form-control-sm fw-bold text-center" placeholder="12:00"/></td>
                     <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones">
                       <option class="fw-bold" value="0">0</option>
                       <option class="fw-bold" value="1">1</option>
@@ -127,7 +127,7 @@
                       <option class="fw-bold" value="3">3</option>
                       <option class="fw-bold" value="4">4</option>
                     </select></td>
-                    <td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center fw-bold" placeholder="Comentarios"/></td>
+                    <td><input [(ngModel)]="model[i].valoracion.observaciones" style="height: 22px" class="form-control-sm text-center fw-bold" placeholder="Comentarios"/></td>
                   </tr>
                 </tbody>
               </div>
@@ -137,7 +137,9 @@
         </div>
       </div>
       <br>
+      
       <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
+      
     </div>
     <app-spinner *ngIf="loading"></app-spinner>
     </div>

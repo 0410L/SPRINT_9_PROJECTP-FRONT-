@@ -29,6 +29,14 @@ export class ValoracionService {
       return this.http.post<any>(`http://localhost:8080/api/valoracion/add/`, {"valoraciones": valoraciones}, {headers});
    }
 
+
+   /*actualizarValoraciones(valoraciones: Valoracion[]): Observable<any>{
+      const headers = new HttpHeaders({'Content-Type':'application/json'});
+      return this.http.put<any>(`http://localhost:8080/api/valoracion/update/${id_valoracion}`, {"valoraciones": valoraciones}, {headers});
+   }*/
+
+
+
    obtenerAlertas(id_alumno: number): Observable<any>{
     const headers = new HttpHeaders({'Content-Type':'application/json'});
     return this.http.get<any>(`http://localhost:8080/api/valoracion/alerta/${id_alumno}`, {headers});

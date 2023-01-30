@@ -109,6 +109,8 @@ export class EditProfesorComponent implements OnInit {
     });
   }
 
+ 
+
   volverdashboard(){
     this.router.navigate(['dashboard']);
     }

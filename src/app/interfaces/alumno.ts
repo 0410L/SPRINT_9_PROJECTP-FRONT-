@@ -5,4 +5,5 @@ export interface Alumno {
     nombre: string,
     phone_no: number,
     email: string,
+    nombre_tutor: string,
 }
