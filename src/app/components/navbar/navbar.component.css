@@ -89,7 +89,9 @@
     background-color: gold;
 }
 
-
+.separar{
+    margin-top: 6px;
+}
 
 #logoPolard{
     /* font-family: 'Sofia Sans Extra Condensed'; */
@@ -97,6 +99,7 @@
      font-size: xx-large;
      margin: 0;
      padding: 0;
+     margin-left: 10px;
      
  }
 
