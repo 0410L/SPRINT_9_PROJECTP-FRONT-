@@ -6,6 +6,10 @@
     max-width: none;
   }
 
+  .a1{
+    cursor: default;
+  }
+
   .titulo{
     /*margin-bottom: 30px;*/
     /*font-weight: 700;*/

@@ -10,6 +10,10 @@
   font-style: bold;
 }
 
+.a1{
+  cursor: default;
+}
+
 .IconoVal{
   width: 30px;
   text-align: center;

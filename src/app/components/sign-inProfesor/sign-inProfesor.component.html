@@ -5,7 +5,7 @@
 
 
         <div class="wrapper">
-            <div *ngIf="!loading" class="container forma p-2 mb-2 rounded shadow p-3">
+            <div *ngIf="!loading" class="container forma p-2 mb-2 rounded shadow p-3"  style="max-width:500px">
                 <img class="logo" src="../../../assets/img/robot3.gif" alt="img login">
                 <h4 class="text-black fw-bold">Registro Profesor</h4>
 
@@ -58,23 +58,30 @@
                     </div>
                 </div>
 
-
                 <div class="row">
+
                     <div class="col">
                         <div class="form-floating mb-2">
-                            <input type="text" [(ngModel)]="grupo_id" class="form-control" placeholder="Grupo">
-                            <label>Grupo</label>
-                        </div>
-                    </div>
-                    
-                    <div class="col">
-                        <div class="form-floating mb-2">
-                            <input type="text" [(ngModel)]="role_id" class="form-control" placeholder="Rol">
+                            <input type="text" [(ngModel)]="role_id" class="form-control" placeholder="Rol" aria-label="Disabled input example" disabled>
                             <label>Rol</label>
                         </div>
                     </div>
-                </div>
 
+                   
+                    <div class="col">
+                        <div class="form-floating mb-2">
+                            <select type="text" [(ngModel)]="grupo_id" class="form-control form-select" aria-label="Default select example" placeholder="Introduce un grupo">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                            <label>Grupo</label>
+                    </div>  
+                    
+                </div>
 
                 <div class="d-grid gap-2">
                     <button type="button" (click)="addUser()" class="boton btn btn-dark btn-lg fw-bold">Aceptar</button>
@@ -90,8 +97,6 @@
         </div>
     </div>
 </div>
-
-
 
 
 

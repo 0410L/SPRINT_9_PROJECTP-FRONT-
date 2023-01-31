@@ -61,6 +61,49 @@ export class NavbarComponent implements OnInit {
    }
   
 
+
+  //BOTONES NAVEGADOR ALUMNO
+
+  btnDashboard(){
+  this.router.navigate(['dashboard']);
+  }
+
+  btnDaily(){
+  this.router.navigate(['daily']);
+  }
+
+  btnHistorial(){
+  this.router.navigate(['historial']);
+  }
+
+  btnAlertas(){
+  this.router.navigate(['alertas']);
+  }
+
+
+
+  // BOTONES NAVEGADOR PROFESOR
+
+  
+  btnDashboardProfesor(){
+  this.router.navigate(['dashboardProfesor']);
+  }
+  
+  btnEntradaDaily(){
+  this.router.navigate(['editProfesor']);
+  }
+
+  btnProfesorDaily(){
+  this.router.navigate(['dailyProfesor']);
+  }
+
+  btnAlumnos(){
+  this.router.navigate(['alumnos']);
+  }
+
+
+  
+
 }
 
 

@@ -17,6 +17,11 @@ button{
     color: black;
 }
 
+.a1{
+    cursor: default;
+}
+
+
 .colorback{
     background-color: rgb(13, 202, 240)
    }

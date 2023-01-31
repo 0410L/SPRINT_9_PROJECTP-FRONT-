@@ -1,36 +1,92 @@
 
-<nav class="navbar navbar-expand-lg bg-info fixed-top p-1 shadow-lg">
+<nav class="navbar navbar-expand bg-info fixed-top p-1 shadow-lg">
     <div class="container-fluid">
+
       
         <div class="col1">
-          <div class="navbar-brand polard" href="#" id="logoPolard" >Polard <img class="iconoPerfil3" src="../../assets/img/robot3.gif"/></div>
-          
 
+          <div class="row vuelta p-0">
+
+            <div class="col p-0">
+              <div class="navbar-brand polard" style="justify-content: center; text-align: center;" href="#" id="logoPolard" >Polard <!--<img class="iconoPerfil3" src="../../assets/img/robot3.gif"/>--></div>
+            </div>
+
+            <div class="col p-0">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown" *ngIf="this.getUserName(); ngIfElse getUserName">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img class="iconoPerfil3" src="../../assets/img/robot3.gif"></a>
+                    
+                    
+                    <ul class="dropdown-menu bg-info fw-black" *ngIf="this.getRol()==1; ngIfElse getRol">
+
+                      <li><a class="dropdown-item fw-black" (click)="btnDaily()">Daily</a></li>
+                      <li><a class="dropdown-item fw-black" (click)="btnHistorial()">Historial</a></li>
+                      <li><a class="dropdown-item fw-black" (click)="btnAlertas()">Alertas</a></li>
+                      <li><a class="dropdown-item fw-black" (click)="btnDashboard()">Dashboard</a></li>
+
+                    </ul>
+
+                    <ul class="dropdown-menu bg-info fw-black" *ngIf="this.getRol()==2; ngIfElse getRol">
+
+                      <li><a class="dropdown-item fw-black" (click)="btnEntradaDaily()">Edit Daily</a></li>
+                      <li><a class="dropdown-item fw-black" (click)="btnProfesorDaily()">Daily</a></li>
+                      <li><a class="dropdown-item fw-black" (click)="btnAlumnos()">Alumnos</a></li>
+                      <li><a class="dropdown-item fw-black" (click)="btnDashboardProfesor()">Dashboard</a></li>
+
+                    </ul>
+
+                
+                    
+                    
+
+
+                  </li>
+                </ul>
+              </div>
+    
+            </div>
+            
+
+          </div>
+          
+        
+          
+         
+
+
+
+        
         </div>
 
 
-
+        <!--API DEL TEMPS-->
         <div class="col2 justify-content-center">
           <app-weather id="wheater"></app-weather>
         </div>
 
 
 
+         <!--NOM USUARI I GRUP-->
         <div class="col3">
           <form class="d-flex" *ngIf="this.getUserName(); ngIfElse getUserName">
 
-            <table class="grupal">
-              <tr>
-                  <th class="nombrecuenta">{{this.getUserName() }}</th>
-              </tr> 
-              <!--<tr>
-                  <th class="nombregrupo">{{getGrupo()}}</th>
-              </tr>-->
-            </table>
+            <div>
+              <div class="col">
+                  <span class="nombrecuenta fw-bold">{{this.getUserName() }}</span>
+              </div> 
+              
+              <div class="col th">
+                  <span class="nombregrupo fw-bold">{{getGrupo()}}</span>
+                </div>
+             
+            </div>
 
-            <!--<span class="rol grupo2"><img class="iconoPerfil" src="../../assets/rol/{{getRol()}}.png"/>
-            </span>--> 
           
+             <!--MODAL DE FITXA INFORMATIVA-->
             <div class="modal" (click)="showModal=false" tabindex="-1"[ngClass]="{'show':showModal}">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -48,6 +104,7 @@
               </div>
           </div>
           
+           <!--BUTTON MODAL-->
           <button type="button" class="grupo btn btn-white btn-sm"
           (click)="showModal=true" data-toggle="modal" data-target="#myModal">
           <img class="iconoPerfil" src="../../assets/rol/{{getRol()}}.png"/>

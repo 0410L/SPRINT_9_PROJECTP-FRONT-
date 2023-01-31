@@ -1,7 +1,7 @@
-<!--<app-navbar></app-navbar>-->
 
 
-<div class="hero container-fluid d-flex justify-content-center align-items-center" *ngIf="this.getRol()===2; ngIfElse getRol">
+
+<div class="hero container-fluid d-flex justify-content-center align-items-center a1" *ngIf="this.getRol()===2; ngIfElse getRol">
 
     <div class="inicial" *ngIf="!loading" id="daily" class="body p-4 mb-2 rounded" style="text-align:center">
       <div class="container-fluid text-center">
@@ -18,31 +18,28 @@
             
             <tbody class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;"> 
               <div class="titulo card-header bg-info"><img class="iconoPerfil0" src="../../assets/rol/{{ model[i].valoracion.alumno_id }}.png" alt="{{ model[i].alumno.nombre }}">
-                <span class="fw-bold">{{ model[i].alumno.nombre }}</span><br>
+                <span class="fw-bold" style="font-size: 18px;">{{ model[i].alumno.nombre }}</span><br>
 
-                <span>Contacto Tutor:</span><br>
-                <!--<span>Telefono: <a class="fw-bold" href="tel:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.phone_no }}</a></span><br>
-                <span>Email: <a class="fw-bold" href="mailto:{{ model[i].alumno.phone_no }}">{{ model[i].alumno.email }}</a></span>-->
-                <div class="row">
-                  <div class="col">
-                    <!--<a class="titulo bg-info" href="https://wa.me/{{ model[i].alumno.phone_no}}"><img class="iconoPerfil" src="../../assets/img/whatsapp.svg" alt="https://wa.me/{{ model[i].alumno.phone_no}}"></a>-->
-                    <!--<a class="titulo bg-info" href="https://api.whatsapp/send?phone={{ model[i].alumno.phone_no }}&text=Hola, ponte en contacto con nosotros. Gracias."><img class="iconoPerfil" src="../../assets/img/whatsapp.svg" alt="https://wa.me/{{ model[i].alumno.phone_no}}"></a>-->
-                    <a class="titulo bg-info" href="https://wa.me/{{ model[i].alumno.phone_no }}?text=Hola! {{ model[i].alumno.nombre_tutor }}, tienes nuevos mensajes en tu hijo {{ model[i].alumno.nombre }} en el apartado Alertas en tu perfil en Polard"><img class="iconoPerfil" src="../../assets/img/whatsapp.svg" alt="https://wa.me/{{ model[i].alumno.phone_no}}"></a>
+                <div class="fondo rounded">
+                  <span class="fw-bold" style="font-size: 12px">Contacto Tutor:</span><br>
+                  <span class="fw-bold">{{ model[i].alumno.nombre_tutor }}</span><br>
+                
+                  <div class="row mt-1">
+                    <div class="col">
+                      <a class="titulo" href="https://wa.me/{{ model[i].alumno.phone_no }}?text=Hola! {{ model[i].alumno.nombre_tutor }}, tienes nuevos mensajes en tu hijo {{ model[i].alumno.nombre }} en el apartado Alertas en tu perfil en Polard"><img class="iconoPerfil" src="../../assets/img/whatsapp.svg" alt="https://wa.me/{{ model[i].alumno.phone_no}}"></a>
+                    </div>
+                    <div class="col">
+                      <a class="titulo" href="mailto:{{ model[i].alumno.email }}"><img class="iconoPerfil2" src="../../assets/img/mail.svg" alt="mailto:{{ model[i].alumno.email }}"></a>
+                    </div>
+                    <div class="col">
+                      <a class="titulo" href="tel:{{ model[i].alumno.phone_no }}"><img class="iconoPerfil3" src="../../assets/img/mobile.svg" alt="tel:{{ model[i].alumno.phone_no }}"></a>
+                    </div>
                   </div>
-                  <div class="col">
-                    <a class="titulo bg-info" href="mailto:{{ model[i].alumno.email }}"><img class="iconoPerfil2" src="../../assets/img/mail.svg" alt="mailto:{{ model[i].alumno.email }}"></a>
-                  </div>
-                  <div class="col">
-                    <a class="titulo bg-info" href="tel:{{ model[i].alumno.phone_no }}"><img class="iconoPerfil3" src="../../assets/img/mobile.svg" alt="tel:{{ model[i].alumno.phone_no }}"></a>
-                  </div>
+
                 </div>
 
-
+      
               </div>
-                
-              
-              
-              <!--<span>{{ model[i].valoracion.alumno_id }} </span>-->
             </tbody>
         </table>
         

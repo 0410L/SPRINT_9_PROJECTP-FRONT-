@@ -15,6 +15,11 @@
   font-size: 20px;
 }
 
+
+.a1{
+  cursor: default;
+}
+
   /*#daily{
     overflow: scroll;
   }*/

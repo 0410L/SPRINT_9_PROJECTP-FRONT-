@@ -47,6 +47,15 @@
   text-align: center;
 }
 
+.fondo{
+  background-color: gold;
+}
+
+
+.a1{
+  cursor: default;
+}
+
 
 .iconoPerfil:hover{
   width: 30px;
