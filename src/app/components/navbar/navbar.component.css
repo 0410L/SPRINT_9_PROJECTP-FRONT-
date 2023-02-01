@@ -5,7 +5,7 @@
 #temperatura{
     width: 200px;
     height: 120px;
-    animation: colorchange 3s; /* animation-name followed by duration in seconds*/ /* you could also use milliseconds (ms) or something like 2.5s */ 
+    animation: colorchange 3s; 
     animation-timing-function: ease-in-out; 
     animation-iteration-count: infinite; 
     animation-play-state: running;
@@ -94,7 +94,6 @@
 }
 
 #logoPolard{
-    /* font-family: 'Sofia Sans Extra Condensed'; */
      font-family: 'Butterfly Kids';
      font-size: xx-large;
      margin: 0;
@@ -104,7 +103,6 @@
  }
 
 .navbar-brand {
-
     padding-bottom: 0;
     
 }
@@ -117,7 +115,6 @@
 
 .nombregrupo{
     font-size: 10px;
-    /*font-style: italic;*/
 	vertical-align:text-top;
     cursor: default;
 }
@@ -137,8 +134,6 @@
     color: white;
     background-color: black;
     border: black;
-    /*height: 50px;
-    text-align: center;*/
 }
 
 
@@ -147,20 +142,11 @@
     border: gold;
    }
   
-   .boton:active{
+.boton:active{
     color: white;
     background-color: black;
-    border: black;
-   }
-
-
-   /*
-   .navbar{
-    max-height: 6vh;
-   }
-   */
-
-
+    order: black;
+}
 
 .card-model {
     font-size: small;
@@ -181,7 +167,6 @@ p{
 }
 
 .card-body:hover{
-    
     border-bottom: 6px solid rgb(79, 179, 250, 0.913);
     background-color: rgb(5, 31, 53);
     box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
@@ -238,7 +223,7 @@ p{
 }
 
 .navbar{
-        --bs-navbar-padding-x: 0;
+    --bs-navbar-padding-x: 0;
 }
 
 table {
@@ -261,11 +246,6 @@ table {
 }
 
 
-/*.modal-content {
-    box-shadow: 4px 2px 2px 4px rgba(49, 138, 172, 1);
-}*/
-
-
 .modal.show{
     display: block;
     background-color: rgb(0, 0, 0, .5);
@@ -284,10 +264,10 @@ table {
 
 @media (max-width: 780px) {
     
-.col2{
-    position: absolute;
-    left:30%;
-}
+    .col2{
+        position: absolute;
+        left:30%;
+    }
 }
 
 @media (max-width: 527px) {
@@ -301,4 +281,4 @@ table {
         display: none;
     }
 
-    }
+}
