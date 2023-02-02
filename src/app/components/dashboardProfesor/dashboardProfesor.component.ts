@@ -26,6 +26,10 @@ export class DashboardProfesorComponent implements OnInit {
 alumnos(){
   this.router.navigate(['alumnos']);
    }
+   
+   scan(){
+    this.router.navigate(['scan']);
+     }
 
    getUserName(): string { 
     return this._userService.getLoggedUserName();

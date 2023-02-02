@@ -1,0 +1,52 @@
+<!--<p>scan works!</p>-->
+
+<!--<qr-code [value]="dataToString" [size]="300"></qr-code>
+<qr-code [value]="'www.positronx.io'"></qr-code>-->
+<div class="text-center color rounded p-4">
+  <h4 class="fw-bold">Tu Código QR</h4>
+  <div class="row mb-2">
+    <div class="col">
+      <span class="fw-bold">QR Code: {{ qrCodeVal }}</span>
+
+    </div>
+    <div class="col">
+      <span class="fw-bold">Level: <span>{{ level }}</span></span>
+    </div>
+    <div class="col">
+      <span class="fw-bold">Size: <span class="fw-regular">{{ width }}</span></span>
+    </div>
+
+  </div>
+  <div>
+    <qr-code [value]="qrCodeVal" [size]="width" [level]="level"></qr-code>
+  </div>
+  <br>
+  <h5 class="fw-bold">Cambia la información de QR</h5>
+
+  <div class="mb-2 mt-2 fw-bold">
+    <label>
+      Actualiza el texto: <input [(ngModel)]="qrCodeVal" class="fw-bold" placeholder="Escribe el link o texto" />
+    </label>
+  </div>
+ 
+  <!--<button (click)="updateQrInfo('John Doe')">Update to "John Doe"</button>
+  <button (click)="updateQrInfo('Ryan Duff')">Update to "Ryan Duff"</button>
+  <button (click)="updateQrInfo('Jerry Maguire')"> update to "Jerry Maguire"</button>-->
+  <div class="mb-2">
+    <strong>Tamaño</strong>: 
+    <button class="boton rounded derecha" (click)="updateWidth(500)">500</button>
+    <button class="boton rounded derecha" (click)="updateWidth(400)">400</button>
+    <button class="boton rounded derecha" (click)="updateWidth(300)">300</button>
+    <button class="boton rounded derecha" (click)="updateWidth(200)">200</button>
+  </div>
+
+  <div  class="mb-2 mt-2">
+    <strong class="mb-2">Nivel</strong>: 
+    <button class="boton rounded derecha" (click)="updateLevel('L')">L</button>
+    <button class="boton rounded derecha" (click)="updateLevel('M')">M</button>
+    <button class="boton rounded derecha" (click)="updateLevel('Q')">Q</button>
+    <button class="boton rounded derecha" (click)="updateLevel('H')">H</button>
+  </div>
+  
+
+</div>

@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -8,9 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginProfesorComponent } from './components/loginProfesor/loginProfesor.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignInProfesorComponent } from './components/sign-inProfesor/sign-inProfesor.component';
-
-// Guards
-import { AuthGuard } from './utils/auth.guard';
+import { ScanComponent } from './scan/scan.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { DailyComponent } from './daily/daily.component';
@@ -18,6 +17,10 @@ import { DailyProfesorComponent } from './daily-profesor/daily-profesor.componen
 import { EditProfesorComponent } from './edit-profesor/edit-profesor.component';
 import { HistorialProfesorComponent } from './historial-profesor/historial-profesor.component';
 import { HistorialComponent } from './historial/historial.component';
+
+// Guards
+import { AuthGuard } from './utils/auth.guard';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -34,6 +37,7 @@ const routes: Routes = [
   { path: 'editProfesor', component: EditProfesorComponent, canActivate: [AuthGuard]  },
   { path: 'historial', component: HistorialComponent, canActivate: [AuthGuard]  },
   { path: 'alumnos', component: HistorialProfesorComponent, canActivate: [AuthGuard]  },
+  { path: 'scan', component: ScanComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 

@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { registerLocaleData } from '@angular/common';
 
+
   // importar locales
   import localePy from '@angular/common/locales/es-PY';
   import localePt from '@angular/common/locales/pt';
@@ -41,6 +42,10 @@ import { DailyProfesorComponent } from './daily-profesor/daily-profesor.componen
 import { HistorialProfesorComponent } from './historial-profesor/historial-profesor.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FooterComponent } from './footer/footer.component';
+import { ScanComponent } from './scan/scan.component';
+import { QRCodeModule } from 'angular2-qrcode';
+/*import { NgQrScannerModule } from 'angular2-qrscanner';*/
+/*import { ZXingScannerModule } from '@zxing/ngx-scanner';*/
 /*import { L10nConfig, L10nLoader, TranslationModule } from 'angular-l10n';*/
 
 
@@ -65,12 +70,15 @@ import { FooterComponent } from './footer/footer.component';
     HistorialProfesorComponent,
     WeatherComponent,
     FooterComponent,
+    ScanComponent,
     
   ],
   imports: [
+    QRCodeModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    /*ZXingScannerModule,*/
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module
@@ -81,7 +89,8 @@ import { FooterComponent } from './footer/footer.component';
     }), // ToastrModule added
 
     //TranslationModule.forRoot(l10nConfig),
-  ],
+  
+    ],
   providers: [{provide: LOCALE_ID, useValue: 'es'/*|| HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true*/}],
 
   bootstrap: [AppComponent]
