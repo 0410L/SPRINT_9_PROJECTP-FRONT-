@@ -1,8 +1,6 @@
-
 <nav class="navbar navbar-expand bg-info fixed-top p-1 shadow-lg">
     <div class="container-fluid">
 
-      
         <div class="col1">
 
           <div class="row vuelta p-0">
@@ -20,7 +18,7 @@
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img class="iconoPerfil3" src="../../assets/img/robot3.gif"></a>
                     
-                    
+                 
                     <ul class="dropdown-menu bg-info fw-black p-0 separar" *ngIf="this.getRol()==1; ngIfElse getRol">
 
                       <li><a class="dropdown-item fw-black" (click)="btnDaily()">Daily</a></li>
@@ -33,33 +31,17 @@
                     <ul class="dropdown-menu bg-info fw-black p-0 separar" *ngIf="this.getRol()==2; ngIfElse getRol">
 
                       <li><a class="dropdown-item fw-black" (click)="btnEntradaDaily()">Edit Daily</a></li>
+                      <li><a class="dropdown-item fw-black" (click)="btnGeneradorQR()">Generador QR</a></li>
                       <li><a class="dropdown-item fw-black" (click)="btnProfesorDaily()">Daily</a></li>
                       <li><a class="dropdown-item fw-black" (click)="btnAlumnos()">Alumnos</a></li>
                       <li><a class="dropdown-item fw-black" (click)="btnDashboardProfesor()">Dashboard</a></li>
 
                     </ul>
-
-                
-                    
-                    
-
-
                   </li>
                 </ul>
               </div>
-    
             </div>
-            
-
           </div>
-          
-        
-          
-         
-
-
-
-        
         </div>
 
 
@@ -111,7 +93,6 @@
             </button>
              
 
-
             <button class="boton btn btn-light-sm p-1 mt-1 mb-1" (click)="logOut()"
             type="button" *ngIf="this.getUserName(); ngIfElse getUserName">Salir</button>
           </form>
@@ -130,27 +111,3 @@
 
 
 
-
-
-
-
-
-
-<!--<b class="navbar-brand polard" href="#" >POLARD</b>
-
-      <app-weather></app-weather>
-
-      <form class="d-flex">
-        <div class="p-2">{{ this.getUserName() }}</div>&nbsp;&nbsp;
-        <button class="btn btn-light" (click)="logOut()" type="button">LogOut</button>
-      </form>
-     
-
-          <style>
-            body {
-              background-image: url(images/blob-9.svg);
-              background-attachment: cover;
-              background-repeat:no-repeat;
-              background-size:100% 100%;
-            }
-          </style>-->

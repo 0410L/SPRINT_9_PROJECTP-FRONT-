@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginProfesorComponent } from './components/loginProfesor/loginProfesor.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignInProfesorComponent } from './components/sign-inProfesor/sign-inProfesor.component';
-import { ScanComponent } from './scan/scan.component';
+import { ScanComponent} from './qr/qr.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { DailyComponent } from './daily/daily.component';
@@ -20,6 +20,7 @@ import { HistorialComponent } from './historial/historial.component';
 
 // Guards
 import { AuthGuard } from './utils/auth.guard';
+import { CameraComponent } from './camera/camera.component';
 
 
 const routes: Routes = [
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'editProfesor', component: EditProfesorComponent, canActivate: [AuthGuard]  },
   { path: 'historial', component: HistorialComponent, canActivate: [AuthGuard]  },
   { path: 'alumnos', component: HistorialProfesorComponent, canActivate: [AuthGuard]  },
-  { path: 'scan', component: ScanComponent, canActivate: [AuthGuard] },
+  {path: 'cam', component: CameraComponent, canActivate: [AuthGuard] },
+  { path: 'qr', component: ScanComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 

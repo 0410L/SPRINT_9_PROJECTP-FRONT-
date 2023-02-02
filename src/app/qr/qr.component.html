@@ -1,0 +1,68 @@
+<div class="text-center" *ngIf="this.getRol()===1; ngIfElse getRol" >
+  <h1>404</h1>
+  <br>
+  <h3>PAGINA NO ENCONTRADA</h3>
+  <br>
+  <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
+</div>
+
+
+<!--<qr-code [value]="dataToString" [size]="300"></qr-code>-->
+
+<!--<qr-code [value]="'www.positronx.io'"></qr-code>-->
+  <br>
+  <br>
+  <br>
+  <div class="text-center color rounded p-4" *ngIf="this.getRol()===2; ngIfElse getRol">
+    <h4 class="fw-bold" *ngIf="!loading">Tu Código QR</h4>
+    <div class="col">
+      <strong class="fw-bold">QR Code: <span class="text-color">{{ qrCodeVal }}</span></strong>
+
+    </div>
+    <div class="row mb-2">
+      <div class="col">
+        <span class="fw-bold">Level: <span class="text-color">{{ level }}</span></span>
+      </div>
+      <div class="col">
+        <span class="fw-bold">Size: <span class="text-color">{{ width }}</span></span>
+      </div>
+
+    </div>
+    <div>
+      <qr-code [value]="qrCodeVal" [size]="width" [level]="level"></qr-code>
+    </div>
+    <br>
+    <h5 class="fw-bold">Escribe la información del QR</h5>
+
+    <div class="mb-2 mt-2 fw-bold">
+      <label>
+        Tu texto en QR: <input class="fw-bold" placeholder="Escribe el link o texto" foreground="blue" [(ngModel)]="qrCodeVal" required>
+      </label>
+    </div>
+  
+    <!--<button (click)="updateQrInfo('John Doe')">Update to "John Doe"</button>
+    <button (click)="updateQrInfo('Ryan Duff')">Update to "Ryan Duff"</button>
+    <button (click)="updateQrInfo('Jerry Maguire')"> update to "Jerry Maguire"</button>-->
+    <div class="mb-2">
+      <strong>Tamaño</strong>: 
+      <button class="boton rounded derecha" (click)="updateWidth(500)">500</button>
+      <button class="boton rounded derecha" (click)="updateWidth(400)">400</button>
+      <button class="boton rounded derecha" (click)="updateWidth(300)">300</button>
+      <button class="boton rounded derecha" (click)="updateWidth(200)">200</button>
+    </div>
+
+    <div  class="mb-2 mt-2">
+      <strong class="mb-2">Nivel</strong>: 
+      <button class="boton rounded derecha" (click)="updateLevel('L')">L</button>
+      <button class="boton rounded derecha" (click)="updateLevel('M')">M</button>
+      <button class="boton rounded derecha" (click)="updateLevel('Q')">Q</button>
+      <button class="boton rounded derecha" (click)="updateLevel('H')">H</button>
+    </div>
+  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
+  <br>
+  <br>
+  <br>
+
+
+

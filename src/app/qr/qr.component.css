@@ -8,12 +8,13 @@
 }
 
 .color{
-background-color: rgb(13, 202, 240);
+/*background-color: rgb(13, 202, 240);*/
+background-color: gold;
 }
 
 
 .boton{
-background-color: rgb(4, 141, 169);
+background-color: rgb(13, 202, 240);
  /*border-color: black;*/
 border: none;
 }
@@ -31,4 +32,8 @@ background-color: gold;
 
 .derecha{
     margin-right: 4px;
+}
+
+.text-color{
+    color: rgb(4, 141, 169);
 }

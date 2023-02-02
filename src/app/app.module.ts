@@ -1,9 +1,10 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { registerLocaleData } from '@angular/common';
+import { NgModule } from '@angular/core'
 
 
   // importar locales
@@ -42,11 +43,14 @@ import { DailyProfesorComponent } from './daily-profesor/daily-profesor.componen
 import { HistorialProfesorComponent } from './historial-profesor/historial-profesor.component';
 import { WeatherComponent } from './weather/weather.component';
 import { FooterComponent } from './footer/footer.component';
-import { ScanComponent } from './scan/scan.component';
+import { ScanComponent } from './qr/qr.component';
 import { QRCodeModule } from 'angular2-qrcode';
+import { CancelComponent } from './cancel/cancel.component';
+import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 /*import { NgQrScannerModule } from 'angular2-qrscanner';*/
 /*import { ZXingScannerModule } from '@zxing/ngx-scanner';*/
 /*import { L10nConfig, L10nLoader, TranslationModule } from 'angular-l10n';*/
+import { CameraComponent } from './camera/camera.component';
 
 
 @NgModule({
@@ -71,6 +75,8 @@ import { QRCodeModule } from 'angular2-qrcode';
     WeatherComponent,
     FooterComponent,
     ScanComponent,
+    CancelComponent,
+    CameraComponent
     
   ],
   imports: [
@@ -79,6 +85,7 @@ import { QRCodeModule } from 'angular2-qrcode';
     AppRoutingModule,
     ReactiveFormsModule,
     /*ZXingScannerModule,*/
+    NgxScannerQrcodeModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule, // required animations module

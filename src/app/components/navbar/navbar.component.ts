@@ -102,6 +102,11 @@ export class NavbarComponent implements OnInit {
   }
 
 
+  btnGeneradorQR(){
+    this.router.navigate(['qr']);
+    }
+
+
   
 
 }

@@ -27,9 +27,13 @@ alumnos(){
   this.router.navigate(['alumnos']);
    }
    
-   scan(){
-    this.router.navigate(['scan']);
+   qr(){
+    this.router.navigate(['qr']);
      }
+
+     cam(){
+      this.router.navigate(['cam']);
+       }
 
    getUserName(): string { 
     return this._userService.getLoggedUserName();
