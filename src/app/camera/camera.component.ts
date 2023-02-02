@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ZXingScannerComponent } from '@zxing/ngx-scanner';
+import { ZXingScannerComponent, ZXingScannerModule } from '@zxing/ngx-scanner';
 import { ResultAndError } from '@zxing/ngx-scanner/lib/ResultAndError';
 import { NgxScannerQrcodeModule, NgxScannerQrcodeComponent } from 'ngx-scanner-qrcode';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 
 @Component({
@@ -10,26 +11,21 @@ import { NgxScannerQrcodeModule, NgxScannerQrcodeComponent } from 'ngx-scanner-q
   styleUrls: ['./camera.component.css']
 })
 export class CameraComponent implements OnInit {
-  public output: any | undefined;
+  device!: MediaDeviceInfo;
+  enabled = false;
 
-  @ViewChild('action', { static: true })
-  action: NgxScannerQrcodeComponent = new NgxScannerQrcodeComponent;
-  // TODO something this.action
+  constructor(private zxingScannerModule: ZXingScannerModule) { }
 
   ngOnInit(): void {
-    this.action.start();
-  }
+    /*ZXingScannerModule.forRoot().then((res) => {
+      this.enabled = true;
+    });*/
+  };
 
-  initScan(e: any) {
-    if (e != '') {
-      console.log('se encontro', e);
-      this.action.stop();
-    } else {
-      console.log('No se encontro ', e);
-    }
+  onCodeResult(result: string) {
+    console.log(result);
   }
-
-  public onError(e: any): void {
-    alert(e);
-  }
+  
+ 
+  
 }

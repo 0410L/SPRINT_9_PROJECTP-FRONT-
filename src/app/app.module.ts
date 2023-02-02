@@ -48,9 +48,10 @@ import { QRCodeModule } from 'angular2-qrcode';
 import { CancelComponent } from './cancel/cancel.component';
 import { NgxScannerQrcodeModule } from 'ngx-scanner-qrcode';
 /*import { NgQrScannerModule } from 'angular2-qrscanner';*/
-/*import { ZXingScannerModule } from '@zxing/ngx-scanner';*/
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 /*import { L10nConfig, L10nLoader, TranslationModule } from 'angular-l10n';*/
 import { CameraComponent } from './camera/camera.component';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 
 @NgModule({
@@ -84,10 +85,13 @@ import { CameraComponent } from './camera/camera.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    /*ZXingScannerModule,*/
+    ZXingScannerModule,
     NgxScannerQrcodeModule,
+    ZXingScannerModule,
     HttpClientModule,
     FormsModule,
+    ZXingScannerModule,
+    NgxQRCodeModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 4000,
