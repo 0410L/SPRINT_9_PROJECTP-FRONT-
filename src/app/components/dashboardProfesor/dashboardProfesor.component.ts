@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { ViewChild } from '@angular/core';
+import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 
 @Component({
   selector: 'app-dashboard-profesor',
@@ -8,10 +10,18 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./dashboardProfesor.component.css']
 })
 export class DashboardProfesorComponent implements OnInit {
-
   showmodal:any;
+  showScanner = false;
+
+  @ViewChild(ZXingScannerComponent)
+  scanner: ZXingScannerComponent = new ZXingScannerComponent;
 
   constructor(private router: Router, private _userService: UserService) { }
+
+  cam(){
+    this.router.navigate(['cam']);
+    this.showScanner = !this.showScanner;
+    }
 
   ngOnInit(): void {
   }
@@ -31,9 +41,7 @@ alumnos(){
     this.router.navigate(['qr']);
      }
 
-     cam(){
-      this.router.navigate(['cam']);
-       }
+  
 
    getUserName(): string { 
     return this._userService.getLoggedUserName();
@@ -51,24 +59,4 @@ alumnos(){
     this.router.navigate(['dashboardProfesor']);
     }
 
-
-  /*
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
-  listProduct: information[] = []
-  listInfo: any;
-
-  //constructor(private _InformationService: InformationService) { }
-
-  ngOnInit(): void {
-    this.getProducts();
-  }
-
-  getProducts() {
-    this._InformationService.getProducts().subscribe((data: information[]) => {
-      this.listProduct = data;
-    })
-  }
-*/
 }

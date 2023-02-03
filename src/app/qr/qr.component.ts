@@ -47,6 +47,9 @@ export class ScanComponent {
     this.width = newValue;
   }
 
+  volver(){
+    this.router.navigate(['dashboardProfesor']);
+    }
   
 
   getRol(): number {

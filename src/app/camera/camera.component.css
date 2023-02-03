@@ -1,33 +1,31 @@
-*{
+* {
+  font-family: Quicksand;
+  font-weight: 100;
+  /*margin: 0;*/
+  /*overflow: hidden;*/
   user-select: none;
 }
 
-h1,
-h5,
-p {
-  word-break: break-all;
-  font-family: 'Courier New', Courier, monospace;
-}
 
 
-div {
+.fondo {
   text-align: center;
-  background: #fdfdfd;
+  background-color: gold;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 
-.button {
+/*.button {
     border-radius: 50%;
     height: 60px;
     width: 60px;
     margin-bottom: 20px;
     
-}
+}*/
 
-.data {
-    background: antiquewhite;
-    border-radius: 5px;
-}
+
 
 .disabled {
     cursor: no-drop;

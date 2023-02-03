@@ -7,62 +7,79 @@
 </div>
 
 
-<!--<qr-code [value]="dataToString" [size]="300"></qr-code>-->
+<h4 class="fw-bold text-center">Generador Códigos QR</h4>
 
-<!--<qr-code [value]="'www.positronx.io'"></qr-code>-->
-  <br>
-  <br>
-  <br>
-  <div class="text-center color rounded p-4" *ngIf="this.getRol()===2; ngIfElse getRol">
-    <h4 class="fw-bold" *ngIf="!loading">Tu Código QR</h4>
-    <div class="col">
-      <strong class="fw-bold">QR Code: <span class="text-color">{{ qrCodeVal }}</span></strong>
-
-    </div>
-    <div class="row mb-2">
-      <div class="col">
-        <span class="fw-bold">Level: <span class="text-color">{{ level }}</span></span>
-      </div>
-      <div class="col">
-        <span class="fw-bold">Size: <span class="text-color">{{ width }}</span></span>
-      </div>
-
-    </div>
-    <div>
-      <qr-code [value]="qrCodeVal" [size]="width" [level]="level"></qr-code>
-    </div>
+<div class="container-fluid d-flex justify-content-center align-items-center" *ngIf="this.getRol()===2; ngIfElse getRol">
+  <div class="fondo m-4 rounded" style="text-align:center">
     <br>
-    <h5 class="fw-bold">Escribe la información del QR</h5>
-
-    <div class="mb-2 mt-2 fw-bold">
-      <label>
-        Tu texto en QR: <input class="fw-bold" placeholder="Escribe el link o texto" foreground="blue" [(ngModel)]="qrCodeVal" required>
-      </label>
-    </div>
+    <div class="text-center color rounded p-4" *ngIf="this.getRol()===2; ngIfElse getRol">
+      <h4 class="fw-bold" *ngIf="!loading">Tu Código QR</h4>
+      <div class="col">
+        <strong class="fw-bold">QR Code: <span class="text-color">{{ qrCodeVal }}</span></strong>
   
-    <!--<button (click)="updateQrInfo('John Doe')">Update to "John Doe"</button>
-    <button (click)="updateQrInfo('Ryan Duff')">Update to "Ryan Duff"</button>
-    <button (click)="updateQrInfo('Jerry Maguire')"> update to "Jerry Maguire"</button>-->
-    <div class="mb-2">
-      <strong>Tamaño</strong>: 
-      <button class="boton rounded derecha" (click)="updateWidth(500)">500</button>
-      <button class="boton rounded derecha" (click)="updateWidth(400)">400</button>
-      <button class="boton rounded derecha" (click)="updateWidth(300)">300</button>
-      <button class="boton rounded derecha" (click)="updateWidth(200)">200</button>
+      </div>
+      <div class="row mb-2">
+        <div class="col">
+          <span class="fw-bold">Level: <span class="text-color">{{ level }}</span></span>
+        </div>
+        <div class="col">
+          <span class="fw-bold">Size: <span class="text-color">{{ width }}</span></span>
+        </div>
+  
+      </div>
+      <div>
+        <qr-code [value]="qrCodeVal" [size]="width" [level]="level"></qr-code>
+      </div>
+      <br>
+      <h5 class="fw-bold">Escribe la información del QR</h5>
+  
+      <div class="mb-2 mt-2 fw-bold">
+        <label>
+          Tu texto en QR: <input class="fw-bold" placeholder="Escribe el link o texto" foreground="blue" [(ngModel)]="qrCodeVal" required>
+        </label>
+      </div>
+    
+      <!--<button (click)="updateQrInfo('John Doe')">Update to "John Doe"</button>
+      <button (click)="updateQrInfo('Ryan Duff')">Update to "Ryan Duff"</button>
+      <button (click)="updateQrInfo('Jerry Maguire')"> update to "Jerry Maguire"</button>-->
+      <div class="mb-2">
+        <strong>Tamaño</strong>: 
+        <button class="boton rounded derecha" (click)="updateWidth(500)">500</button>
+        <button class="boton rounded derecha" (click)="updateWidth(400)">400</button>
+        <button class="boton rounded derecha" (click)="updateWidth(300)">300</button>
+        <button class="boton rounded derecha" (click)="updateWidth(200)">200</button>
+      </div>
+  
+      <div  class="mb-2 mt-2">
+        <strong class="mb-2">Nivel</strong>: 
+        <button class="boton rounded derecha" (click)="updateLevel('L')">L</button>
+        <button class="boton rounded derecha" (click)="updateLevel('M')">M</button>
+        <button class="boton rounded derecha" (click)="updateLevel('Q')">Q</button>
+        <button class="boton rounded derecha" (click)="updateLevel('H')">H</button>
+      </div>
+    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
+    
+    <br>
+  
+      
+    
     </div>
 
-    <div  class="mb-2 mt-2">
-      <strong class="mb-2">Nivel</strong>: 
-      <button class="boton rounded derecha" (click)="updateLevel('L')">L</button>
-      <button class="boton rounded derecha" (click)="updateLevel('M')">M</button>
-      <button class="boton rounded derecha" (click)="updateLevel('Q')">Q</button>
-      <button class="boton rounded derecha" (click)="updateLevel('H')">H</button>
-    </div>
   </div>
-  <app-spinner *ngIf="loading"></app-spinner>
-  <br>
-  <br>
-  <br>
 
+    <div class="d-grid gap-2 d-md text-center justify-content-center">
+      <button class="shake boton btn btn-info p-1 mt-2 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
+</div>
+
+
+
+
+<!-- GENERA CODIGO QR DE FORMA INSTANTANEA-->
+<!--<qr-code [value]="dataToString" [size]="300"></qr-code>-->
+<!--<qr-code [value]="'www.positronx.io'"></qr-code>-->
+
+
+  
 
 

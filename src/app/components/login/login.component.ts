@@ -91,6 +91,7 @@ export class LoginComponent implements OnInit {
           icon: 'success',
           title: '¡Benvenido Alumno!',
           showConfirmButton: false,
+          background: '#fff url(../../assets/img/sweetalert2.gif)',
           timer: 1500
         })
 

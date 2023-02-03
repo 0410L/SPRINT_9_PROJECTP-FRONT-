@@ -39,6 +39,7 @@ export class LoginProfesorComponent implements OnInit {
         text: 'Todos los campos son obligatorios',
         showConfirmButton: false,
         timer: 2000,
+        background: '#fff url(../../assets/img/sweetalert2.gif)',
       })
       //this.toastr.error('Todos los campos son obligatorios', 'Error');
       return

@@ -40,7 +40,8 @@ export class NavbarComponent implements OnInit {
       title: 'Nos vemos,',
       text: 'que pases un buen dia!',
       showConfirmButton: false,
-      timer: 1500
+      timer: 1500,
+      background: '#fff url(../../assets/img/sweetalert2.gif)',
     })
   }
 
@@ -104,9 +105,11 @@ export class NavbarComponent implements OnInit {
 
   btnGeneradorQR(){
     this.router.navigate(['qr']);
-    }
+  }
 
-
+  btnEscanerQR(){
+    this.router.navigate(['cam'])
+  }
   
 
 }
