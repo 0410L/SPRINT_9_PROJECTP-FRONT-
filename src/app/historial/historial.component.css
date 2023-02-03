@@ -4,6 +4,7 @@
     /*overflow: hidden;*/
     max-width: none;
     /*height: none;*/
+    user-select: none;
   }
 
   .IconoVal{

@@ -1,10 +1,11 @@
-* {
+*{
     font-weight: auto;
     font-size: small;
     color: black;
     letter-spacing: 1px;
     font-family: Quicksand;
     /* margin: 0; */
+    user-select: none;
 }
 
 

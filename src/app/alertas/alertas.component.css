@@ -4,6 +4,7 @@
     /*margin: 0;*/
     /*overflow: hidden;*/
     max-width: none;
+    user-select: none;
   }
 
   .a1{

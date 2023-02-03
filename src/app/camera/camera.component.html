@@ -2,43 +2,15 @@
 
 
 <div>
-  <zxing-scanner [device]="device" (scanSuccess)="onCodeResult($event)"></zxing-scanner>
+  <zxing-scanner [device]="device" (scanSuccess)="onCodeResult($event)" *ngIf="showScanner"></zxing-scanner>
+  
 </div>
 
-<div>
+<app-spinner *ngIf="showSpinner"></app-spinner>
+
+
+
+<!-- <div>
   <input type="file" accept="image/*" capture="environment">
 </div>
-
-
-
-
-
-
-
-<!-- <div [style.padding.px]="50">
-    <h1> ngx-scanner-qrcode </h1>
-    
-    <ngx-scanner-qrcode #action="scanner" (data)="initScan($event)" (error)="onError($event)"></ngx-scanner-qrcode>
-  
-    <p class="data">{{ output }}</p>
-  
-    <p *ngIf="action.isLoading">⌛ Loading video...</p>
-    
-    <button (click)="action.start()" class="btn" [class.btn-info]="!action.isStart" [class.btn-warning]="action.isStart" [disabled]="action.isLoading">
-      <img *ngIf="!action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v2.png" width="30px"/>
-      <img *ngIf="action.isStart" src="https://img.icons8.com/ios/50/000000/no-camera--v1.png" width="30px"/>
-    </button>
-
-</div>
  -->
-
-
-<!-- data
-<span>{{ action.data.value | json }}</span>
-<span>{{ action.data | async | json }}</span>
-
-Loading
-<p *ngIf="action.isLoading">⌛ Loading...</p>
-
-start
-<button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop' : 'Start'}}</button> -->
