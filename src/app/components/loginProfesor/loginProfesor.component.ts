@@ -14,6 +14,7 @@ import Swal from 'sweetalert2'
   styleUrls: ['./loginProfesor.component.css']
 })
 export class LoginProfesorComponent implements OnInit {
+  [x: string]: any;
   email: string = 'marta@gmail.com';
   password: string = '1234';
   loading: boolean = false;
@@ -91,9 +92,11 @@ export class LoginProfesorComponent implements OnInit {
 
         Swal.fire({
           icon: 'success',
-          title: '¡Benvenido Profesor!',
+          title: 'Bienvenido Profesor',
+          text: `${this.getUserName()}`,
           showConfirmButton: false,
-          timer: 1500
+          background: '#fff url(../../assets/img/sweetalert2.gif)',
+          timer: 2500
         })
 
       },
@@ -113,7 +116,9 @@ export class LoginProfesorComponent implements OnInit {
     return this.userservice.getRol();
    }
 
-  
+   getUserName(): string { 
+    return this._userService.getLoggedUserName();
+   };
 
   
 

@@ -39,9 +39,14 @@ export class NavbarComponent implements OnInit {
       icon: 'success',
       title: 'Nos vemos,',
       text: 'que pases un buen dia!',
+      /*text: `${this.getUserName()}`,*/
       showConfirmButton: false,
-      timer: 1500,
+      timer: 2000,
       background: '#fff url(../../assets/img/sweetalert2.gif)',
+
+      
+
+
     })
   }
 

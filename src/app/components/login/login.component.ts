@@ -89,10 +89,12 @@ export class LoginComponent implements OnInit {
 
         Swal.fire({
           icon: 'success',
-          title: '¡Benvenido Alumno!',
+          title: 'Bienvenido Alumno',
+          text: `${this.getUserName()}`,
           showConfirmButton: false,
           background: '#fff url(../../assets/img/sweetalert2.gif)',
-          timer: 1500
+          timer: 2500
+         
         })
 
       },
@@ -104,6 +106,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  
+  getUserName(): string { 
+    return this._userService.getLoggedUserName();
+   };
 
 }
+
+
