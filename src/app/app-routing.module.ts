@@ -21,6 +21,7 @@ import { HistorialComponent } from './historial/historial.component';
 // Guards
 import { AuthGuard } from './utils/auth.guard';
 import { CameraComponent } from './camera/camera.component';
+import { ModalAlumnoComponent } from './modal-alumno/modal-alumno.component';
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'alumnos', component: HistorialProfesorComponent, canActivate: [AuthGuard]  },
   {path: 'cam', component: CameraComponent, canActivate: [AuthGuard] },
   { path: 'qr', component: ScanComponent, canActivate: [AuthGuard] },
+  { path: 'modal', component: ModalAlumnoComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 

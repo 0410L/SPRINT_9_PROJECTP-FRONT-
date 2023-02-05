@@ -19,10 +19,14 @@
 
              <!--COLUMNA PER TABLET / SMARTPHONE EN RESOLUCIÓ VERTICAL-->
             <div class="card mt-3 d-xl-none" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
-    
+              
               <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
     
               <ul class="list-group list-group-flush justify-content-center bg-info">
+
+                <li class="celdas list-group-item fw-bold">Enviar<td><input type="checkbox" [(ngModel)]="model[i].valoracion.actualizar"/>
+                </td></li>
+                
                 <li class="celdas list-group-item fw-bold">Desayuno<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.desayuno">
                   <option value="1" class="fw-bold">🟢 Todo</option>
                   <option value="2" class="fw-bold">🟡 Bastante</option>
@@ -53,7 +57,7 @@
                   <option value="3" class="fw-bold">🟠 Poco</option>
                   <option value="4" class="fw-bold">❌ No</option>
                 </select></td></li>
-                <li class="celdas list-group-item fw-bold">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="10:00"/></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="12:00"/></td></li>
+                <li class="celdas list-group-item fw-bold">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="10:00" /></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="12:00" /></td></li>
                 
                 <li class="celdas list-group-item fw-bold">Deposiciones <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones">
                   <option value="0" class="fw-bold">0</option>
@@ -72,6 +76,7 @@
             <div *ngIf="!loading" id="daily" class="body d-none d-xl-block">
               <div class="table justify-content-center">
                 <thead class="cabecera m-3 rounded justify-content-center">
+                  <th class="fw-bold">Enviar</th>
                   <th class="fw-bold">Nombre</th>
                   <th class="fw-bold">Desayuno</th>
                   <th class="fw-bold">Comida 1o</th>
@@ -87,39 +92,52 @@
                 
                 <tbody class="bg-info m-3 rounded text-center justify-content-center">
                   <tr *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
+                    <td><input type="checkbox" [(ngModel)]="model[i].valoracion.actualizar"/>
+                    </td>
                     <td class="fw-bold">{{ model[i].alumno.nombre }}</td>
                     <td><select class="celdas form-control-sm fw-bold shadow" [(ngModel)]="model[i].valoracion.desayuno">
-                      <option class="fw-bold" value="1">🟢 Tot</option>
-                      <option class="fw-bold" value="2">🟡 Bastant</option>
-                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="1">🟢 Todo</option>
+                      <option class="fw-bold" value="2">🟡 Bastante</option>
+                      <option class="fw-bold" value="3">🟠 Poco</option>
                       <option class="fw-bold" value="4" >❌ No</option>
                     </select></td>
                     <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_primero">
-                      <option class="fw-bold" value="1">🟢 Tot</option>
-                      <option class="fw-bold" value="2">🟡 Bastant</option>
-                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="1">🟢 Todo</option>
+                      <option class="fw-bold" value="2">🟡 Bastante</option>
+                      <option class="fw-bold" value="3">🟠 Poco</option>
                       <option class="fw-bold" value="4" >❌ No</option>
                     </select></td>
                     <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_segundo">
-                      <option class="fw-bold" value="1">🟢 Tot</option>
-                      <option class="fw-bold" value="2">🟡 Bastant</option>
-                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="1">🟢 Todo</option>
+                      <option class="fw-bold" value="2">🟡 Bastante</option>
+                      <option class="fw-bold" value="3">🟠 Poco</option>
                       <option class="fw-bold" value="4" >❌ No</option>
                     </select></td>
                     <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_postre">
-                      <option class="fw-bold" value="1">🟢 Tot</option>
-                      <option class="fw-bold" value="2">🟡 Bastant</option>
-                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="1">🟢 Todo</option>
+                      <option class="fw-bold" value="2">🟡 Bastante</option>
+                      <option class="fw-bold" value="3">🟠 Poco</option>
                       <option class="fw-bold" value="4" >❌ No</option>
                     </select></td>
                     <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.merienda">
-                      <option class="fw-bold" value="1">🟢 Tot</option>
-                      <option class="fw-bold" value="2">🟡 Bastant</option>
-                      <option class="fw-bold" value="3">🟠 Poc</option>
+                      <option class="fw-bold" value="1">🟢 Todo</option>
+                      <option class="fw-bold" value="2">🟡 Bastante</option>
+                      <option class="fw-bold" value="3">🟠 Poco</option>
                       <option class="fw-bold" value="4" >❌ No</option>
                     </select></td>
-                    <td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px; height: 22px" class="form-control-sm fw-bold text-center" placeholder="10:00"/></td>
-                    <td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px; height: 22px" class="form-control-sm fw-bold text-center" placeholder="12:00"/></td>
+
+                    <td><input [(ngModel)]="model[i].valoracion.dormir_inicio"
+                      style="width:70px; height: 22px"
+                      class="form-control-sm fw-bold text-center"
+                      placeholder="10:00"/>
+                    </td>
+
+                    <td><input [(ngModel)]="model[i].valoracion.dormir_final"
+                      style="width:70px; height: 22px"
+                      class="form-control-sm fw-bold text-center"
+                      placeholder="12:00"/>
+                    </td>
+                    
                     <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones">
                       <option class="fw-bold" value="0">0</option>
                       <option class="fw-bold" value="1">1</option>
@@ -127,7 +145,9 @@
                       <option class="fw-bold" value="3">3</option>
                       <option class="fw-bold" value="4">4</option>
                     </select></td>
+
                     <td><input [(ngModel)]="model[i].valoracion.observaciones" style="height: 22px" class="form-control-sm text-center fw-bold" placeholder="Comentarios"/></td>
+
                   </tr>
                 </tbody>
               </div>
@@ -138,7 +158,15 @@
       </div>
       <br>
       
-      <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
+      <div class="row">
+        <div class="col">
+          <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
+        </div>
+        <div class="col">
+          <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="actualizar()">Actualizar</button>
+        </div>
+      </div>
+      
       
     </div>
     <app-spinner *ngIf="loading"></app-spinner>

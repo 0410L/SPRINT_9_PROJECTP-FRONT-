@@ -28,7 +28,8 @@ export class DailyProfesorComponent implements OnInit {
     dormir_inicio: '00:00',
     dormir_final: '00:00',
     deposiciones: 0,
-    observaciones: ''
+    observaciones: '',
+    actualizar: false
   };
   alummnoService: any;
 

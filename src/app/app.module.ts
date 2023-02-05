@@ -52,6 +52,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 /*import { L10nConfig, L10nLoader, TranslationModule } from 'angular-l10n';*/
 import { CameraComponent } from './camera/camera.component';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { ModalAlumnoComponent } from './modal-alumno/modal-alumno.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     FooterComponent,
     ScanComponent,
     CancelComponent,
-    CameraComponent
+    CameraComponent,
+    ModalAlumnoComponent
     
   ],
   imports: [

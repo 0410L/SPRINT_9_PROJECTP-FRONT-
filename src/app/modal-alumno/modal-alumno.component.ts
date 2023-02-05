@@ -1,3 +1,4 @@
+
 import { Valoracion } from './../interfaces/valoracion';
 import { ValoracionService } from './../services/valoracion.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,13 +16,11 @@ import { UserService } from 'src/app/services/user.service';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-edit-profesor',
-  templateUrl: './edit-profesor.component.html',
-  styleUrls: ['./edit-profesor.component.css']
+  selector: 'app-modal-alumno',
+  templateUrl: './modal-alumno.component.html',
+  styleUrls: ['./modal-alumno.component.css']
 })
- 
-
-export class EditProfesorComponent implements OnInit {
+export class ModalAlumnoComponent implements OnInit {
   [x: string]: any;
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
@@ -78,17 +77,18 @@ export class EditProfesorComponent implements OnInit {
     })
   }
 
+
+  getUserName(): string { 
+    return this.userservice.getLoggedUserName();
+   }
   
   guardar() {
 
     let valoraciones: Valoracion[] = [];
     this.model.forEach((v: AlumnoValoracion) => {
       let valoracion: Valoracion = v.valoracion;
-      if(valoracion.actualizar)
-      { 
-        valoracion.alumno_id = v.alumno.id_alumno;
-        valoraciones.push(valoracion);
-      }
+      valoracion.alumno_id = v.alumno.id_alumno;
+      valoraciones.push(valoracion);
     });
     
 

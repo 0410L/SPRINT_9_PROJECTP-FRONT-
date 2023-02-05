@@ -16,6 +16,28 @@
   padding-right: 40px;
 }
 
+.camera-preview {
+  width: 500px;
+  overflow: hidden;
+  position: relative;
+  top: 50%;
+}
+
+.camera-preview::before {
+  content: "";
+  display: block;
+  /*padding-top: 75%;*/
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+
+/*.camera-preview {
+  width: 50vw;
+  height: 20vh;
+}*/
+
 
 /*.button {
     border-radius: 50%;
@@ -29,4 +51,11 @@
 
 .disabled {
     cursor: no-drop;
+}
+
+
+.video[_ngcontent-gem-c50] {
+  width: 0;
+  height: auto;
+  object-fit: contain;
 }

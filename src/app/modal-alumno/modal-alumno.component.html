@@ -1,0 +1,102 @@
+
+
+<div class="hero container-fluid d-flex justify-content-center align-items-center a1" *ngIf="this.getRol()===2; ngIfElse getRol">
+
+    <div class="inicial" style="text-align:center">
+      <div class="container-fluid text-center ">
+        <br>
+        <br>
+        <br>
+     
+        <div *ngIf="!loading" id="daily" class="container-fluid body p-4 mb-2 rounded">
+          
+          <div class="row">
+            <div class="col">
+              <div class="table" id="tablainfo" >
+                <h4 class="text-black fw-bold">Modal Edit Daily ({{ this.getdate() }})</h4><h5 class="fw-bold">{{ getGrupo() }}</h5>
+                <br>
+    
+    
+                 <!--COLUMNA PER TABLET / SMARTPHONE EN RESOLUCIÓ VERTICAL-->
+                <div class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split('2'); let i = index;">
+        
+                  <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
+        
+                  <ul class="list-group list-group-flush justify-content-center bg-info">
+                    <li class="celdas list-group-item fw-bold">Desayuno<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.desayuno">
+                      <option value="1" class="fw-bold">🟢 Todo</option>
+                      <option value="2" class="fw-bold">🟡 Bastante</option>
+                      <option value="3" class="fw-bold">🟠 Poco</option>
+                      <option value="4" class="fw-bold">❌ No</option>
+                    </select></td></li>
+        
+                    <li class="celdas list-group-item fw-bold">Comida<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_primero">
+                      <option value="1" class="fw-bold">🟢 Todo</option>
+                      <option value="2" class="fw-bold">🟡 Bastante</option>
+                      <option value="3" class="fw-bold">🟠 Poco</option>
+                      <option value="4" class="fw-bold">❌ No</option>
+                    </select></td><td><select class="form-control-sm fw-bold margen" [(ngModel)]="model[i].valoracion.comida_segundo">
+                      <option value="1" class="fw-bold">🟢 Todo</option>
+                      <option value="2" class="fw-bold">🟡 Bastante</option>
+                      <option value="3" class="fw-bold">🟠 Poco</option>
+                      <option value="4" class="fw-bold">❌ No</option>
+                    </select></td><td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_postre">
+                      <option value="1" class="fw-bold">🟢 Todo</option>
+                      <option value="2" class="fw-bold">🟡 Bastante</option>
+                      <option value="3" class="fw-bold">🟠 Poco</option>
+                      <option value="4" class="fw-bold">❌ No</option>
+                    </select></td></li>
+                    
+                    <li class="celdas list-group-item fw-bold">Merienda<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.merienda">
+                      <option value="1" class="fw-bold">🟢 Todo</option>
+                      <option value="2" class="fw-bold">🟡 Bastante</option>
+                      <option value="3" class="fw-bold">🟠 Poco</option>
+                      <option value="4" class="fw-bold">❌ No</option>
+                    </select></td></li>
+                    <li class="celdas list-group-item fw-bold">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="10:00" /></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="12:00" /></td></li>
+                    
+                    <li class="celdas list-group-item fw-bold">Deposiciones <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones">
+                      <option value="0" class="fw-bold">0</option>
+                      <option value="1" class="fw-bold">1</option>
+                      <option value="2" class="fw-bold">2</option>
+                      <option value="3" class="fw-bold">3</option>
+                      <option value="4" class="fw-bold">4</option>
+                    </select></td></li>
+                    <li class="celdas list-group-item fw-bold">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center fw-bold" placeholder="Comentarios"/></td></li>
+                  </ul>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
+            </div>
+            <div class="col">
+              <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="actualizar()">Actualizar</button>
+            </div>
+          </div>
+          <br>
+        </div>
+        <div class="d-grid gap-2 d-md text-center justify-content-center">
+          <button class="shake boton btn btn-info p-1 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
+        </div>
+        <br>
+        <br>
+        <br>
+      </div>
+          
+        </div>
+        <app-spinner *ngIf="loading"></app-spinner>
+       
+
+    
+    <div class="text-center" *ngIf="this.getRol()===1; ngIfElse getRol" >
+      <h1>404</h1>
+      <br>
+      <h3>PAGINA NO ENCONTRADA</h3>
+      <br>
+      <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
+    </div>

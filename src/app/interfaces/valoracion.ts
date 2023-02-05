@@ -12,5 +12,6 @@ export interface Valoracion {
     dormir_inicio: string,
     dormir_final: string,
     deposiciones: number,
-    observaciones: string
+    observaciones: string,
+    actualizar: boolean
 }
