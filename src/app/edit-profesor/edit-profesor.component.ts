@@ -28,6 +28,20 @@ export class EditProfesorComponent implements OnInit {
   colorIndex = 0;
 
 
+  cambiarEstadoCheckbox() {
+    const select = document.getElementById("miSelect");
+    const checkbox = document.getElementById("miCheckbox");
+
+    if (this['select'].value === "opcion1") {
+      this['checkbox'].checked = true;
+    } else {
+      this['checkbox'].checked = false;
+    }
+  }
+
+ 
+
+
   constructor(private router: Router,
               private alummnoService: AlumnoService,
               private valoracionService: ValoracionService,
@@ -76,6 +90,9 @@ export class EditProfesorComponent implements OnInit {
         this.errorService.msjError(e);
       }
     })
+  
+    
+
   }
 
   
@@ -84,6 +101,7 @@ export class EditProfesorComponent implements OnInit {
     let valoraciones: Valoracion[] = [];
     this.model.forEach((v: AlumnoValoracion) => {
       let valoracion: Valoracion = v.valoracion;
+      //si se marca la opcion valoracion, se actualizara
       if(valoracion.actualizar)
       { 
         valoracion.alumno_id = v.alumno.id_alumno;
@@ -117,41 +135,6 @@ export class EditProfesorComponent implements OnInit {
 
   }
 
-  actualizar(){
-
-    let valoraciones: Valoracion[] = [];
-    this.model.forEach((v: AlumnoValoracion) => {
-      let valoracion: Valoracion = v.valoracion;
-      valoracion.alumno_id = v.alumno.id_alumno;
-      valoraciones.push(valoracion);
-    });
-
-    this.valoracionService.actualizarValoraciones(valoraciones).subscribe({
-      next: (response) => {
-        console.log(response);
-        if(response.error)
-        {
-          this.errorService.mensajeError('Error al guardar.');
-          return;
-        }
-        Swal.fire({
-          icon: 'success',
-          title: 'Datos guardados correctamente!',
-          showConfirmButton: false,
-          timer: 1500
-        });
-
-      },
-      error: (e: HttpErrorResponse) => {
-        console.log()
-        this.errorService.msjError(e);
-      }
-    });
-  }
-
-
-
-  
 
   volverdashboard(){
     this.router.navigate(['dashboard']);
@@ -183,6 +166,11 @@ export class EditProfesorComponent implements OnInit {
   getRol(): number {
     return this.userservice.getRol();
   }
+
+
+ 
+
+
 
 
 }

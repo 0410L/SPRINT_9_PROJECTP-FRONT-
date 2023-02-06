@@ -117,40 +117,6 @@ export class ModalAlumnoComponent implements OnInit {
 
   }
 
-  actualizar(){
-
-    let valoraciones: Valoracion[] = [];
-    this.model.forEach((v: AlumnoValoracion) => {
-      let valoracion: Valoracion = v.valoracion;
-      valoracion.alumno_id = v.alumno.id_alumno;
-      valoraciones.push(valoracion);
-    });
-
-    this.valoracionService.actualizarValoraciones(valoraciones).subscribe({
-      next: (response) => {
-        console.log(response);
-        if(response.error)
-        {
-          this.errorService.mensajeError('Error al guardar.');
-          return;
-        }
-        Swal.fire({
-          icon: 'success',
-          title: 'Datos guardados correctamente!',
-          showConfirmButton: false,
-          timer: 1500
-        });
-
-      },
-      error: (e: HttpErrorResponse) => {
-        console.log()
-        this.errorService.msjError(e);
-      }
-    });
-  }
-
-
-
   
 
   volverdashboard(){

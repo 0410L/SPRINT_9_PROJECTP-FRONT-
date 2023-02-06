@@ -24,7 +24,7 @@
     
               <ul class="list-group list-group-flush justify-content-center bg-info">
 
-                <li class="celdas list-group-item fw-bold">Enviar<td><input type="checkbox" [(ngModel)]="model[i].valoracion.actualizar"/>
+                <li class="celdas list-group-item fw-bold">Enviar<td><input type="checkbox" [(ngModel)]="model[i].valoracion.actualizar" />
                 </td></li>
                 
                 <li class="celdas list-group-item fw-bold">Desayuno<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.desayuno">
@@ -92,10 +92,11 @@
                 
                 <tbody class="bg-info m-3 rounded text-center justify-content-center">
                   <tr *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
-                    <td><input type="checkbox" [(ngModel)]="model[i].valoracion.actualizar"/>
+                    <td><input type="checkbox" id="miCheckbox" [(ngModel)]="model[i].valoracion.actualizar"/>
                     </td>
                     <td class="fw-bold">{{ model[i].alumno.nombre }}</td>
-                    <td><select class="celdas form-control-sm fw-bold shadow" [(ngModel)]="model[i].valoracion.desayuno">
+                    <td><select class="celdas form-control-sm fw-bold shadow" [(ngModel)]="model[i].valoracion.desayuno" id="miSelect" onchange="cambiarEstadoCheckbox()" >
+                      <option select=""></option>
                       <option class="fw-bold" value="1">🟢 Todo</option>
                       <option class="fw-bold" value="2">🟡 Bastante</option>
                       <option class="fw-bold" value="3">🟠 Poco</option>
@@ -161,9 +162,6 @@
       <div class="row">
         <div class="col">
           <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
-        </div>
-        <div class="col">
-          <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="actualizar()">Actualizar</button>
         </div>
       </div>
       
