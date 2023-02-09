@@ -20,6 +20,7 @@ export class ScanComponent {
   }]
   dataToString = JSON.stringify(this.data);*/
 
+
   public qrCodeVal: string;
   public foreground: string;
   public level: "L" | "M" | "Q" | "H";
@@ -60,6 +61,8 @@ export class ScanComponent {
     this.router.navigate(['dashboard']);
     }
 
+
+    
 
 }
   

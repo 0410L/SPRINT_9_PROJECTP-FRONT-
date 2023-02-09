@@ -28,17 +28,19 @@ export class EditProfesorComponent implements OnInit {
   colorIndex = 0;
 
 
-  cambiarEstadoCheckbox() {
-    const select = document.getElementById("miSelect");
-    const checkbox = document.getElementById("miCheckbox");
-
-    if (this['select'].value === "opcion1") {
-      this['checkbox'].checked = true;
-    } else {
-      this['checkbox'].checked = false;
-    }
+  cambiarEstadoCheckbox(i:number) {
+    //alert("CAMBIO DE FUNCION")
+    console.log("cambio de funcion")
+    const checkbox = document.getElementById("cb-"+i) as HTMLFormElement;
+    checkbox['checked'] = true;
   }
 
+    cambiarEstadoCheckboxPC(i:number) {
+    //alert("CAMBIO DE FUNCION")
+    console.log("cambio de funcion")
+    const checkbox = document.getElementById("cbb-"+i) as HTMLFormElement;
+    checkbox['checked'] = true;
+  }
  
 
 
@@ -169,7 +171,9 @@ export class EditProfesorComponent implements OnInit {
 
 
  
-
+  checkearAlumno(){
+    alert("hola")
+  }
 
 
 
