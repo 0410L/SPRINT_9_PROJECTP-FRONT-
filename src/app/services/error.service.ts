@@ -17,7 +17,7 @@ export class ErrorService {
       Swal.fire({
         icon: 'error',
         title: 'Error...',
-        text: 'Verifica que has puesto correctamente tu usuario y contraseña ',
+        text: 'Verifica que has puesto correctamente tus datos',
         showConfirmButton: false,
         timer: 4500,
       })

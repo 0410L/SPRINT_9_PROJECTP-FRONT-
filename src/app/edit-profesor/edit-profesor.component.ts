@@ -26,20 +26,25 @@ export class EditProfesorComponent implements OnInit {
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
   colorIndex = 0;
+  mostrar = false;
 
 
   cambiarEstadoCheckbox(i:number) {
     //alert("CAMBIO DE FUNCION")
     console.log("cambio de funcion")
-    const checkbox = document.getElementById("cb-"+i) as HTMLFormElement;
-    checkbox['checked'] = true;
+    this.model[i].valoracion.actualizar = true;
+    //const checkbox = document.getElementById("cb-"+i) as HTMLFormElement;
+    //checkbox['checked'] = true;
+  
   }
 
     cambiarEstadoCheckboxPC(i:number) {
     //alert("CAMBIO DE FUNCION")
     console.log("cambio de funcion")
-    const checkbox = document.getElementById("cbb-"+i) as HTMLFormElement;
-    checkbox['checked'] = true;
+    this.model[i].valoracion.actualizar = true;
+    //const checkbox = document.getElementById("cbb-"+i) as HTMLFormElement;
+    //checkbox['checked'] = true;
+    
   }
  
 
@@ -158,7 +163,7 @@ export class EditProfesorComponent implements OnInit {
   
   getdate()
   {
-    return formatDate(Date.now(),'dd-MM-yyyy','en-US');
+    return formatDate(Date.now(),'dd/MM/yyyy','en-US');
   }
 
   getIdProfesor(): number {

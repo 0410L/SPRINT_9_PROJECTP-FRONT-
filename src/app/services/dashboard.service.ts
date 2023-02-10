@@ -8,18 +8,18 @@ import { information } from '../interfaces/information';
   providedIn: 'root'
 })
 export class DashboardService {
-  private myAppUrl: string;
-  private myApiUrl: string;
+  //private myAppUrl: string;
+  //private myApiUrl: string;
 
   constructor(private http: HttpClient) {
-    this.myAppUrl = environment.endpoint;
-    this.myApiUrl = 'api/products'
+    //this.myAppUrl = environment.endpoint;
+    //this.myApiUrl = ''
   }
 
-  getProducts(): Observable<information[]> {
+  // getProducts(): Observable<information[]> {
     /*  const token = localStorage.getItem('token')
      const headers = new HttpHeaders().set('Authorization',`Bearer ${token}`) */
     /*     return this.http.get<Product[]>(`${this.myAppUrl}${this.myApiUrl}`, { headers: headers } ) */
-    return this.http.get<information[]>(`${this.myAppUrl}${this.myApiUrl}`)
-  }
+  //   return this.http.get<information[]>(`${this.myAppUrl}${this.myApiUrl}`)
+  // }
 }

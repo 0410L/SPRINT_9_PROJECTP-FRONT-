@@ -18,11 +18,11 @@ export class ValoracionService {
     return this.http.get<any>(`http://localhost:8080/api/valoracion/show/${id_alumno}`, {headers});
    }
 
-/*    //OBTENER VALORACION DIARIA ALUMNOS
+   //OBTENER VALORACION DIARIA ALUMNOS
    obtenerValoracionDiariaAlumnos(id_alumno: number): Observable<any> {
       const headers = new HttpHeaders({'Content-Type':'application/json'});
-      return this.http.get<any>(`http://localhost:8080/api/valoracion/show/`, {headers});
-   } */
+      return this.http.get<any>(`http://localhost:8080/api/valoracion/shows/`, {headers});
+   }
 
 
    obtenerValoracionesHistorial(id_alumno: number): Observable<any> {
