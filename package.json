@@ -26,6 +26,7 @@
     "angular2-qrcode": "^2.0.3",
     "angular2-qrscanner": "^1.0.7",
     "bootstrap": "^5.2.1",
+    "jspdf": "^2.5.1",
     "ngx-qrcode2": "^9.0.0",
     "ngx-scanner-qrcode": "^1.2.1",
     "ngx-toastr": "^15.0.0",

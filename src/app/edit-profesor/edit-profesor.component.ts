@@ -122,7 +122,7 @@ export class EditProfesorComponent implements OnInit {
         console.log(response);
         if(response.error)
         {
-          this.errorService.mensajeError('Error al guardar.');
+          this.errorService.mensajeError('Señala las opciones y pulsa guardar.');
           return;
         }
         Swal.fire({
@@ -172,7 +172,7 @@ export class EditProfesorComponent implements OnInit {
 
   getRol(): number {
     return this.userservice.getRol();
-  }
+  } 
 
 
  
@@ -181,5 +181,6 @@ export class EditProfesorComponent implements OnInit {
   }
 
 
+  
 
 }

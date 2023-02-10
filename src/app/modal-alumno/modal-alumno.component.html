@@ -15,54 +15,64 @@
               <div class="table" id="tablainfo" >
                 <h4 class="text-black fw-bold">Modal Edit Daily ({{ this.getdate() }})</h4><h5 class="fw-bold">{{ getGrupo() }}</h5>
                 <br>
-    
+     
     
                  <!--COLUMNA PER TABLET / SMARTPHONE EN RESOLUCIÓ VERTICAL-->
-                <div class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split('2'); let i = index;">
+                <div class="card mt-3" style="width: 22rem" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
+              
         
                   <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
         
                   <ul class="list-group list-group-flush justify-content-center bg-info">
-                    <li class="celdas list-group-item fw-bold">Desayuno<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.desayuno">
+                  
+                    <li *ngIf="mostrar"  class="celdas list-group-item fw-bold">Enviar<td><input type="checkbox" id="cb-{{i}}" [(ngModel)]="model[i].valoracion.actualizar" />
+                    </td></li>
+
+                    <li class="celdas list-group-item fw-bold">Desayuno<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.desayuno" (change)="cambiarEstadoCheckbox(i)">
+                      <option value="1" class="fw-bold">Seleccionar</option>
                       <option value="1" class="fw-bold">🟢 Todo</option>
                       <option value="2" class="fw-bold">🟡 Bastante</option>
                       <option value="3" class="fw-bold">🟠 Poco</option>
                       <option value="4" class="fw-bold">❌ No</option>
                     </select></td></li>
         
-                    <li class="celdas list-group-item fw-bold">Comida<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_primero">
+                    <li class="celdas list-group-item fw-bold">Comida<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_primero" (change)="cambiarEstadoCheckbox(i)">
+                      <option value="1" class="fw-bold">Seleccionar</option>
                       <option value="1" class="fw-bold">🟢 Todo</option>
                       <option value="2" class="fw-bold">🟡 Bastante</option>
                       <option value="3" class="fw-bold">🟠 Poco</option>
                       <option value="4" class="fw-bold">❌ No</option>
-                    </select></td><td><select class="form-control-sm fw-bold margen" [(ngModel)]="model[i].valoracion.comida_segundo">
+                    </select></td><td><select class="form-control-sm fw-bold margen" [(ngModel)]="model[i].valoracion.comida_segundo" (change)="cambiarEstadoCheckbox(i)">
+                      <option value="1" class="fw-bold">Seleccionar</option>
                       <option value="1" class="fw-bold">🟢 Todo</option>
                       <option value="2" class="fw-bold">🟡 Bastante</option>
                       <option value="3" class="fw-bold">🟠 Poco</option>
                       <option value="4" class="fw-bold">❌ No</option>
-                    </select></td><td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_postre">
+                    </select></td><td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_postre" (change)="cambiarEstadoCheckbox(i)">
+                      <option value="1" class="fw-bold">Seleccionar</option>
                       <option value="1" class="fw-bold">🟢 Todo</option>
                       <option value="2" class="fw-bold">🟡 Bastante</option>
                       <option value="3" class="fw-bold">🟠 Poco</option>
                       <option value="4" class="fw-bold">❌ No</option>
                     </select></td></li>
                     
-                    <li class="celdas list-group-item fw-bold">Merienda<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.merienda">
+                    <li class="celdas list-group-item fw-bold">Merienda<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.merienda" (change)="cambiarEstadoCheckbox(i)">
+                      <option value="1" class="fw-bold">Seleccionar</option>
                       <option value="1" class="fw-bold">🟢 Todo</option>
                       <option value="2" class="fw-bold">🟡 Bastante</option>
                       <option value="3" class="fw-bold">🟠 Poco</option>
                       <option value="4" class="fw-bold">❌ No</option>
                     </select></td></li>
-                    <li class="celdas list-group-item fw-bold">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="10:00" /></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="12:00" /></td></li>
+                    <li class="celdas list-group-item fw-bold">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="10:00" (change)="cambiarEstadoCheckbox(i)"/></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="12:00" (change)="cambiarEstadoCheckbox(i)"/></td></li>
                     
-                    <li class="celdas list-group-item fw-bold">Deposiciones <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones">
+                    <li class="celdas list-group-item fw-bold">Deposiciones <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones" (change)="cambiarEstadoCheckbox(i)">
                       <option value="0" class="fw-bold">0</option>
                       <option value="1" class="fw-bold">1</option>
                       <option value="2" class="fw-bold">2</option>
                       <option value="3" class="fw-bold">3</option>
                       <option value="4" class="fw-bold">4</option>
                     </select></td></li>
-                    <li class="celdas list-group-item fw-bold">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center fw-bold" placeholder="Comentarios"/></td></li>
+                    <li class="celdas list-group-item fw-bold">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center fw-bold" placeholder="Comentarios" (change)="cambiarEstadoCheckbox(i)"/></td></li>
                   </ul>
                 </div>
                 </div>

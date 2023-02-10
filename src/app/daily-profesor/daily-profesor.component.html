@@ -1,38 +1,172 @@
-<!--<app-navbar></app-navbar>-->
-
-
 <div class="hero container-fluid d-flex justify-content-center align-items-center a1" *ngIf="this.getRol()===2; ngIfElse getRol">
 
-    <div class="inicial" style="text-align:center">
-      <div class="container-fluid text-center ">
-        <h2 class="text-black fw-bold">Daily</h2><h5 class="fw-bold">{{ getGrupo() }}</h5>
-        <div *ngIf="!loading" class="body p-4 mb-2 rounded">
+  <div class="inicial" style="text-align:center">
+    <div class="container-fluid text-center ">
+      <br>
+      <br>
+      <br>
+   
+      <div *ngIf="!loading" id="daily" class="container-fluid body p-4 mb-2 rounded">
+        
+        <div class="row">
+          <div class="col" *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
+            <div class="table" id="tablainfo" >
+              <h4 class="text-black fw-bold">Daily</h4><h5 class="fw-bold"></h5>
+              <br>{{ getGrupo() }}
+   
+  
+               <!--COLUMNA PER TABLET / SMARTPHONE EN RESOLUCIÓ VERTICAL-->
+              <div class="card mt-3 d-xl-none" style="width: 22rem">
+                
+                <div class="cabecera titulo card-header"><span>{{ model[i].alumno.nombre }}</span></div>
+      
+                <ul class="list-group list-group-flush justify-content-center bg-info">
+  
+                  <!-- <li class="celdas list-group-item fw-bold">Enviar<td><input type="checkbox" id="cb-{{i}}" [(ngModel)]="model[i].valoracion.actualizar" />
+                  </td></li> -->
+  
+                  <li  *ngIf="mostrar" class="celdas list-group-item fw-bold">Enviar<td><input type="checkbox" id="cb-{{i}}" [(ngModel)]="model[i].valoracion.actualizar" />
+                  </td></li>
 
-          <div class="card mt-3" style="width: 18rem">
-            <div class="titulo cabecera card-header"><span>{{ this.model.fecha | date : 'fullDate' }}</span></div>
-            <!--<div class="titulo cabecera card-header"><span>{{ this.model.fecha | date : 'd/M/y' }}</span></div>-->
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-info text-white ok fw-bold">Desayuno <p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.desayuno}}.svg"/></li>
-              <li class="list-group-item bg-info text-white ok fw-bold">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.model.comida_postre}}.svg"/></li>
-              <li class="list-group-item bg-info text-white ok fw-bold">Merienda <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.merienda}}.svg"/></li>
-              <li class="list-group-item bg-info text-white ok fw-bold">Dormir <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.model.dormir_inicio}}</span> - <span class="text-black nook fw-bold">{{this.model.dormir_final}}</span></li>
-              <li class="list-group-item bg-info text-white ok fw-bold">Deposiciones: <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.model.deposiciones}}</span></li>
-              <li class="list-group-item bg-info text-white ok fw-bold">Observaciones: <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.model.observaciones}}</span></li>
-            </ul>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-info text-white ok fw-bold">Desayuno <p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.models.desayuno}}.svg"/></li>
+                    <li class="list-group-item bg-info text-white ok fw-bold">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.models.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.models.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.models.comida_postre}}.svg"/></li>
+                    <li class="list-group-item bg-info text-white ok fw-bold">Merienda <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.models.merienda}}.svg"/></li>
+                    <li class="list-group-item bg-info text-white ok fw-bold">Dormir <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.models.dormir_inicio}}</span> - <span class="text-black nook fw-bold">{{this.models.dormir_final}}</span></li>
+                    <li class="list-group-item bg-info text-white ok fw-bold">Deposiciones: <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.models.deposiciones}}</span></li>
+                    <li class="list-group-item bg-info text-white ok fw-bold">Observaciones: <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.models.observaciones}}</span></li>
+                  </ul>
+                  
+                  <li class="celdas list-group-item fw-bold">Desayuno<td><select class="form-control-sm fw-bold" (change)="cambiarEstadoCheckbox(i)">{{model[i].valoracion.desayuno}}
+                  </select></td></li>
+      
+                  <li class="celdas list-group-item fw-bold">Comida<td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.models.desayuno}}.svg"/><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_primero" (change)="cambiarEstadoCheckbox(i)">
+                    
+                  </select></td><td><select class="form-control-sm fw-bold margen" [(ngModel)]="model[i].valoracion.comida_segundo" (change)="cambiarEstadoCheckbox(i)">
+                    <option class="fw-bold" value="1">Selecciona</option>
+                    <option class="fw-bold" value="1">🟢 Todo</option>
+                    <option value="2" class="fw-bold">🟡 Bastante</option>
+                    <option value="3" class="fw-bold">🟠 Poco</option>
+                    <option value="4" class="fw-bold">❌ No</option>
+                  </select></td><td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_postre" (change)="cambiarEstadoCheckbox(i)">
+                    <option class="fw-bold" value="1">Selecciona</option>
+                    <option class="fw-bold" value="1">🟢 Todo</option>
+                    <option value="2" class="fw-bold">🟡 Bastante</option>
+                    <option value="3" class="fw-bold">🟠 Poco</option>
+                    <option value="4" class="fw-bold">❌ No</option>
+                  </select></td></li>
+                  
+                  <li class="celdas list-group-item fw-bold">Merienda<td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.merienda" (change)="cambiarEstadoCheckbox(i)">
+                    <option class="fw-bold" value="1">Selecciona</option>
+                    <option class="fw-bold" value="1">🟢 Todo</option>
+                    <option value="2" class="fw-bold">🟡 Bastante</option>
+                    <option value="3" class="fw-bold">🟠 Poco</option>
+                    <option value="4" class="fw-bold">❌ No</option>
+                  </select></td></li>
+                  <li class="celdas list-group-item fw-bold">Dormir<td><input [(ngModel)]="model[i].valoracion.dormir_inicio" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="10:00"  (change)="cambiarEstadoCheckbox(i)"/></td><td><input [(ngModel)]="model[i].valoracion.dormir_final" style="width:70px" class="form-control-sm text-center fw-bold" placeholder="12:00" (change)="cambiarEstadoCheckbox(i)" /></td></li>
+                  
+                  <li class="celdas list-group-item fw-bold">Deposiciones <td><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.deposiciones" (change)="cambiarEstadoCheckbox(i)">
+                    <option value="0" class="fw-bold">0</option>
+                    <option value="1" class="fw-bold">1</option>
+                    <option value="2" class="fw-bold">2</option>
+                    <option value="3" class="fw-bold">3</option>
+                    <option value="4" class="fw-bold">4</option>
+                  </select></td></li>
+                  <li class="celdas list-group-item fw-bold">Observaciones<td><input [(ngModel)]="model[i].valoracion.observaciones" class="form-control-sm text-center fw-bold" placeholder="Comentarios" (change)="cambiarEstadoCheckbox(i)"/></td></li>
+                  <button class="boton3 btn btn-dark p-1 fw-bold"  (click)="guardar()">Enviar datos</button>
+                </ul>
+                
+              </div>
+  
+  
+
+
+
+
+  
+              <!--COLUMNA PER PC EN RESOLUCIÓ AMPLE-->
+              <div *ngIf="!loading" id="daily" class="body d-none d-xl-block">
+                <div class="table justify-content-center">
+                  <thead class="cabecera m-3 rounded justify-content-center">
+                    <th *ngIf="mostrar"  class="fw-bold">Enviar</th>
+                    <th class="fw-bold">Nombre</th>
+                    <th class="fw-bold">Desayuno</th>
+                    <th class="fw-bold">Comida 1o</th>
+                    <th class="fw-bold">Comida 2o</th>
+                    <th class="fw-bold">Postre</th>
+                    <th class="fw-bold">Merienda</th>
+                    <th class="fw-bold">Dormir Ini</th>
+                    <th class="fw-bold">Dormir Fin</th>
+                    <th class="fw-bold">Deposiciones</th>
+                    <th class="fw-bold">Observaciones</th>
+                  </thead>
+          
+                  
+                  <tbody class="bg-info m-3 rounded text-center justify-content-center">
+                    <tr *ngFor="let item of ' '.repeat(model.length).split(''); let i = index;">
+                      <td *ngIf="mostrar" ><input  type="checkbox" id="cbb-{{i}}" [(ngModel)]="model[i].valoracion.actualizar"/>
+                      </td>
+                      <td class="fw-bold">{{ model[i].alumno.nombre }}</td>
+                      <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.models.desayuno}}.svg"/></td>
+                      <td>{{model[i].valoracion.comida_primero}}</td>
+                      <td>{{model[i].valoracion.comida_segundo}}</td>
+                      <td>{{model[i].valoracion.comida_postre}}</td>
+                      <td>{{model[i].valoracion.merienda}}</td>
+                      <td>{{model[i].valoracion.dormir_inicio}}</td>
+                      <td>{{model[i].valoracion.dormir_final}}</td>
+                      <td>{{model[i].valoracion.deposiciones}}</td>
+                      <td>{{model[i].valoracion.observaciones}}</td>
+  
+                      <!-- <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-info text-white ok fw-bold">Desayuno <p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.models.desayuno}}.svg"/></li>
+                        <li class="list-group-item bg-info text-white ok fw-bold">Comida <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.models.comida_primero}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.models.comida_segundo}}.svg"/>&nbsp;<img class="IconoVal" src="../../assets/img/{{this.models.comida_postre}}.svg"/></li>
+                        <li class="list-group-item bg-info text-white ok fw-bold">Merienda <p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.models.merienda}}.svg"/></li>
+                        <li class="list-group-item bg-info text-white ok fw-bold">Dormir <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.models.dormir_inicio}}</span> - <span class="text-black nook fw-bold">{{this.models.dormir_final}}</span></li>
+                        <li class="list-group-item bg-info text-white ok fw-bold">Deposiciones: <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.models.deposiciones}}</span></li>
+                        <li class="list-group-item bg-info text-white ok fw-bold">Observaciones: <p class="mb-1"></p><span class="text-black nook fw-bold">{{this.models.observaciones}}</span></li>
+                      </ul>
+                      
+                      <li class="celdas list-group-item fw-bold">Desayuno<td><select class="form-control-sm fw-bold" (change)="cambiarEstadoCheckbox(i)">{{model[i].valoracion.desayuno}}
+                      </select></td></li>
+          
+                      <li class="celdas list-group-item fw-bold">Comida<td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.models.desayuno}}.svg"/><select class="form-control-sm fw-bold" [(ngModel)]="model[i].valoracion.comida_primero" (change)="cambiarEstadoCheckbox(i)"> -->
+                        
+
+
+
+                    </tr>
+                  </tbody>
+                </div>
+              
+              </div>
+            </div>
           </div>
         </div>
-        <app-spinner *ngIf="loading"></app-spinner>
+        <br>
+        
+        <div class="row">
+          <div class="col">
+            <button class="boton2 btn btn-dark p-1 fw-bold" style="height:50px;width:110px" (click)="guardar()">Enviar datos</button>
+          </div>
+        </div>
+        
+        
+      </div>
+      <app-spinner *ngIf="loading"></app-spinner>
       </div>
       <div class="d-grid gap-2 d-md text-center justify-content-center">
-        <button class="shake boton btn btn-info p-1 mt-2 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
+        <button class="shake boton btn btn-info p-1 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
       </div>
+      <br>
+      <br>
+      <br>
     </div>
-</div>
-<!--<div *ngIf="this.getRol()==1; ngIfElse getRol"></div>-->
-<div class="text-center" *ngIf="this.getRol()===1; ngIfElse getRol">
-  <h1>404</h1>
-  <br>
-  <h3>PAGINA NO ENCONTRADA</h3>
-  <br>
-  <button class="boton btn btn-info p-1"  style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
-</div>
+  </div>
+  
+  <div class="text-center" *ngIf="this.getRol()===1; ngIfElse getRol" >
+    <h1>404</h1>
+    <br>
+    <h3>PAGINA NO ENCONTRADA</h3>
+    <br>
+    <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
+  </div>

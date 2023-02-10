@@ -25,13 +25,17 @@ export class ModalAlumnoComponent implements OnInit {
   loading: boolean = true;
   model: Array<AlumnoValoracion> = [];
   colorIndex = 0;
+  mostrar = false;
 
 
-  constructor(private router: Router,
-              private alummnoService: AlumnoService,
-              private valoracionService: ValoracionService,
-              private userservice: UserService,
-              private errorService: ErrorService) { }
+
+
+
+constructor(private router: Router,
+            private alummnoService: AlumnoService,
+            private valoracionService: ValoracionService,
+            private userservice: UserService,
+            private errorService: ErrorService) { }
 
   ngOnInit(): void {
 
@@ -47,6 +51,10 @@ export class ModalAlumnoComponent implements OnInit {
 
         //Asignar al modelo
         response.data.forEach((al: Alumno) => {
+
+          //SELECCIONAR ALUMNO CONCRETO
+          if (al.id_alumno == 8) {
+
           let alumnoValoracion: AlumnoValoracion = {
             alumno: al,
             valoracion: {
@@ -66,7 +74,7 @@ export class ModalAlumnoComponent implements OnInit {
             }
           }
           this.model.push(alumnoValoracion);
-        });
+        }});
 
         this.loading = false;
       },
@@ -78,17 +86,20 @@ export class ModalAlumnoComponent implements OnInit {
   }
 
 
-  getUserName(): string { 
-    return this.userservice.getLoggedUserName();
-   }
   
-  guardar() {
+
+  
+   guardar() {
 
     let valoraciones: Valoracion[] = [];
     this.model.forEach((v: AlumnoValoracion) => {
       let valoracion: Valoracion = v.valoracion;
-      valoracion.alumno_id = v.alumno.id_alumno;
-      valoraciones.push(valoracion);
+      //si se marca la opcion valoracion, se actualizara
+      if(valoracion.actualizar)
+      { 
+        valoracion.alumno_id = v.alumno.id_alumno;
+        valoraciones.push(valoracion);
+      }
     });
     
 
@@ -97,7 +108,7 @@ export class ModalAlumnoComponent implements OnInit {
         console.log(response);
         if(response.error)
         {
-          this.errorService.mensajeError('Error al guardar.');
+          this.errorService.mensajeError('Señala las opciones y pulsa guardar.');
           return;
         }
         Swal.fire({
@@ -118,6 +129,9 @@ export class ModalAlumnoComponent implements OnInit {
   }
 
   
+  getUserName(): string { 
+    return this.userservice.getLoggedUserName();
+   }
 
   volverdashboard(){
     this.router.navigate(['dashboard']);
@@ -139,7 +153,7 @@ export class ModalAlumnoComponent implements OnInit {
   
   getdate()
   {
-    return formatDate(Date.now(),'dd-MM-yyyy','en-US');
+    return formatDate(Date.now(),'dd/MM/yyyy','en-US');
   }
 
   getIdProfesor(): number {
@@ -150,5 +164,17 @@ export class ModalAlumnoComponent implements OnInit {
     return this.userservice.getRol();
   }
 
+  cambiarEstadoCheckbox(i:number) {
+    //alert("CAMBIO DE FUNCION")
+    console.log("cambio de funcion")
+    this.model[i].valoracion.actualizar = true;
+    //const checkbox = document.getElementById("cb-"+i) as HTMLFormElement;
+    //checkbox['checked'] = true;
+  }
+
+  
+  checkearAlumno(){
+    alert("hola")
+  }
 
 }
