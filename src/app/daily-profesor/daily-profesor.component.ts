@@ -22,10 +22,10 @@ import { FormControl, Validators } from '@angular/forms';
 export class DailyProfesorComponent implements OnInit {
   [x: string]: any;
   loading: boolean = true;
-  model: Array<AlumnoValoracion> = [];
+  models: Array<AlumnoValoracion> = [];
   colorIndex = 0;
   mostrar = false;
-  models: Valoracion = {
+  model: Valoracion = {
     id_valoracion: 0,
     fecha: new Date(),
     alumno_id: 0,
@@ -45,7 +45,7 @@ export class DailyProfesorComponent implements OnInit {
   cambiarEstadoCheckbox(i:number) {
     //alert("CAMBIO DE FUNCION")
     console.log("cambio de funcion")
-    this.model[i].valoracion.actualizar = true;
+    this.models[i].valoracion.actualizar = true;
     //const checkbox = document.getElementById("cb-"+i) as HTMLFormElement;
     //checkbox['checked'] = true;
   
@@ -54,7 +54,7 @@ export class DailyProfesorComponent implements OnInit {
     cambiarEstadoCheckboxPC(i:number) {
     //alert("CAMBIO DE FUNCION")
     console.log("cambio de funcion")
-    this.model[i].valoracion.actualizar = true;
+    this.models[i].valoracion.actualizar = true;
     //const checkbox = document.getElementById("cbb-"+i) as HTMLFormElement;
     //checkbox['checked'] = true;
     
@@ -100,7 +100,7 @@ export class DailyProfesorComponent implements OnInit {
               actualizar: false
             }
           }
-          this.model.push(alumnoValoracion);
+          this.models.push(alumnoValoracion);
         });
 
         this.loading = false;
@@ -111,7 +111,8 @@ export class DailyProfesorComponent implements OnInit {
       }
     })
   
-    this.valoracionService.obtenerValoracionDiaria(this['userService'].getLoggedUserId()).subscribe({
+    //this.valoracionService.obtenerValoracionDiaria(this['userService'].getLoggedUserId()).subscribe({
+    this.valoracionService.obtenerValoracionDiariaAlumnos().subscribe({
       next: (response) => {
         console.log(response);
         if(response.error)
@@ -136,7 +137,7 @@ export class DailyProfesorComponent implements OnInit {
   guardar() {
 
     let valoraciones: Valoracion[] = [];
-    this.model.forEach((v: AlumnoValoracion) => {
+    this.models.forEach((v: AlumnoValoracion) => {
       let valoracion: Valoracion = v.valoracion;
       //si se marca la opcion valoracion, se actualizara
       if(valoracion.actualizar)

@@ -19,7 +19,7 @@ export class ValoracionService {
    }
 
    //OBTENER VALORACION DIARIA ALUMNOS
-   obtenerValoracionDiariaAlumnos(id_alumno: number): Observable<any> {
+   obtenerValoracionDiariaAlumnos(): Observable<any> {
       const headers = new HttpHeaders({'Content-Type':'application/json'});
       return this.http.get<any>(`http://localhost:8080/api/valoracion/shows/`, {headers});
    }

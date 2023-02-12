@@ -46,6 +46,7 @@
       {
         "list": "off"
       }
-    ]
+    ],
+    "css-prefix-order": "off"
   }
 }
