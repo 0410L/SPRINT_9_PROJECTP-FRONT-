@@ -13,30 +13,31 @@
               <br>
             <div class="table" id="tablainfo">
               <h4 class="text-black fw-bold d-xl-none">Daily</h4>
+              <h5 class="fw-bold d-xl-none">{{ this.model[0].fecha }}</h5>
               <h5 class="fw-bold d-xl-none">{{ getGrupo() }}</h5>
 
               <!--COLUMNA PER TABLET / SMARTPHONE EN RESOLUCIÓ VERTICAL-->
-              <div class="card mt-3 d-xl-none" style="width: 22rem" *ngFor="let item of ' '.repeat(models.length).split(''); let i = index;">
+              <div class="card mt-3 d-xl-none" style="width: 22rem" *ngFor="let item of model">
                 
-                <div class="cabecera titulo card-header"><span>{{ models[i].alumno.nombre }}</span></div>
+                <div class="cabecera titulo card-header"><span>{{ item.nombre }}</span></div>
 
                 <ul class="list-group list-group-flush justify-content-center bg-info">
 
                   <ul class="list-group list-group-flush mt-3" >
                     <li class="list-group-item bg-info text-white ok fw-bold">Desayuno <p class="mb-1"><img
-                          class="IconoVal" src="../../assets/img/{{this.model.desayuno}}.svg" /></li>
+                          class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg" /></li>
                     <li class="list-group-item bg-info text-white ok fw-bold">Comida <br><img
-                        class="IconoVal" src="../../assets/img/{{this.model.comida_primero}}.svg"/><img src="../../assets/img/{{this.model.comida_segundo}}.svg"><img src="../../assets/img/{{this.model.comida_postre}}.svg"><span></span></li>
+                        class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/><img src="../../assets/img/{{item.comida_segundo}}.svg"><img src="../../assets/img/{{item.comida_postre}}.svg"><span></span></li>
                     <li class="list-group-item bg-info text-white ok fw-bold">Merienda <p class="mb-1"></p><img
-                        class="IconoVal" src="../../assets/img/{{this.model.merienda}}.svg" /></li>
+                        class="IconoVal" src="../../assets/img/{{item.merienda}}.svg" /></li>
                     <li class="list-group-item bg-info text-white ok fw-bold">Dormir Inicio <p class="mb-1"></p><span
-                        class="text-black nook fw-bold">{{this.model.dormir_inicio}}</span></li>
+                        class="text-black nook fw-bold">{{item.dormir_inicio}}</span></li>
                     <li class="list-group-item bg-info text-white ok fw-bold">Dormir Final <p class="mb-1"></p><span
-                        class="text-black nook fw-bold">{{this.model.dormir_final}}</span></li>
+                        class="text-black nook fw-bold">{{item.dormir_final}}</span></li>
                     <li class="list-group-item bg-info text-white ok fw-bold">Deposiciones: <p class="mb-1"></p><span
-                        class="text-black nook fw-bold">{{this.model.deposiciones}}</span></li>
+                        class="text-black nook fw-bold">{{item.deposiciones}}</span></li>
                     <li class="list-group-item bg-info text-white ok fw-bold">Observaciones: <p class="mb-1"></p><span
-                        class="text-black nook fw-bold">{{this.model.observaciones}}</span></li>
+                        class="text-black nook fw-bold">{{item.observaciones}}</span></li>
                   </ul>
                 </ul>
               </div>
@@ -78,19 +79,19 @@
             </thead>
     
             
-            <tbody class="bg-info m-3 rounded text-center justify-content-center" *ngFor="let item of ' '.repeat(models.length).split(''); let i = index;">
+            <tbody class="bg-info m-3 rounded text-center justify-content-center" *ngFor="let item of model">
               <tr>
 
-                <td class="fw-bold">{{ models[i].alumno.nombre }}</td>
-                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.desayuno}}.svg"/></td>
-                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.comida_primero}}.svg"/></td>
-                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.comida_segundo}}.svg"/></td>
-                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{this.model.comida_postre}}.svg"/></td>
-                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.merienda}}.svg"/></td>
-                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.merienda}}.svg"/></td>
-                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{this.model.merienda}}.svg"/></td>
-                <td>{{this.model.deposiciones}}</td>
-                <td>{{this.model.observaciones}}</td>
+                <td class="fw-bold">{{ item.nombre }}</td>
+                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></td>
+                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/></td>
+                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/></td>
+                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></td>
+                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></td>
+                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></td>
+                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></td>
+                <td>{{item.deposiciones}}</td>
+                <td>{{item.observaciones}}</td>
 
               </tr>
             </tbody>

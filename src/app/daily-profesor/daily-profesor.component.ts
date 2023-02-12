@@ -13,6 +13,7 @@ import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { FormControl, Validators } from '@angular/forms';
+import { ProfesorValoracion } from '../interfaces/profesorValoracion';
   
 @Component({
   selector: 'app-daily-profesor',
@@ -22,44 +23,10 @@ import { FormControl, Validators } from '@angular/forms';
 export class DailyProfesorComponent implements OnInit {
   [x: string]: any;
   loading: boolean = true;
-  models: Array<AlumnoValoracion> = [];
+  model: Array<ProfesorValoracion> = [];
   colorIndex = 0;
   mostrar = false;
-  model: Valoracion = {
-    id_valoracion: 0,
-    fecha: new Date(),
-    alumno_id: 0,
-    desayuno: '',
-    comida_primero: '',
-    comida_segundo: '',
-    comida_postre: '',
-    merienda: '',
-    dormir_inicio: '00:00',
-    dormir_final: '00:00',
-    deposiciones: 0,
-    observaciones: '',
-    actualizar: false
-  };
-
-
-  cambiarEstadoCheckbox(i:number) {
-    //alert("CAMBIO DE FUNCION")
-    console.log("cambio de funcion")
-    this.models[i].valoracion.actualizar = true;
-    //const checkbox = document.getElementById("cb-"+i) as HTMLFormElement;
-    //checkbox['checked'] = true;
   
-  }
-
-    cambiarEstadoCheckboxPC(i:number) {
-    //alert("CAMBIO DE FUNCION")
-    console.log("cambio de funcion")
-    this.models[i].valoracion.actualizar = true;
-    //const checkbox = document.getElementById("cbb-"+i) as HTMLFormElement;
-    //checkbox['checked'] = true;
-    
-  }
- 
 
 
   constructor(private router: Router,
@@ -70,54 +37,13 @@ export class DailyProfesorComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.alummnoService.obtenerLista().subscribe(
+    this.valoracionService.obtenerValoracionDiariaAlumnos().subscribe(
     {
       next: (response) => {
         console.log(response);
         if(response.error)
         {
           this.errorService.mensajeError('No existen alumnos.');
-          return;
-        }
-
-        //Asignar al modelo
-        response.data.forEach((al: Alumno) => {
-          let alumnoValoracion: AlumnoValoracion = {
-            alumno: al,
-            valoracion: {
-              id_valoracion: 0,
-              fecha: new Date(),
-              alumno_id: 0,
-              desayuno: '1',
-              comida_primero: '1',
-              comida_segundo: '1',
-              comida_postre: '1',
-              merienda: '1',
-              dormir_inicio: '00:00',
-              dormir_final: '00:00',
-              deposiciones: 0,
-              observaciones: '',
-              actualizar: false
-            }
-          }
-          this.models.push(alumnoValoracion);
-        });
-
-        this.loading = false;
-      },
-      error: (e: HttpErrorResponse) => {
-        console.log()
-        this.errorService.msjError(e);
-      }
-    })
-  
-    //this.valoracionService.obtenerValoracionDiaria(this['userService'].getLoggedUserId()).subscribe({
-    this.valoracionService.obtenerValoracionDiariaAlumnos().subscribe({
-      next: (response) => {
-        console.log(response);
-        if(response.error)
-        {
-          this.errorService.mensajeError('No existe valoración.');
           return;
         }
 
@@ -130,45 +56,14 @@ export class DailyProfesorComponent implements OnInit {
         this.errorService.msjError(e);
       }
     })
-
-  }
-
   
-  guardar() {
-
-    let valoraciones: Valoracion[] = [];
-    this.models.forEach((v: AlumnoValoracion) => {
-      let valoracion: Valoracion = v.valoracion;
-      //si se marca la opcion valoracion, se actualizara
-      if(valoracion.actualizar)
-      { 
-        valoracion.alumno_id = v.alumno.id_alumno;
-        valoraciones.push(valoracion);
-      }
-    });
     
 
-    this.valoracionService.introducirValoraciones(valoraciones).subscribe({
-      next: (response) => {
-        console.log(response);
-        if(response.error)
-        {
-          this.errorService.mensajeError('Señala las opciones y pulsa guardar.');
-          return;
-        }
-        Swal.fire({
-          icon: 'success',
-          title: 'Datos guardados correctamente!',
-          showConfirmButton: false,
-          timer: 1500
-        });
+  
+  
+    
 
-      },
-      error: (e: HttpErrorResponse) => {
-        console.log()
-        this.errorService.msjError(e);
-      }
-    });
+ 
 
 
   }
