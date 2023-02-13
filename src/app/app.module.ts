@@ -53,6 +53,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { CameraComponent } from './camera/camera.component';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ModalAlumnoComponent } from './modal-alumno/modal-alumno.component';
+import { HistorialCompletoComponent } from './historial-completo/historial-completo.component';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { ModalAlumnoComponent } from './modal-alumno/modal-alumno.component';
     ScanComponent,
     CancelComponent,
     CameraComponent,
-    ModalAlumnoComponent
+    ModalAlumnoComponent,
+    HistorialCompletoComponent
     
   ],
   imports: [

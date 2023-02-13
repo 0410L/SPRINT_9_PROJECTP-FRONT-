@@ -27,36 +27,41 @@ export class DashboardProfesorComponent implements OnInit {
   }
 
     //acció que fará el botó 'iniciar' per començar amb els textos.
- editProfesor(){
-  this.router.navigate(['editProfesor']);
-  }
- dailyProfesor(){
-  this.router.navigate(['dailyProfesor']);
-  }
-alumnos(){
+  editProfesor(){
+    this.router.navigate(['editProfesor']);
+    }
+  dailyProfesor(){
+    this.router.navigate(['dailyProfesor']);
+    }
+
+  alumnos(){
   this.router.navigate(['alumnos']);
-   }
+    }
    
-   qr(){
-    this.router.navigate(['qr']);
-     }
+  qr(){
+  this.router.navigate(['qr']);
+  }
+
+  historialAlumnos(){
+  this.router.navigate(['historialAlumnos']);
+  }
 
   
 
-   getUserName(): string { 
-    return this._userService.getLoggedUserName();
-   }
+  getUserName(): string { 
+  return this._userService.getLoggedUserName();
+  }
 
-   getGrupo(): string { 
-    return this._userService.getGrupo();
-   }
+  getGrupo(): string { 
+  return this._userService.getGrupo();
+  }
 
-   getRol():number {
-    return this._userService.getRol();
-   }
+  getRol():number {
+  return this._userService.getRol();
+  }
 
-   volverdashboard(){
-    this.router.navigate(['dashboardProfesor']);
-    }
+  volverdashboard(){
+  this.router.navigate(['dashboardProfesor']);
+  }
 
 }

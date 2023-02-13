@@ -1,0 +1,89 @@
+<div class="hero container-fluid d-flex justify-content-center align-items-center a1"
+  *ngIf="this.getRol()===2; ngIfElse getRol">
+
+  <div class="inicial" style="text-align:center">
+    <div class="container-fluid text-center ">
+      <br>
+      <div *ngIf="!loading" id="daily" class="container-fluid body p-4 mb-2 rounded">
+
+        <div class="container">
+          <div class="col">
+            <br>
+              <br>
+              <br>
+            <div class="table" id="tablainfo">
+              <h4 class="text-black fw-bold">Daily <span class="fw-bold">({{ getGrupo() }})</span></h4>
+              
+
+              <!--COLUMNA PER TABLET / SMARTPHONE EN RESOLUCIÓ VERTICAL-->
+              <div class="card mt-3" style="width: 100%" *ngFor="let item of model">
+                
+                <div class="cabecera titulo card-header" style="width: 100%">
+                    <h5 class="fw-bold">{{ item.nombre }}</h5>
+                    <p></p>{{item.fecha | date : 'fullDate' }}</div>
+
+                <ul class="list-group list-group-flush justify-content-center bg-info" style="width: 100%" >
+
+                  <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Desayuno
+                      <img class="IconoVal3 mb-1" src="../../assets/img/{{item.desayuno}}.svg" />
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Comida
+                      <img class="IconoVal3 mb-1" src="../../assets/img/{{item.comida_primero}}.svg"/>
+                      <img class="IconoVal2 mb-1" src="../../assets/img/{{item.comida_segundo}}.svg">
+                      <img class="IconoVal mb-1" src="../../assets/img/{{item.comida_postre}}.svg">
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Merienda
+                      <img class="IconoVal3 mb-1" src="../../assets/img/{{item.merienda}}.svg"/>
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Dormir Inicio
+                      <span class="text-black nook fw-bold IconoVal3 mb-1">{{item.dormir_inicio}}</span>
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Dormir Final
+                      <span class="text-black nook fw-bold IconoVal3 mb-1">{{item.dormir_final}}</span>
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Deposiciones:
+                      <span class="text-black nook fw-bold IconoVal3 mb-1">{{item.deposiciones}}</span>
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Observaciones:
+                      <span class="text-black nook fw-bold IconoVal3 mb-1">{{item.observaciones}}</span>
+                    </li>
+
+                  </ul>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <app-spinner *ngIf="loading"></app-spinner>
+        </div>
+    </div>
+  </div>
+
+
+  <div class="d-grid gap-2 d-md text-center justify-content-center">
+    <button class="shake boton btn btn-info p-1 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+
+
+<div class="text-center" *ngIf="this.getRol()===1; ngIfElse getRol">
+  <h1>404</h1>
+  <br>
+  <h3>PAGINA NO ENCONTRADA</h3>
+  <br>
+  <button class="boton btn btn-info p-1" style="height:40px;width:70px" (click)="volverdashboard()">Volver</button>
+</div>

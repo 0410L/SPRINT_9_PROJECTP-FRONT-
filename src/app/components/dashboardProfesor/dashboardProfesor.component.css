@@ -16,10 +16,16 @@
 
 button{
     color: black;
+    background-color: gold;
 }
 
 .a1{
     cursor: default;
+}
+
+
+.txt{
+    font-size: medium;
 }
 
 

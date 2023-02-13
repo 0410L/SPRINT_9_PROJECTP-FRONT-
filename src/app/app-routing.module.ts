@@ -1,3 +1,4 @@
+import { HistorialCompletoComponent } from './historial-completo/historial-completo.component';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path: 'cam', component: CameraComponent, canActivate: [AuthGuard] },
   { path: 'qr', component: ScanComponent, canActivate: [AuthGuard] },
   { path: 'modal', component: ModalAlumnoComponent, canActivate: [AuthGuard] },
+  { path: 'historialAlumnos', component: HistorialCompletoComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 

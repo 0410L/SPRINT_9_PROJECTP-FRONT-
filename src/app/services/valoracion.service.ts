@@ -30,6 +30,11 @@ export class ValoracionService {
    return this.http.get<any>(`http://localhost:8080/api/valoracion/list/${id_alumno}`, {headers});
    }
 
+   //OBTENER VALORACIONES HISTORIAL DE TODOS LOS ALUMNOS
+   obtenerValoracionesHistorialAlumnos(): Observable<any> {
+      const headers = new HttpHeaders({'Content-Type':'application/json'});
+      return this.http.get<any>(`http://localhost:8080/api/valoracion/showHistorial/`, {headers});
+      }
 
 /* 
    //OBTENER HISTORIA VALORACION ALUMNOS
