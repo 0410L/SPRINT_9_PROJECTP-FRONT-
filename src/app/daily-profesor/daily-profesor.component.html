@@ -12,32 +12,49 @@
               <br>
               <br>
             <div class="table" id="tablainfo">
-              <h4 class="text-black fw-bold d-xl-none">Daily</h4>
-              <h5 class="fw-bold d-xl-none">{{ this.model[0].fecha }}</h5>
-              <h5 class="fw-bold d-xl-none">{{ getGrupo() }}</h5>
+              <h4 class="text-black fw-bold d-xl-none">Daily <span class="fw-bold d-xl-none">({{ getGrupo() }})</span></h4>
+              <h5 class="fw-bold d-xl-none">{{ this.model[0].fecha | date : 'fullDate' }}</h5>
+              
 
               <!--COLUMNA PER TABLET / SMARTPHONE EN RESOLUCIÓ VERTICAL-->
-              <div class="card mt-3 d-xl-none" style="width: 22rem" *ngFor="let item of model">
+              <div class="card mt-3 d-xl-none" style="width: 100%" *ngFor="let item of model">
                 
-                <div class="cabecera titulo card-header"><span>{{ item.nombre }}</span></div>
+                <div class="cabecera titulo card-header" style="width: 100%" ><span>{{ item.nombre }}</span></div>
 
-                <ul class="list-group list-group-flush justify-content-center bg-info">
+                <ul class="list-group list-group-flush justify-content-center bg-info" style="width: 100%" >
 
-                  <ul class="list-group list-group-flush mt-3" >
-                    <li class="list-group-item bg-info text-white ok fw-bold">Desayuno <p class="mb-1"><img
-                          class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg" /></li>
-                    <li class="list-group-item bg-info text-white ok fw-bold">Comida <br><img
-                        class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/><img src="../../assets/img/{{item.comida_segundo}}.svg"><img src="../../assets/img/{{item.comida_postre}}.svg"><span></span></li>
-                    <li class="list-group-item bg-info text-white ok fw-bold">Merienda <p class="mb-1"></p><img
-                        class="IconoVal" src="../../assets/img/{{item.merienda}}.svg" /></li>
-                    <li class="list-group-item bg-info text-white ok fw-bold">Dormir Inicio <p class="mb-1"></p><span
-                        class="text-black nook fw-bold">{{item.dormir_inicio}}</span></li>
-                    <li class="list-group-item bg-info text-white ok fw-bold">Dormir Final <p class="mb-1"></p><span
-                        class="text-black nook fw-bold">{{item.dormir_final}}</span></li>
-                    <li class="list-group-item bg-info text-white ok fw-bold">Deposiciones: <p class="mb-1"></p><span
-                        class="text-black nook fw-bold">{{item.deposiciones}}</span></li>
-                    <li class="list-group-item bg-info text-white ok fw-bold">Observaciones: <p class="mb-1"></p><span
-                        class="text-black nook fw-bold">{{item.observaciones}}</span></li>
+                  <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Desayuno
+                      <img class="IconoVal3 mb-1" src="../../assets/img/{{item.desayuno}}.svg" />
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Comida
+                      <img class="IconoVal3 mb-1" src="../../assets/img/{{item.comida_primero}}.svg"/>
+                      <img class="IconoVal2 mb-1" src="../../assets/img/{{item.comida_segundo}}.svg">
+                      <img class="IconoVal mb-1" src="../../assets/img/{{item.comida_postre}}.svg">
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Merienda
+                      <img class="IconoVal3 mb-1" src="../../assets/img/{{item.merienda}}.svg"/>
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Dormir Inicio
+                      <span class="text-black nook fw-bold IconoVal3 mb-1">{{item.dormir_inicio}}</span>
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Dormir Final
+                      <span class="text-black nook fw-bold IconoVal3 mb-1">{{item.dormir_final}}</span>
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Deposiciones:
+                      <span class="text-black nook fw-bold IconoVal3 mb-1">{{item.deposiciones}}</span>
+                    </li>
+
+                    <li class="list-group-item bg-info text-white ok fw-bold">Observaciones:
+                      <span class="text-black nook fw-bold IconoVal3 mb-1">{{item.observaciones}}</span>
+                    </li>
+
                   </ul>
                 </ul>
               </div>
@@ -52,46 +69,50 @@
 
 <div class="hero container-fluid d-flex justify-content-center align-items-center a1" *ngIf="this.getRol()===2; ngIfElse getRol">
 
-  <div class="inicial" style="text-align:center" *ngIf="!loading" id="daily">
+  <div class="inicial" style="text-align:center" *ngIf="!loading" id="tablainfo">
     <div class="container-fluid text-center ">
         <div class="container">
           <div class="col">
             <div class="table" id="tablainfo" >
-              <h4 class="text-black fw-bold d-none d-xl-block">Daily</h4><h5 class="fw-bold d-none d-xl-block">{{ getGrupo() }}</h5>
+              <br>
+              <br>
+              <br> 
+              <br>
+              <h4 class="text-black fw-bold d-none d-xl-block">Daily <span>({{ getGrupo() }})</span></h4>
+              <h5 class="fw-bold d-none d-xl-block">{{ this.model[0].fecha | date : 'fullDate' }}</h5>
               <br>
 
         <!--COLUMNA PER PC EN RESOLUCIÓ AMPLE-->
 
-        <div *ngIf="!loading" id="daily" class="body d-none d-xl-block">
-          <div class="table justify-content-center">
-            <thead class="cabecera m-3 rounded justify-content-center space">
-              <th *ngIf="mostrar"  class="fw-bold">Enviar</th>
-              <th class="fw-bold space">Nombre</th>
+        <div *ngIf="!loading" class="body d-none d-xl-block">
+          <div class="table justify-content-center space">
+            <thead class="cabecera rounded justify-content-center space">
+              <th class="fw-bold space" style="width: 12vw">Nombre</th>
               <th class="fw-bold space">Desayuno</th>
-              <th class="fw-bold space">Comida 1o</th>
-              <th class="fw-bold space">Comida 2o</th>
+              <th class="fw-bold space">Primero</th>
+              <th class="fw-bold space">Segundo</th>
               <th class="fw-bold space">Postre</th>
               <th class="fw-bold space">Merienda</th>
-              <th class="fw-bold space">Dormir Ini</th>
-              <th class="fw-bold space">Dormir Fin</th>
+              <th class="fw-bold space">Dormir inicio</th>
+              <th class="fw-bold space">Dormir final</th>
               <th class="fw-bold space">Deposiciones</th>
               <th class="fw-bold space">Observaciones</th>
             </thead>
     
             
-            <tbody class="bg-info m-3 rounded text-center justify-content-center" *ngFor="let item of model">
-              <tr>
+            <tbody class="bg-info center-horizontal-vertical" *ngFor="let item of model">
+              <tr class="fw-bold center-horizontal-vertical">
 
-                <td class="fw-bold">{{ item.nombre }}</td>
-                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{item.desayuno}}.svg"/></td>
-                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_primero}}.svg"/></td>
-                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_segundo}}.svg"/></td>
-                <td><p class="mb-1"></p><img class="IconoVal" src="../../assets/img/{{item.comida_postre}}.svg"/></td>
-                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></td>
-                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></td>
-                <td><p class="mb-1"><img class="IconoVal" src="../../assets/img/{{item.merienda}}.svg"/></td>
-                <td>{{item.deposiciones}}</td>
-                <td>{{item.observaciones}}</td>
+                <td class="fw-bold center-horizontal-vertical">{{ item.nombre }}</td>
+                <td class="fw-bold center-horizontal-vertical"><p><img class="IconoVal1" style="text-align:center" title="Desayuno" src="../../assets/img/{{item.desayuno}}.svg"/></td>
+                <td class="fw-bold center-horizontal-vertical"><p><img class="IconoVal1" title="Primero" src="../../assets/img/{{item.comida_primero}}.svg"/></td>
+                <td class="fw-bold center-horizontal-vertical"><p><img class="IconoVal1" title="Segundo" src="../../assets/img/{{item.comida_segundo}}.svg"/></td>
+                <td class="fw-bold center-horizontal-vertical"><p><img class="IconoVal1" title="Postre" src="../../assets/img/{{item.comida_postre}}.svg"/></td>
+                <td class="fw-bold center-horizontal-vertical"><p><img class="IconoVal1" title="Merienda" src="../../assets/img/{{item.merienda}}.svg"/></td>
+                <td class="fw-bold center-horizontal-vertical"><p><span class="IconoVal1" title="Dormir inicio">{{item.dormir_inicio}}</span></td>
+                <td class="fw-bold center-horizontal-vertical"><p><span class="IconoVal1" title="Dormir final">{{item.dormir_final}}</span></td>
+                <td class="fw-bold center-horizontal-vertical">{{item.deposiciones}}</td>
+                <td class="fw-bold center-horizontal-vertical">{{item.observaciones}}</td>
 
               </tr>
             </tbody>
@@ -102,6 +123,9 @@
       </div>
     </div>
   </div>
+  <br>
+  <br>
+
   <div class="d-grid gap-2 d-md text-center justify-content-center">
     <button class="shake boton btn btn-info p-1 fw-bold" style="height:40px;width:70px" (click)="volver()">Volver</button>
   </div>
