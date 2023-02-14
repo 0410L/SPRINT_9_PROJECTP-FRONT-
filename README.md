@@ -1,27 +1,21 @@
-# Frontend
+# Polard Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+He creado una app que permite gestionar y visualizar una base de datos que muestran el dia a dia de tu/s hijo/s en la guarderia o la escuela.
 
-## Development server
+## Explicación
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+¿Estás cansado de perder la información sobre las necesidades diarias de tu hijo en la guardería?
+¿Te preocupa que otras personas no estén al tanto de sus requerimientos básicos, como pañales, toallitas o ropa?
 
-## Code scaffolding
+¡Polard es la solución!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Polard te mantendrá informado sobre el día a día de tu hijo en la guardería en tiempo real. Ya no tendrás que preocuparte por la pizarra que se borra al final del día, (o por los familiares o abuelos que no están al tanto de las observaciones escritas) con Polard, recibirás alertas inmediatas por correo electrónico sobre las necesidades de tu hijo.
 
-## Build
+Además, tambien podrás ver la evolución de tu hijo, revisar su registro y necesidades en cualquier momento. Incluso, el perfil de profesor te permitirá tener acceso a información detallada sobre los alumnos, incluyendo sus contactos y una ficha con acceso directo a llamadas, mensajes de WhatsApp y correo electrónico.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Y lo mejor de todo, Polard incluye un creador y lector de códigos QR para un registro aún más fácil y rápido.
 
-## Running unit tests
+No esperes más para mejorar tu día a día en la guardería... con Polard,siempre estarás informado sobre las necesidades de tu hijo.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+¡Polard, te hace la vida más fácil!
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
